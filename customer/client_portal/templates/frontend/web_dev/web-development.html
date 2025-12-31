@@ -1,0 +1,76 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Web Development | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/web-development.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/case-study.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  <!-- Keep the Organization schema from base -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Web Development Services",
+    "description": "Engineered web solutions that scale with ambition. Professional web development with modern frameworks and cloud-native architecture.",
+    "url": "https://www.dycetix.com/web-development",
+    "serviceType": "Web Development",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dycetix"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Development Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "E-Commerce Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service", 
+                    "name": "Enterprise Systems"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "SaaS Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Next-Gen Experiences"
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/web_dev/sections/hero.html' %}
+    {% include 'frontend/web_dev/sections/service-definition.html' %}
+    {% include 'frontend/web_dev/sections/why-us.html' %}
+    {% include 'frontend/web_dev/sections/solutions.html' %}
+    {% include 'frontend/web_dev/sections/case-study.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/web-development.js' %}?v=1.0"></script>
+{% endblock %}

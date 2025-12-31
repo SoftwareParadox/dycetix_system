@@ -1,0 +1,149 @@
+<!-- industries_retail.html -->
+<section id="industries-retail" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Retail Technology Solutions</h3>
+        <p itemprop="description">E-commerce platforms, inventory management, POS systems, and customer experience solutions for modern retailers.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Retail Technology">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/retailer.jpg" 
+                    alt="Retail technology solutions including e-commerce and inventory management"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Retail</span> Technology
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Digital commerce solutions, omnichannel experiences, and retail operations optimization for modern businesses.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-store feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">E-commerce Platforms</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Custom online stores, marketplace integrations, and mobile shopping experiences.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-boxes feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Inventory Management</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Real-time stock tracking, automated replenishment, and multi-location inventory control.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-user-tag feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Customer Experience</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Personalized shopping, loyalty programs, and seamless omnichannel customer journeys.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">E-commerce</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">POS Systems</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Inventory Management</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">CRM Integration</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Analytics</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_ELEVATE_RETAIL %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Retail Technology Solutions",
+        "description": "Digital commerce solutions, omnichannel experiences, and retail operations optimization for modern businesses",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Retail Technology",
+        "category": "Retail IT",
+        "knowsAbout": [
+            "E-commerce",
+            "POS Systems",
+            "Inventory Management",
+            "CRM Integration",
+            "Analytics",
+            "Customer Experience"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "E-commerce Platforms",
+                "description": "Custom online stores, marketplace integrations, and mobile shopping experiences"
+            },
+            {
+                "@type": "Thing",
+                "name": "Inventory Management", 
+                "description": "Real-time stock tracking, automated replenishment, and multi-location inventory control"
+            },
+            {
+                "@type": "Thing",
+                "name": "Customer Experience",
+                "description": "Personalized shopping, loyalty programs, and seamless omnichannel customer journeys"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Elevate Retail",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

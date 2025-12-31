@@ -1,0 +1,151 @@
+<!-- technologies_postgresql.html -->
+<section id="technologies-postgresql" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">PostgreSQL Database Services</h3>
+        <p itemprop="description">Enterprise-grade PostgreSQL database solutions with advanced features, scalability, and robust data management capabilities.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="PostgreSQL Development">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/postgresql.jpg" 
+                    alt="PostgreSQL database management and optimization for enterprise applications"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    Enterprise <span class="tech-accent">PostgreSQL</span>
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Robust, scalable database solutions with advanced SQL features, JSON support, and enterprise-grade performance.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-expand-arrows-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">High Availability</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Replication, clustering, and failover solutions for mission-critical applications with 99.99% uptime.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-shield-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Advanced Security</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Row-level security, encryption at rest, and comprehensive audit logging for compliance and data protection.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-bolt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Performance Optimization</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Query optimization, indexing strategies, and connection pooling for maximum throughput and low latency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Database Design</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Performance Tuning</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Replication</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">JSON Support</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">GIS Extensions</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_START_POSTGRESQL_PROJECT %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Enterprise PostgreSQL Database Services",
+        "description": "Robust, scalable database solutions with advanced SQL features, JSON support, and enterprise-grade performance",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "PostgreSQL Development",
+        "category": "Database Management",
+        "knowsAbout": [
+            "Database Design",
+            "Performance Tuning",
+            "Replication",
+            "JSON Support",
+            "GIS Extensions",
+            "High Availability",
+            "Security",
+            "Backup & Recovery"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "High Availability",
+                "description": "Replication, clustering, and failover solutions for mission-critical applications with 99.99% uptime"
+            },
+            {
+                "@type": "Thing",
+                "name": "Advanced Security", 
+                "description": "Row-level security, encryption at rest, and comprehensive audit logging for compliance and data protection"
+            },
+            {
+                "@type": "Thing",
+                "name": "Performance Optimization",
+                "description": "Query optimization, indexing strategies, and connection pooling for maximum throughput and low latency"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Optimize Your Database",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

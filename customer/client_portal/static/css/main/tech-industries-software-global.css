@@ -1,0 +1,263 @@
+.tech-background {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tech-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  animation: pan-grid 40s linear infinite;
+  
+}
+
+@keyframes pan-grid {
+  0% { transform: translate(-10%, -10%); }
+  100% { transform: translate(-30%, -30%); }
+}
+
+.tech-icon {
+  opacity: 0.5;
+  color: #2a2d65;
+  animation: pulse-icon 4s ease-in-out infinite;
+  animation-delay: var(--animation-delay);
+  transition: all 0.3s ease;
+  font-size: 3.5rem;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+.delay-1 { --animation-delay: 0.2s; }
+.delay-2 { --animation-delay: 0.5s; }
+.delay-3 { --animation-delay: 0.8s; }
+.delay-4 { --animation-delay: 1.1s; }
+.delay-5 { --animation-delay: 1.4s; }
+.delay-6 { --animation-delay: 1.7s; }
+.delay-7 { --animation-delay: 2.0s; }
+.delay-8 { --animation-delay: 2.3s; }
+
+
+
+
+/* Fix hover effect to work on entire container */
+.tech-stack-image-container:hover .tech-stack-image-wrapper,
+.tech-stack-image-container:hover .tech-stack-image {
+    transform: scale(1.05);
+}
+
+.tech-stack-image-container:hover .tech-stack-image-overlay {
+    opacity: 1;
+}
+
+/* Remove all gaps and make image cover full section */
+.tech-stack-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: var(--bg-gradient);
+}
+
+.tech-stack-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0; /* Remove gap between image and content */
+    align-items: stretch; /* Make both columns equal height */
+    min-height: 600px; /* Ensure minimum height */
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Make image container fill entire grid cell */
+.tech-stack-image-container {
+    position: relative;
+    overflow: hidden;
+    margin:  0 !important;
+    padding: 0 !important;
+    height: 100%;
+    width: 100%;
+    display: flex; /* Added to help with stretching */
+}
+
+.tech-stack-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(0);
+    transition: transform 0.3s ease;
+    display: flex; /* Added to help with stretching */
+}
+
+.tech-stack-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures it covers the area without distortion */
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    flex: 1; /* Added to ensure it stretches */
+    min-height: 100%; /* Ensure it doesn't shrink below container */
+}
+
+/* Ensure the grid items stretch properly */
+.tech-stack-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    align-items: stretch; /* This is key - makes both columns equal height */
+    min-height: 600px;
+}
+
+/* Make sure both columns take full height */
+.tech-stack-image-container,
+.tech-stack-description {
+    height: 100%;
+}
+
+/* Force the grid container to fill available space */
+.tech-stack-section {
+    padding: 0 !important;
+    margin: 0 !important;
+    background: var(--bg-gradient);
+    height: auto; /* Let it grow with content */
+}
+
+
+/* Content container - full right half with internal padding */
+.tech-stack-description {
+    padding: 80px 60px; /* Internal padding only */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Remove any external spacing */
+.tech-stack-container {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+}
+
+/* Rest of your existing styles remain the same */
+.tech-stack-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(148, 88, 236, 0.1) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.tech-stack-image-wrapper img {
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, transparent 100%);
+}
+
+.tech-stack-title {
+    color: var(--color-white-background-header);
+}
+
+.tech-accent {
+    color: var(--section-hero-color);
+}
+
+.tech-stack-subtitle {
+    color: var(--color-white-background-paragraph);
+}
+
+.tech-stack-features {
+    margin-bottom: 40px;
+}
+
+.tech-feature {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.tech-feature:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.feature-icon {
+    font-size: 1.5rem;
+    color: #E76F00;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.feature-content {
+    flex: 1;
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+
+.feature-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.technologies-stack {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+}
+
+.technologies-pill {
+    background: rgba(0, 204, 153, 0.223);
+    color: var(--section-hero-color);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.9rem;
+}
+
+.technologies-pill:hover {
+    background: var(--section-hero-color-light);
+    color: white;
+}
+
+.tech-stack-cta {
+    text-align: left;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .tech-stack-content {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .tech-stack-right {
+        flex-direction: column-reverse;
+    }
+    .tech-stack-image-container {
+        order: -1;
+        height: 400px; /* Fixed height on mobile */
+    }
+    
+    .tech-stack-description {
+        padding: 60px 30px;
+    }
+    
+    .tech-stack-title {
+        font-size: 2rem;
+    }
+}

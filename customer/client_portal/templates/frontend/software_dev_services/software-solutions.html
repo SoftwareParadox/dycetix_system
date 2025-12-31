@@ -1,0 +1,26 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Software Development Solutions | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/main/software-dev-services.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/main/tech-industries-software-global.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/software_dev_services/sections/hero.html' %}
+    {% include 'frontend/software_dev_services/sections/custom-dev-services.html' %}
+    {% include 'frontend/software_dev_services/sections/web-dev-services.html' %}
+    {% include 'frontend/software_dev_services/sections/mobile-dev-services.html' %}
+    {% include 'frontend/software_dev_services/sections/desktop-dev-services.html' %}
+    {% include 'frontend/software_dev_services/sections/database-dev-services.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

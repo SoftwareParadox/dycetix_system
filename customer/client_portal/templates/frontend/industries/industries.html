@@ -1,0 +1,108 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Industry Solutions | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/industries.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/tech-industries-software-global.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Industry-Specific Technology Solutions",
+    "description": "Custom software solutions for Healthcare, Financial, Retail, Manufacturing, Insurance, Education, Logistics, and Media industries with specialized expertise.",
+    "url": "https://www.dycetix.com/industries",
+    "serviceType": "Industry Solutions",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dycetix"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Industry Solutions",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Healthcare Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Financial Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Retail Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Manufacturing Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Insurance Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Education Technology Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Logistics Management Solutions"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Media & Entertainment Solutions"
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/industries/sections/hero.html' %}
+    {% include 'frontend/industries/sections/health.html' %}
+    {% include 'frontend/industries/sections/finance.html' %}
+    {% include 'frontend/industries/sections/retail.html' %}
+    {% include 'frontend/industries/sections/manufacturing.html' %}
+    {% include 'frontend/industries/sections/insurance.html' %}
+    {% include 'frontend/industries/sections/education.html' %}
+    {% include 'frontend/industries/sections/logistics.html' %}
+    {% include 'frontend/industries/sections/media.html' %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/industries.js' %}?v=1.0"></script>
+{% endblock %}

@@ -1,0 +1,119 @@
+<!-- about_us_hero.html -->
+<section id="photography-videography-hero" class="hero-section" itemscope itemtype="https://schema.org/Service">
+    <div class="video-photo-hero-background">
+        <video class="video-photo-bg-video" autoplay muted loop playsinline aria-label="Professional photography and videography services showcase">
+            <source src="../../static/videos/video-photo-hero.mp4" type="video/mp4">
+        </video>
+        <div class="video-photo-gradient-overlay"></div>
+    </div>
+    
+    <div class="visually-hidden">
+        <h2 itemprop="description">Professional Photography and Videography Services - Commercial Photography, Cinematic Videography, and Professional Editing</h2>
+    </div>
+
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="name">
+                    Capture Your Story
+                    <span class="hero-title-part">In Every Frame</span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Transforming moments into lasting visual narratives through professional 
+                    photography and cinematic videography. Where technical precision meets 
+                    vision to tell your unique story.
+                </p>
+            </div>
+            <div class="pill-chips-container" itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+                        <span itemprop="name">Commercial Photography</span>
+                        <meta itemprop="serviceType" content="Photography">
+                    </span>
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+                        <span itemprop="name">Cinematic Videography</span>
+                        <meta itemprop="serviceType" content="Videography">
+                    </span>
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Service">
+                        <span itemprop="name">Professional Editing</span>
+                        <meta itemprop="serviceType" content="Video Editing">
+                    </span>
+                </div>
+            <!-- CTA Buttons -->
+            {% include 'includes/hero-cta.html' %}
+        </div>
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for Photography & Videography service -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Professional Photography and Videography Services</h3>
+        <p itemprop="description">Transforming moments into lasting visual narratives through professional photography and cinematic videography services.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="serviceType">Photography</div>
+        <div itemprop="serviceType">Videography</div>
+        <div itemprop="areaServed">Worldwide</div>
+        <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
+            <meta itemprop="audienceType" content="Businesses and individuals seeking professional visual content">
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Photography and Videography Services",
+        "description": "Professional photography and videography services including commercial photography, cinematic videography, and professional editing. Transforming moments into lasting visual narratives.",
+        "url": "https://www.dycetix.com/services/photography-videography",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com",
+            "description": "Professional photography, videography, and creative visual services"
+        },
+        "serviceType": ["Photography", "Videography"],
+        "areaServed": "Worldwide",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Businesses and individuals seeking professional visual content creation"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Photography and Videography Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Commercial Photography",
+                        "description": "Professional commercial photography services for businesses and brands"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cinematic Videography",
+                        "description": "Professional cinematic videography and video production services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Professional Editing",
+                        "description": "Professional photo and video editing services"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</section>

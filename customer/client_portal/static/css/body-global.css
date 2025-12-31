@@ -1,0 +1,60 @@
+/* Body Global Styles */
+/* Import variables at the top */
+@import url('variables.css');
+
+/* Now all your CSS rules */
+html { 
+    font-size: 100%;
+    font-family: var(--text-font-family);
+    scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 14px; 
+    }
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+/* Page wrapper */
+.wrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    height: auto;
+    overflow: hidden;
+}
+
+body {
+    font-family: var(--text-font-family); 
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    background-color: var(--section-background-color-light);
+}
+.header-content {
+  margin: 0 auto;
+  max-width: var(--max-width-800);
+  text-align: center;
+}
+
+/* @media (max-width: 768px) {
+  .header-content,
+  .s-solutions-header {
+    text-align: left;
+  }
+} */

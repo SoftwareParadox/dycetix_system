@@ -1,0 +1,175 @@
+<!-- web_development_hero.html -->
+<section id="web-development-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
+    <!-- Contextual Visual Preview -->
+    <!-- <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
+        <div class="hero-gradient-overlay"></div>
+    </div> -->
+     <div class="web-hero-background">
+        <video class="web-hero-bg-video" autoplay muted loop playsinline aria-label="Abstract technology visualization">
+            <source src="../../static/videos/web-dev-hero.mp4" type="video/mp4">
+        </video>
+        <div class="web-hero-gradient-overlay"></div>
+    </div>
+    <div class="hero-content-container mobile-hero">
+        <div class="hero-split-content-container">
+            <div class="hero-content hero-split-content">
+                <!-- Text Content -->
+                <div class="text-container">
+                    <h1 class="hero-title" itemprop="name">
+                        <span class="hero-title-part">Engineered Web Solutions</span>
+                        <span>That Scale With Ambition</span>
+                        <span class="hero-title-underline"></span>
+                    </h1>
+        
+                    <p class="hero-subtitle" itemprop="description">
+                        Empower your business with secure, scalable web solutions—leveraging automation for faster, smarter deployments
+                    </p>
+                </div>
+        
+                <!-- Pill Chips -->
+                <div class="pill-chips-container" itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">E-commerce Platforms</span>
+                    </span>
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">Automated Web-Based Systems</span>
+                    </span>
+                    <span class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">Enterprise Web Applications</span>
+                    </span>
+                </div>
+        
+                <!-- CTA Buttons -->
+                {% include 'includes/hero-cta.html' %}
+        
+                <!-- Tech Stack Icons -->
+                <ul class="hero-tech-context" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                    <li class="hero-tech-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                        <i class="fa-brands fa-square-js" itemprop="image"></i>
+                        <meta itemprop="name" content="JavaScript">
+                    </li>
+                    <li class="hero-tech-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                        <i class="fab fa-react" itemprop="image"></i>
+                        <meta itemprop="name" content="React">
+                    </li>
+                    <li class="hero-tech-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                        <i class="fab fa-node-js" itemprop="image"></i>
+                        <meta itemprop="name" content="Node.js">
+                    </li>
+                    <li class="hero-tech-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                        <i class="fa-brands fa-html5" itemprop="image"></i>
+                        <meta itemprop="name" content="HTML5">
+                    </li>
+                    <li class="hero-tech-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                        <i class="fa-brands fa-css3-alt" itemprop="image"></i>
+                        <meta itemprop="name" content="CSS3">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- <div class="hero-mockup-container">
+            <div class="webdev-hero-website-preview" role="presentation">
+                <img src="../../static/images/main/webdev-hero.png" alt="Website development example" itemprop="image">
+            </div>
+        </div> -->
+        
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Web Development Services</h3>
+        <p itemprop="description">Engineered web solutions that scale with ambition, featuring modern frameworks and cloud-native architecture.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="E-commerce Platforms">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Automated Web-Based Systems">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Enterprise Web Applications">
+            </div>
+        </div>
+        <div itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <meta itemprop="name" content="JavaScript">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <meta itemprop="name" content="React">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <meta itemprop="name" content="Node.js">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <meta itemprop="name" content="HTML5">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <meta itemprop="name" content="CSS3">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Web Development Hero Section",
+        "description": "Engineered web solutions that scale with ambition, empowering businesses with secure, scalable web solutions",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com"
+        },
+        "serviceType": "Web Development",
+        "keywords": [
+            "E-commerce Platforms",
+            "Automated Web-Based Systems", 
+            "Enterprise Web Applications"
+        ],
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "JavaScript"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "React"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Node.js"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "HTML5"
+            },
+            {
+                "@type": "PropertyValue", 
+                "name": "CSS3"
+            }
+        ],
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action",
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

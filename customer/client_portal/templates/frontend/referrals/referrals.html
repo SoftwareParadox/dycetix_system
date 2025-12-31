@@ -1,0 +1,22 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Refer a Client | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/job-form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/referrals.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/referrals/sections/referrals.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/referrals.js' %}?v=1.0"></script>
+{% endblock %}

@@ -1,0 +1,57 @@
+/* referral-form.css */
+.referral-section-header {
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--section-hero-color);
+}
+
+.referral-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #334155;
+}
+
+.referral-icon {
+    color: var(--section-hero-color);
+    font-size: 1.2rem;
+}
+
+.referral-section-description {
+    color: #64748B;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.referral-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border: 2px solid #E2E8F0;
+    border-radius: 8px;
+    background: #F8FAFC;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.referral-option:hover {
+    background: #F0F9FF;
+    border-color: var(--section-hero-color);
+}
+
+.referral-option input[type="radio"] {
+    margin-left: 1rem;
+}
+
+.referral-options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Focus states for accessibility */
+.referral-option:focus-within {
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    border-color: var(--section-hero-color);
+}

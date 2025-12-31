@@ -1,0 +1,21 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Terms of Service | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/terms-of-service.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/accessibility.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/terms_of_service/sections/hero.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

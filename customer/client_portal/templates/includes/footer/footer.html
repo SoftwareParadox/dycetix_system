@@ -1,0 +1,135 @@
+<!-- Beginning of footer section -->
+<footer id="footer-contact" class="footer-container" itemscope itemtype="https://schema.org/Organization">
+    <div class="footer-content-wrapper">
+
+        <!-- CTA Section -->
+        <div class="footer-cta">
+            <div class="footer-text">
+                <h2 itemprop="description">We're Here to Make Things Happen</h2>
+                <p itemprop="slogan">
+                    Let's work together to build something extraordinary. Whether you need a consultation, a custom solution, or 
+                    just have questions, we're here to help.
+                </p>
+                <div class="footer-cta-buttons">
+                    <div class="hero-cta-btn-container">
+                        <button class="hero-cta-btn primary" onclick="location.href='/get-in-touch/#project-quote-form'" itemprop="potentialAction" itemscope itemtype="https://schema.org/ReserveAction">
+                            <span itemprop="name">Schedule Free Consultation</span> →
+                            <div class="hero-cta-btn-hover-fill"></div>
+                        </button>
+                        <button class="hero-cta-btn secondary footer-main-cta" onclick="location.href='/pricing'" itemprop="potentialAction" itemscope itemtype="https://schema.org/ReserveAction">
+                            <span itemprop="name">Estimate Project Cost</span> ↗
+                            <div class="hero-cta-btn-hover-fill"></div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Main Footer Section -->
+        <div class="footer-main">
+    
+            <!-- Left Section -->
+            <div class="footer-left">
+                <a href="/" aria-label="Dycetix Home" itemprop="url" class="footer-image">
+                    <img src="../../static/images/footer/dycetix-logo.png" alt="Dycetix - Tech Solutions Provider" class="footer-logo" loading="lazy" itemprop="logo">
+                </a>
+                <p itemprop="description">Transforming ideas into reality, one solution at a time.</p>
+        
+                <!-- Newsletter Signup -->
+                <div id="footer-newsletter" class="footer-newsletter">
+                    <h4>Subscribe for Tech Insights</h4>
+                    <form action="/subscribe" method="post" itemprop="potentialAction" itemscope itemtype="https://schema.org/SubscribeAction">
+                        <input type="email" name="email" placeholder="Enter your email" required itemprop="object">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+    
+            <!-- Right Section -->
+            <div class="footer-right">
+                <!-- TOP: Footer Sections -->
+                <div class="footer-sections-container">
+                    <!-- Services Section -->
+                    <div class="footer-section">
+                        <h3 itemprop="makesOffer">Our Services</h3>
+                        <a href="{% url 'software_dev_services' %}" itemprop="hasOfferCatalog">Software Development</a>
+                        <a href="{% url 'it_maintenance' %}" itemprop="hasOfferCatalog">IT Support & Maintenance</a>
+                        <a href="{% url 'graphic_design' %}" itemprop="hasOfferCatalog">Graphic Design</a>
+                        <a href="{% url 'video_photo' %}" itemprop="hasOfferCatalog">Photography & Videography</a>
+                    </div>
+        
+                    <!-- Contact Section -->
+                    <div class="footer-section" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <h3>Contact</h3>
+                        <a href="tel:+1234567890" itemprop="telephone"><i class="fa-solid fa-phone"></i>+27 75 195 5229</a>
+                        <a href="https://wa.me/+27751955229" itemprop="sameAs"><i class="fa-brands fa-whatsapp"></i>Chat on WhatsApp</a>
+                        <a href="mailto:solutions@dycetix.com" itemprop="email"><i class="fa-regular fa-envelope"></i>solutiobs@dycetix.com</a>
+                    </div>
+        
+                    <!-- Legal Section -->
+                    <div class="footer-section">
+                        <h3>Legal</h3>
+                        <a href="{% url 'privacy_policy' %}" itemprop="mainEntityOfPage">Privacy Policy</a>
+                        <a href="{% url 'terms_of_service' %}" itemprop="mainEntityOfPage">Terms of Service</a>
+                        <a href="{% url 'cookie_policy' %}" itemprop="mainEntityOfPage">Cookie Policy</a>
+                    </div>
+                </div>
+    
+                <!-- BOTTOM: Social + Bottom Links -->
+                <div class="footer-social-container">
+                    <!-- Social Section -->
+                    <div class="footer-social">
+                        <hr class="social-line-left">
+                            <div class="social-icons">
+                                <a href="[FB_URL]" aria-label="Facebook" itemprop="sameAs"><i class="fab fa-facebook"></i></a>
+                                <a href="[YouTube_URL]" aria-label="YouTube" itemprop="sameAs"><i class="fa-brands fa-square-youtube"></i></a>
+                                <a href="[LinkedIn_URL]" aria-label="LinkedIn" itemprop="sameAs"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" aria-label="Instagram" itemprop="sameAs"><i class="fa-brands fa-telegram"></i></a>
+                                <a href="[Instagram_URL]" aria-label="Instagram" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        <hr class="social-line-right">
+                    </div>
+        
+                    <!-- Bottom Section -->
+                    <div class="footer-bottom">
+                        <p itemprop="copyrightNotice">© {% now "Y" %} Dycetix Technology Solutions. All Rights Reserved.</p>
+                        <p>
+                            <a href="{% url 'sitemap' %}" itemprop="mainEntityOfPage">Sitemap</a> |
+                            <a href="{% url 'accessibility' %}" itemprop="mainEntityOfPage">Accessibility</a> |
+                            <a href="{% url 'careers' %}" itemprop="mainEntityOfPage">Careers</a>
+                        </p>
+                    </div>
+                </div>
+            </div><!-- End of .footer-right -->
+        </div><!-- End of .footer-main -->
+    </div>
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "description": "Transforming ideas into reality, one solution at a time.",
+        "slogan": "We're Here to Make Things Happen",
+        "email": "contact@dycetix.com",
+        "telephone": "+27-67-038-2734",
+        "sameAs": [
+            "[FB_URL]",
+            "[YouTube_URL]",
+            "[LinkedIn_URL]",
+            "[Instagram_URL]"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "South Africa"
+        },
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "name": "Schedule Free Consultation",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://www.dycetix.com/#contact"
+            }
+        }
+    }
+    </script>
+</footer> <!-- end of footer section -->

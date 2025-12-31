@@ -1,0 +1,129 @@
+<!-- frontend/database_dev/sections/why-us.html -->
+<section id="database-development-why-choose" class="body-section why-us-section" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container why-us-container">
+        <!-- Methodology Visual Section -->
+        <div class="why-us-methodology-visual">
+            <div class="why-us-process-diagram">
+                <div class="why-us-process-step icon-small">
+                    <i class="fas fa-binoculars global-icon"></i>
+                    <span>Needs Analysis</span>
+                </div>
+                <div class="why-us-process-connector"></div>
+                <div class="why-us-process-step icon-small">
+                    <i class="fas fa-drafting-compass global-icon"></i>
+                    <span>Architecture Design</span>
+                </div>
+                <div class="why-us-process-connector"></div>
+                <div class="why-us-process-step icon-small">
+                    <i class="fas fa-code global-icon"></i>
+                    <span>Implementation</span>
+                </div>
+            </div>
+            <div class="why-us-compliance-badges">
+                <div class="why-us-badge-item why-us-aws">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS Partner</span>
+                </div>
+                <div class="why-us-badge-item why-us-gdpr">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Privacy Legislation Ready</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Section -->
+        <div class="why-us-content">
+            <h2 class="body-header why-us-section-title" itemprop="name">
+                Strategic Database Partnerships
+            </h2>
+            
+            <div class="why-us-grid" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                <!-- Collaborative Design -->
+                <article class="larger-global-card solutions-delivered-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-medium">
+                        <i class="fas fa-people-carry" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header larger-global-card-title" itemprop="name">Collaborative Design</h3>
+
+                    <div class="body-card-paragraph larger-global-card-desc" itemprop="description">
+                        <p>Co-create your data architecture through our interactive workshops</p>
+                        <ul class="solutions-delivered-benefits">
+                            <li><i class="fas fa-video"></i> Real-time modeling sessions</li>
+                            <li><i class="fas fa-comments"></i> Daily progress reviews</li>
+                            <li><i class="fas fa-code-merge"></i> Iterative schema refinement</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- Preventive Optimization -->
+                <article class="larger-global-card solutions-delivered-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-medium">
+                        <i class="fas fa-brain" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header larger-global-card-title" itemprop="name">Preventive Optimization</h3>
+
+                    <div class="body-card-paragraph larger-global-card-desc" itemprop="description">
+                        <p>Anticipate scaling needs before they become bottlenecks</p>
+                        <ul class="solutions-delivered-benefits">
+                            <li><i class="fas fa-chart-area"></i> Load pattern forecasting</li>
+                            <li><i class="fas fa-balance-scale"></i> Cost/performance modeling</li>
+                            <li><i class="fas fa-clock"></i> Proactive index tuning</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="body-cta-container scope-visual-cta">
+                <p class="body-card-paragraph">Get a free database blueprint and a technical consultation to kick off your project</p>
+                {% include 'includes/body-cta.html' with cta_text=CTA_START_YOUR_DB_PROJECT %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for why choose us -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Strategic Database Partnerships</h3>
+        <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Collaborative Design">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Preventive Optimization">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        "name": "Strategic Database Partnership Benefits",
+        "description": "Why choose our database development services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "Collaborative Design",
+                "description": "Co-create your data architecture through our interactive workshops",
+                "includes": [
+                    "Real-time modeling sessions",
+                    "Daily progress reviews",
+                    "Iterative schema refinement"
+                ]
+            },
+            {
+                "@type": "Offer",
+                "name": "Preventive Optimization", 
+                "description": "Anticipate scaling needs before they become bottlenecks",
+                "includes": [
+                    "Load pattern forecasting",
+                    "Cost/performance modeling",
+                    "Proactive index tuning"
+                ]
+            }
+        ]
+    }
+    </script>
+</section>

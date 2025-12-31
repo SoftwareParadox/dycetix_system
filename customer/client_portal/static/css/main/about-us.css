@@ -1,0 +1,190 @@
+/* about us page styles */
+.about-hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.about-hero-bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) contrast(1.2);
+    filter: blur(2px); 
+}
+
+.about-hero-gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(13, 17, 23, 0.9) 30%, transparent 100%);
+    pointer-events: none;
+}
+
+.mission-vision-header {
+    max-width: var(--max-width-1400) !important;
+}
+
+.mission-box-subheading,
+.vision-box-subheading {
+    color: var(--color-white-background-header);
+}
+.mission-vision-seo-heading {
+    color: var(--color-white-background-header);
+}
+
+.mission-statement, .vision-statement {
+    color: var(--color-white-background-paragraph);
+}
+
+.mission-vision-accent-color {
+    color: var(--section-hero-color) !important;
+}
+.mission-vision-section-subtitle {
+    color: var(--color-white-background-paragraph);
+    margin-bottom: 2rem !important;
+}
+
+/* Particles with neutral colors */
+.mission-vision-quantum-particles .mission-vision-particle {
+    background: rgba(0,204,153,0.15);
+}
+.mission-vision-quantum-particles .mission-vision-particle:nth-child(1) {
+    --i: 1;
+  }
+  
+  .mission-vision-quantum-particles .mission-vision-particle:nth-child(2) {
+    --i: 2;
+  }
+  
+  .mission-vision-quantum-particles .mission-vision-particle:nth-child(3) {
+    --i: 3;
+  }
+  
+.mission-vision-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    animation: floatAnimation 5s infinite ease-in-out;
+    animation-delay: calc(var(--i) * 0.5s);
+  }
+  
+  @keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(-20px);
+      opacity: 0.5;
+    }
+  }
+
+/* values section */
+
+.core-values-container {
+    max-width: var(--max-width-800) !important;
+    margin: 0 auto;
+}
+.value-title {
+    color: var(--color-white-background-header);
+}
+.value-description {
+    color: var(--color-white-background-paragraph);
+}
+
+.values-section-heading {
+    color: var(--color-white-background-header);
+}
+
+/* our story and growth */
+.journey-heading {
+    max-width: 100% !important;
+}
+.journey-story-heading {
+    color: var(--color-white-background-header);
+}
+
+.journey-founding-story {
+    color: var(--color-white-background-paragraph);
+    max-width: var(--max-width-1200);
+}
+
+.journey-founding-story strong {
+    color: var(--section-hero-color);
+}
+
+.journey-milestone-card {
+    border-left: 4px solid var(--section-hero-color) !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    transition: transform 0.3s ease;
+}
+
+.journey-roadmap-heading {
+    text-align: center;
+    font-size: var(--header-font-size);
+    margin: 4rem 0 2rem 0;
+    color: var(--color-white-background-header);
+}
+
+/* innovative solutions */
+  .solutions-container {
+      max-width: var(--max-width-800) !important;
+  }
+
+  .solution-cta {
+      display: inline-flex;
+      align-items: center;
+      color: var(--section-hero-color);
+      text-decoration: none;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      margin-top: 2rem;
+  }
+  
+  .solution-cta:hover {
+      color: var(--section-hero-color-light);
+      text-decoration: underline;
+  }
+  .solution-card:hover .solution-cta {
+      opacity: 1;
+      transform: translateY(0);
+  }
+  
+  .solutions-cta-arrow {
+      margin-left: 10px;
+      transition: transform 0.3s ease;
+  }
+  
+  .solution-cta:hover .cta-arrow {
+      transform: translateX(5px);
+  }
+  
+  .solutions-section-heading {
+      color: var(--color-white-background-header);
+  }
+  
+  .solutions-accent {
+    color: var(--section-hero-color);
+  }
+
+  .solutions-section-subhead {
+    color: var(--color-white-background-paragraph);
+  }
+
+  @media (max-width: 820px) {
+    .solution-cta {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+

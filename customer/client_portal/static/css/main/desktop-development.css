@@ -1,0 +1,496 @@
+.hero-background {
+  background: url('../../images/main/desktop-development-hero.jpg') center/cover;
+}
+
+.hero-content-container {
+  display: flex;
+  gap: 4rem;
+  margin-top: 5rem !important;
+}
+
+.hero-mockup-container,
+.hero-split-content-container {
+  flex: 1 1 50%; 
+  min-width: 0;
+}
+
+.hero-mockup-container {
+  position: relative;
+  perspective: 1000px;
+}
+
+.hero-mockups {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+}
+
+/* .hero-section {
+  border: 2px solid yellow !important;
+} */
+
+@media (max-width: 1199.98px) {
+  .hero-content-container {
+      flex-direction: column !important;
+      gap: 2rem;
+  }
+  .hero-split-content-container {
+      width: 100%;
+      margin: 0 auto;
+  }
+}
+
+/* Performance Meter Styles */
+.desktop-hero-performance-meter {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    .desktop-hero-performance-meter  {
+        display: none;
+    }
+}
+.desktop-hero-meter-gauge {
+  height: 300px;
+  border-radius: 8px;
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.meter-video-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gauge-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+
+/* desktop development service definition */
+.service-definition-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  /* padding: 0 2rem; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.service-definition-visual {
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.2rem auto;
+}
+
+.service-definition-architecture-timeline {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between; 
+  gap: 2rem;
+  max-width: 800px !important;
+  margin-bottom: 3rem !important;
+  margin: auto;
+}
+
+.service-definition-timeline-phase {
+  padding: 20px;
+  border-radius: 8px;
+  width: 250px; 
+  min-height: 200px; 
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 8px;
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 8px rgba(150, 150, 150, 0.15);
+    font-weight: 500;
+    border: 1px solid #dcdee0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.service-definition-timeline-phase:hover {
+  background: #00CC99;
+    color: white;
+    box-shadow: 0 4px 6px -1px rgba(0, 204, 153, 0.2);
+}
+.service-definition-timeline-phase:hover i {
+    color: #2A5CAA;
+}
+.service-definition-phase-icon {
+  font-size: 2rem;
+  color: var(--section-hero-color);
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.service-definition-timeline-phase h4 {
+  color: var(--color-white-background-header);
+}
+
+.service-definition-timeline-phase p {
+  color: var(--color-white-background-paragraph);
+}
+
+.service-definition-timeline-arrow {
+  font-size: 2rem;
+  color: var(--section-hero-color);
+}
+
+.service-definition-platform-breakdown {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.service-definition-platform-card {
+  background: rgba(0, 204, 153, 0.223);
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.service-definition-platform-card:hover {
+  background: #00CC99;
+}
+
+.service-definition-platform-card i {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-definition-platform-card.service-definition-windows i { color: #0078d4; }
+.service-definition-platform-card.service-definition-mac i { color: #a2aaad; }
+
+.service-definition-platform-tech span {
+  display: block;
+  color: var(--color-white-background-paragraph);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+}
+
+/* Content Section Styles */
+.service-definition-section-title {
+  color: var(--color-white-background-header);
+}
+
+/* .service-definition-title-decorator {
+  display: inline-block;
+  width: 50px;
+  height: 4px;
+  background: linear-gradient(90deg, #00ffcc, #00cc99);
+  border-radius: 2px;
+} */
+
+.service-definition-lead {
+  color: var(--color-white-background-paragraph);
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid var(--section-hero-color);
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+}
+
+/* Process Flow */
+.service-definition-process-flow {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  margin: 3rem 0;
+}
+
+.service-definition-process-step {
+  position: relative !important;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+  border-radius: 8px;
+}
+
+.service-definition-content {
+  padding: 1.2rem;
+}
+.service-definition-step-number {
+  position: absolute !important;
+  left: -1rem;
+  top: -1rem;
+  background: var(--section-hero-color);
+  color: #ffffff;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  box-shadow: 0 5px 15px rgba(0, 204, 153, 0.2);
+}
+
+.service-definition-process-step h3 {
+  color: var(--color-white-background-header);
+}
+.service-definition-lists {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+
+.service-definition-lists li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--section-hero-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.service-definition-lists i {
+    color: var(--section-hero-color);
+}
+
+/* Industry Solutions */
+.service-definition-industry-solutions h3,
+.service-definition-industry-card h4  {
+  color: var(--color-white-background-header);
+}
+
+.service-definition-industry-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.service-definition-industry-card p {
+  color: var(--color-white-background-paragraph);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .service-definition-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+  }
+  
+  .service-definition-section-title {
+      font-size: 2rem;
+  }
+  
+  
+}
+
+@media (max-width: 768px) {
+  .service-definition {
+      padding: 4rem 0;
+  }
+  
+  .service-definition-lead {
+      font-size: 1.1rem;
+      padding: 1rem;
+  }
+  
+  .service-definition-process-step {
+      padding: 1.5rem;
+  }
+  .service-definition-architecture-timeline {
+    flex-direction: column;
+}
+
+.service-definition-timeline-arrow {
+    transform: rotate(90deg);
+    margin: 1rem 0;
+}
+  .service-definition-platform-breakdown {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* desktop development why entrust us */
+.why-us-container {
+  max-width: var(--max-width-1400);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  /* padding: 0 2rem; */
+}
+
+.why-us-section-title {
+  color: var(--color-white-background-header);
+}
+
+.why-us-matrix {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.why-us-panel {
+  background-color: #ffffff;
+  box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+  overflow: hidden;
+}
+
+.why-us-panel-tabs {
+  display: flex;
+  border-bottom: 1px solid #ccc; 
+}
+
+.why-us-tab {
+  padding: 1.2rem 2rem;
+  background: none;
+  border: none;
+  color: var(--color-white-background-header);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.why-us-tab.active {
+  color:var(--section-hero-color);
+  font-weight: 500;
+}
+
+.why-us-tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--section-hero-color);
+}
+
+.why-us-tab-content {
+  display: none;
+  padding: 2rem;
+}
+
+.why-us-tab-content.active {
+  display: block;
+}
+
+.desktop-dev-why-us-cta {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .why-us-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .why-us-panel {
+      max-width: 600px;
+      margin: 0 auto;
+  }
+
+  .why-us-panel {
+      margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-us-matrix {
+      grid-template-columns: 1fr;
+  }
+  .why-us-container {
+    gap: 2rem;
+  }
+  .why-us-section-title {
+      font-size: 2rem;
+  }
+}
+
+
+/* solutions we offer */
+.solutions-section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.solutions-section-header h2 {
+  color: var(--color-white-background-header);
+  font-size: var(--header-font-size);
+  margin-bottom: 0.5rem;
+}
+
+.solutions-section-header .subheader {
+  color: var(--color-white-background-paragraph);
+  font-size: var(--sub-header-font-size);
+}
+
+.solutions-grid {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin: 2rem 0;
+}
+.solutions-delivered-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+
+.solutions-delivered-benefits li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--section-hero-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.solutions-delivered-benefits i {
+    color: var(--section-hero-color);
+}
+
+@media (max-width: 768px) {
+  .section-header h2 {
+      font-size: 2rem;
+  }
+  
+  .solution-card {
+      padding: 2rem;
+  }
+}
+
+/* desktop development pricing */
+.pricing-section-header,
+.pricing-section-subtitle,
+.factors-header,
+.pricing-tech-section-title,
+.pricing-tech-section-subtitle {
+  text-align: center;
+}
+/* case studies and proof */
+.case-study-header {
+  color: var(--color-white-background-header);
+  text-align: center;
+}
+.case-study-subtitle {
+  color: var(--color-white-background-paragraph);
+  text-align: center;
+}

@@ -1,0 +1,76 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Graphic Design Services | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/graphic-design.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/case-study.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Graphic Design Services",
+    "description": "Transform your vision into stunning visual identities with our end-to-end creative expertise. From brand strategy to pixel-perfect execution - we craft designs that grow with you.",
+    "url": "https://www.dycetix.com/graphic-design",
+    "serviceType": "Graphic Design",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dycetix"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Graphic Design Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Brand Identity"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service", 
+                    "name": "UI/UX Design"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Motion Graphics"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Print Design"
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/graphic_design/sections/hero.html' %}
+    {% include 'frontend/graphic_design/sections/service-definition.html' %}
+    {% include 'frontend/graphic_design/sections/why-us.html' %}
+    {% include 'frontend/graphic_design/sections/solution.html' %}
+    {% include 'frontend/graphic_design/sections/case-study.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/graphic-design.js' %}?v=1.0"></script>
+{% endblock %}

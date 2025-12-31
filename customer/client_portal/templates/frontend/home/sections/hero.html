@@ -1,0 +1,115 @@
+<!-- Hero section -->
+<section id="hero" class="hero-section" itemscope itemtype="https://schema.org/ProfessionalService">
+    <div class="index-hero-background">
+        <div class="index-hero-particle-overlay"></div>
+        <div class="index-hero-gradient-overlay"></div>
+    </div>
+
+    <!-- Structured Data for SEO -->
+    <div class="visually-hidden" itemprop="additionalType" itemscope itemtype="https://schema.org/Organization">
+        <h2 itemprop="name">Dycetix Tech Solutions</h2>
+        <meta itemprop="url" content="https://www.dycetix.com">
+        <p itemprop="description">Dycetix provides custom technology solutions including software development, IT support, graphic design, and  photography and videography services to help businesses thrive in the digital age.</p>
+    </div>
+
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="headline">
+                    Transform Your Business with 
+                    <span class="hero-title-part" itemprop="knowsAbout">Custom Tech Solutions</span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Dycetix Tech Solutions specializes in software development, IT support, graphic design, and  photography and videography services. 
+                    We help businesses thrive in the digital age with tailored technology solutions.
+                </p>
+            </div>
+
+            <div class="pill-chips-container">
+                <span class="pill-chip" itemprop="serviceType">
+                    Custom Software Development
+                </span>
+                <span class="pill-chip" itemprop="serviceType">
+                    24/7 IT Support
+                </span>
+                <span class="pill-chip" itemprop="serviceType">
+                    Impactful Graphic Design
+                </span>
+                <span class="pill-chip" itemprop="serviceType">
+                    Premium Photography & Videography
+                </span>
+            </div>
+
+            {% include 'includes/hero-cta.html' %}
+        </div>
+
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Dycetix Tech Solutions",
+        "description": "Dycetix provides custom technology solutions including software development, IT support, and graphic design services to help businesses thrive in the digital age.",
+        "url": "https://www.dycetix.com",
+        "logo": "https://www.dycetix.com/static/images/logo.png",
+        "serviceType": [
+            "Custom Software Development",
+            "IT Support", 
+            "Graphic Design"
+        ],
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Technology Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Software Development",
+                        "description": "Tailored software solutions for your business needs"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "24/7 IT Support",
+                        "description": "Round-the-clock technical support and maintenance"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Impactful Graphic Design",
+                        "description": "Professional design services for branding and marketing"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Premium Photography & Videography",
+                        "description": "High-quality photography and cinematic videography crafted for events, brands, and personal projects. 
+                        We capture moments with clarity, creativity, and a refined visual style"
+                    }
+                }
+            ]
+        },
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Schedule Consultation",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

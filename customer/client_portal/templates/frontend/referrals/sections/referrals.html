@@ -1,0 +1,185 @@
+<!-- job-application-form.html -->
+<section class="body-section form-section" id="referral-form-section">
+    <div class="body-section-container">
+
+        <!-- Right Form Panel -->
+        <div class="index-quote-form-panel">
+            <form class="index-quote-quote-form" id="referral-form" data-form-type="referral">
+                <div class="header-content index-quote-form-header">
+                    <h2 class="body-header index-quote-quote-title">Refer a Client</h2>
+                    <p class="body-sub-header index-quote-quote-subtitle">Help us connect with great businesses and earn rewards.</p>
+                </div>
+                
+                <!-- Section for Referrer Information -->
+                <div class="referral-section-header">
+                    <h3 class="body-sub-header referral-section-title">
+                        <i class="fas fa-user referral-icon"></i>
+                        Your Information
+                    </h3>
+                    <p class="referral-section-description">Tell us about yourself so we can follow up and thank you.</p>
+                </div>
+                
+                <!-- Grid layout for basic information -->
+                <div class="job-form-grid-container">
+                    <!-- Floating Label Form Groups with job- prefix -->
+                     <div class="index-quote-form-group floating-label">
+                        <input type="text" id="referral-referrer-name" name="referrer_name" required>
+                        <label for="referral-referrer-name">Your Full Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Referrer Email -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="email" id="referral-referrer-email" name="referrer_email" required>
+                        <label for="referral-referrer-email">Your Email Address <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Optional: Referrer Company -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="referral-referrer-company" name="referrer_company">
+                        <label for="referral-referrer-company">Your Company (Optional)</label>
+                    </div>
+                    
+                    <!-- Phone Input with job- prefix -->
+                    <div class="index-quote-form-group floating-label phone-input-wrapper">
+                        <input type="tel" 
+                            id="referral-referrer-phone" 
+                            name="referrer_phone" 
+                            required 
+                            placeholder=" "
+                            autocomplete="tel">
+                        <label for="referral-referrer-phone">Your Phone Number <span class="required-asterisk">*</span></label>
+                    </div>
+                </div>
+                <div class="referral-section-header">
+                    <h3 class="body-sub-header referral-section-title">
+                        <i class="fas fa-building referral-icon"></i>
+                        Client Information
+                    </h3>
+                    <p class="referral-section-description">Tell us about the business or person you're referring.</p>
+                </div>
+
+                <div class="job-form-grid-container">
+                    <!-- Floating Label Form Groups with job- prefix -->
+                     <div class="index-quote-form-group floating-label">
+                        <input type="text" id="referral-referred-name" name="referred_name" required>
+                        <label for="referral-referred-name">Client/Business Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Referrer Email -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="referral-contact-person" name="contact_person">
+                        <label for="referral-contact-person">Contact Person (if known)</label>
+                    </div>
+                    
+                    <!-- Optional: Referrer Company -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="email" id="referral-referred-email" name="referred_email" required>
+                        <label for="referral-referred-email">Client Email <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Phone Input with job- prefix -->
+                    <div class="index-quote-form-group floating-label phone-input-wrapper">
+                        <input type="tel" 
+                            id="referral-referred-phone" 
+                            name="referred_phone" 
+                            required 
+                            placeholder=" "
+                            autocomplete="tel">
+                        <label for="referral-referred-phone">Client Phone <span class="required-asterisk">*</span></label>
+                    </div>
+                    <div class="index-quote-form-group floating-label">
+                        <input type="url" id="referral-website" name="website">
+                        <label for="referral-website">Client Website (Optional)</label>
+                    </div>
+                    
+                    <!-- Optional: Referrer Company -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="referral-industry" name="industry">
+                        <label for="referral-industry">Industry/Sector (Optional)</label>
+                    </div>
+                </div>
+                <!-- Position/Job Type Selection -->
+                <div class="index-quote-form-group job-position-container">
+                    <label class="service-label">How do you know this client? <span class="required-asterisk">*</span></label>
+                    <div class="service-options-container job-options-grid">
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-briefcase service-icon"></i>
+                                    Current Client
+                                </span>
+                                <input type="radio" name="relationship" value="current-client" id="referral-current-client" required>
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-user-friends service-icon"></i>
+                                    Colleague/Partner
+                                </span>
+                                <input type="radio" name="relationship" value="colleague" id="referral-colleague">
+                            </label>
+                        </div>
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-network-wired service-icon"></i>
+                                    Professional Network
+                                </span>
+                                <input type="radio" name="relationship" value="network" id="referral-network">
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-star service-icon"></i>
+                                    Satisfied Customer
+                                </span>
+                                <input type="radio" name="relationship" value="customer" id="referral-customer">
+                            </label>
+                        </div>
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-handshake service-icon"></i>
+                                    Business Partner
+                                </span>
+                                <input type="radio" name="relationship" value="partner" id="referral-partner">
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-user service-icon"></i>
+                                    Personal Connection
+                                </span>
+                                <input type="radio" name="relationship" value="personal" id="referral-personal">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Other Option with Text Input -->
+                <div class="index-quote-form-group floating-label form-description-textarea">
+                    <textarea id="referral-context" name="context" rows="3"></textarea>
+                    <label for="referral-context">Additional Context (Optional)</label>
+                    <small class="form-help-text">Why are you referring this client? What services might they need? Any special notes?</small>
+                </div>
+                <button type="submit" class="body-cta index-quote-submit-btn" id="referral-submitBtn">
+                    <span>Submit Referral</span>
+                    <div class="body-cta-hover"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+     <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Client Referral Submission",
+        "description": "Refer a business or client to Dycetix and earn rewards through our referral program.",
+        "url": "https://www.dycetix.com/referrals",
+        "mainEntity": {
+            "@type": "ContactPoint",
+            "contactType": "referrals",
+            "email": "referrals@dycetix.com",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide"
+        }
+    }
+    </script>
+</section>

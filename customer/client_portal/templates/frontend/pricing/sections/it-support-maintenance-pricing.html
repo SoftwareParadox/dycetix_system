@@ -1,0 +1,159 @@
+<section id="it-support-maintenance-pricing" class="body-section pricing-section" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container pricing-container">
+        <div class="header-content">
+            <h2 class="body-header pricing-section-header" itemprop="name">Smart IT Support Pricing</h2>
+            <p class="body-sub-header pricing-section-subtitle" itemprop="description">Modular solutions tailored to your business needs</p>
+        </div>
+
+        <!-- Pricing Grid -->
+        <div class="pricing-grid it-support-maintenance-pricing" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <!-- Modular Service Bundle -->
+            <article class="price-card it-support-maintenance-pricing-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <div class="pricing-card-content">
+                    <i class="fas fa-cubes card-content-icon" itemprop="image"></i>
+                    <h3 class="body-card-header" itemprop="name">Modular Service Bundles</h3>
+                    <p class="plan-desc" itemprop="description">Build your perfect plan from core components</p>
+                    
+                    <ul class="pricing-features" itemprop="description">
+                        <li><i class="fas fa-check pricing-check"></i>Base Monitoring Package</li>
+                        <li><i class="fas fa-check pricing-check"></i>Priority Response Add-on</li>
+                        <li><i class="fas fa-check pricing-check"></i>Compliance Management</li>
+                        <li><i class="fas fa-check pricing-check"></i>Disaster Recovery Layer</li>
+                        <li><i class="fas fa-check pricing-check"></i>24/7 Technical Support</li>
+                        <li><i class="fas fa-check pricing-check"></i>Security Vulnerability Scanning</li>
+                    </ul>
+                    {% include 'includes/pricing-cta.html' with cta_text=CTA_SCHEDULE_TECHNICAL_CONSULTATION %}
+                </div>
+            </article>
+        </div>
+
+        <!-- Pricing Considerations -->
+        <div class="pricing-section-cost-factors" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+            <div class="header-content">
+                <h3 class="body-header factors-header">Key Investment Factors</h3>
+            </div>
+            <div class="pricing-section-factor-grid">
+                <div class="pricing-section-factor" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <i class="fas fa-sitemap"></i>
+                    <div>
+                        <h4 class="body-card-header" itemprop="name">Infrastructure Complexity</h4>
+                        <p class="body-card-paragraph" itemprop="value">Number of systems and integration points</p>
+                    </div>
+                </div>
+                <div class="pricing-section-factor" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <i class="fas fa-shield-alt"></i>
+                    <div>
+                        <h4 class="body-card-header" itemprop="name">Security Requirements</h4>
+                        <p class="body-card-paragraph" itemprop="value">Industry compliance standards needed</p>
+                    </div>
+                </div>
+                <div class="pricing-section-factor" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4 class="body-card-header" itemprop="name">Response SLAs</h4>
+                        <p class="body-card-paragraph" itemprop="value">Required resolution time guarantees</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Custom Quote CTA -->
+        <div class="pricing-section-quote-cta" itemprop="potentialAction" itemscope itemtype="https://schema.org/Action">
+            <div class="pricing-section-cta-content">
+                <h3 class="body-card-header" itemprop="name">Need a Tailored IT Support Plan?</h3>
+                <p class="body-card-paragraph" itemprop="description">Get a customized quote in 72 hours</p>
+                {% include 'includes/body-cta.html' with cta_text=CTA_REQUEST_CUSTOM_QUOTE %}
+            </div>
+            <div class="pricing-section-cta-assurance">
+                <div class="pricing-section-assurance">
+                    <i class="fas fa-lock"></i>
+                    <span>No obligation estimate</span>
+                </div>
+                <div class="pricing-section-assurance">
+                    <i class="fas fa-headset"></i>
+                    <span>24/7 support guarantee</span>
+                </div>
+                <div class="pricing-section-assurance">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Proactive system monitoring</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for IT Support section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h2 itemprop="name">Dycetix IT Support & Maintenance Services</h2>
+        <p itemprop="description">Modular IT support solutions including monitoring, security, compliance management, and 24/7 technical support.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="serviceType">IT Support & Maintenance</div>
+        <div itemprop="areaServed">Worldwide</div>
+        <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
+            <meta itemprop="audienceType" content="Businesses requiring IT infrastructure support">
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "IT Support & Maintenance Services",
+        "description": "Modular IT support solutions tailored to business needs including monitoring, security, compliance, and 24/7 technical support",
+        "url": "https://www.dycetix.com/pricing#it-support",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com",
+            "description": "Professional IT support and maintenance services"
+        },
+        "serviceType": "IT Support & Maintenance",
+        "areaServed": "Worldwide",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Businesses requiring comprehensive IT infrastructure support"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "IT Support Modular Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Modular Service Bundles",
+                        "description": "Build your perfect IT support plan from core components including monitoring, security, and technical support"
+                    },
+                    "url": "https://www.dycetix.com/enterprise-contact"
+                }
+            ]
+        },
+        "additionalProperty": [
+            {
+                "@type": "PropertyValue",
+                "name": "Infrastructure Complexity",
+                "value": "Number of systems and integration points"
+            },
+            {
+                "@type": "PropertyValue", 
+                "name": "Security Requirements",
+                "value": "Industry compliance standards needed"
+            },
+            {
+                "@type": "PropertyValue",
+                "name": "Response SLAs", 
+                "value": "Required resolution time guarantees"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Request Custom Quote",
+            "url": "https://www.dycetix.com/quote",
+            "description": "Get a customized IT support quote in 24 hours"
+        }
+    }
+    </script>
+</section>

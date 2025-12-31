@@ -1,0 +1,91 @@
+<!-- frontend/graphic_design/sections/hero.html -->
+<section id="graphic-design-hero" class="hero-section" itemscope itemtype="https://schema.org/Service">
+    <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+        
+    <!-- Content Container -->
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container"> 
+                <h1 class="hero-title" itemprop="name">
+                    Tailored <span class="hero-title-part">Graphic Design</span> Solutions for Scalable Growth
+                    <span class="hero-title-underline"></span>
+                </h1>
+                
+                <p class="hero-subtitle" itemprop="description">
+                    Transform your vision into stunning visual identities with our end-to-end creative expertise. From brand strategy to pixel-perfect execution - we craft designs that grow with you.
+                </p>
+            </div>
+
+            <!-- Visual Elements -->
+            <div class="gd-visual-preview">
+                <div class="gd-device-mockup gd-phone">
+                    <div class="gd-screen">
+                        <img src="../../static/images/main/graphic-design-3.jpg" alt="Graphic Design on Phone" itemprop="image">
+                    </div>
+                </div>
+                <div class="gd-device-mockup gd-tablet">
+                    <div class="gd-screen">
+                        <img src="../../static/images/main/graphic-design-1.jpg" alt="Graphic Design on Tablet" itemprop="image">
+                    </div>
+                </div>
+                <div class="gd-device-mockup gd-laptop">
+                    <div class="gd-screen">
+                        <img src="../../static/images/main/graphic-design-2.jpg" alt="Graphic Design on Laptop" itemprop="image">
+                    </div>
+                </div>
+            </div>
+            <!-- Dynamic Value Pillars -->
+            <div class="pill-chips-container" itemprop="keywords">
+                <span class="pill-chip">Brand Identity</span>
+                <span class="pill-chip">UI/UX Design</span>
+                <span class="pill-chip">Motion Graphics</span>
+            </div>
+            <!-- CTA Section -->
+            {% include 'includes/hero-cta.html' %}
+        </div>
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Graphic Design Services</h3>
+        <p itemprop="description">Transform your vision into stunning visual identities with end-to-end creative expertise</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <div itemprop="serviceType">Graphic Design</div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Graphic Design Services",
+        "description": "Transform your vision into stunning visual identities with our end-to-end creative expertise",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Graphic Design",
+        "keywords": ["Brand Identity", "UI/UX Design", "Motion Graphics"],
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action", 
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

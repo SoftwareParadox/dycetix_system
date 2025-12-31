@@ -1,0 +1,525 @@
+.hero-background {
+    background: url('../../images/main/database-development-hero.jpg') center/cover;
+}
+.hero-content-container {
+    display: flex;
+    gap: 4rem;
+    margin-top: 5rem !important;
+}
+
+.hero-mockup-container,
+.hero-split-content-container {
+    flex: 1 1 50%; 
+    min-width: 0;
+}
+
+.hero-mockup-container {
+    position: relative;
+    perspective: 1000px;
+}
+
+.hero-mockups {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+}
+.hero-data-node {
+    position: absolute;
+    background: rgba(0, 255, 204, 0.1);
+    border: 2px solid #00ffcc;
+    border-radius: 50%;
+    animation: float 6s infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #00ffcc; 
+}
+
+.hero-data-node.primary {
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    left: 30%;
+}
+
+.hero-data-node.secondary {
+    width: 150px;
+    height: 150px;
+    top: 30%;
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.hero-data-node.tertiary {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 60%;
+    animation-delay: -4s;
+}
+
+.hero-data-node i {
+    position: relative;
+    z-index: 2; 
+    filter: drop-shadow(0 0 8px rgba(0, 255, 204, 0.4));
+}
+
+.hero-connection-line {
+    position: absolute;
+    background: rgba(0, 255, 204, 0.2);
+    height: 2px;
+    transform-origin: left;
+    animation: connect 8s infinite;
+}
+
+.hero-schema-code {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #0a192f;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+    width: 100%;
+    /* max-width: 800px; */
+}
+
+.hero-schema-code pre {
+    margin: 0;
+    overflow-x: auto;
+}
+
+.hero-sql {
+    color: #8892b0;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.hero-sql .keyword {
+    color: #00ffcc;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+@keyframes connect {
+    0% { width: 0; opacity: 0; }
+    50% { width: 100%; opacity: 1; }
+    100% { width: 0; opacity: 0; }
+}
+
+@media (max-width: 1199.98px) {
+    .hero-content-container {
+        display: flex;
+        flex-direction: column-reverse !important; 
+        gap: 2rem;
+    }
+
+    .hero-split-content-container {
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+@media (max-width: 768px) {
+    .hero-mockup-container {
+        display: none;
+    }
+}
+/* service definition database development */
+.service-definition-container {
+    max-width: var(--max-width-1400);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.service-definition-data-architecture {
+    position: relative;
+    height: 500px;
+}
+
+.service-definition-section-title {
+    color: var(--color-white-background-header);
+    align-items: center;
+    text-align: center;
+}
+
+/* .service-definition-title-decorator {
+    font-size: 2.5rem;
+    color: var(--section-here-color);
+} */
+
+.service-definition-intro {
+    color: var(--color-white-background-paragraph);
+    text-align: center;
+}
+.service-definition-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.service-definition-tech-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+}
+
+.service-definition-tech-list li {
+    padding: 0.5rem 0;
+    color: var(--color-white-background-paragraph);
+    position: relative;
+    /* padding-left: 1.5rem; */
+}
+
+.service-definition-tech-list i {
+    color: var(--section-here-color);
+    margin-right: 0.5rem;
+}
+/* .service-definition-tech-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00cc99;
+} */
+
+/* Data Flow Visualization */
+.service-definition-data-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.service-definition-flow-step {
+    width: 80px;
+    height: 80px;
+    border: 2px dashed var(--section-hero-color);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: var(--section-hero-color);
+}
+
+.service-definition-flow-arrow {
+    font-size: 1.5rem;
+    color: var(--section-hero-color);
+}
+
+/* Schema Diagram */
+.service-definition-schema-diagram {
+    position: relative;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.service-definition-schema-table {
+    position: absolute;
+    width: 120px;
+    height: 80px;
+    background: white;
+    border: 2px solid var(--section-hero-color);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--section-hero-color);
+}
+
+.service-definition-schema-table.primary {
+    left: 35%;
+    top: 20%;
+}
+
+.service-definition-schema-table.service-definition-related {
+    right: 35%;
+    top: 50%;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .service-definition-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .service-definition-data-architecture {
+        height: 400px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .service-definition-section-title {
+        font-size: 2rem;
+    }
+    
+    .service-definition-card {
+        padding: 1.5rem;
+    }
+    
+    .service-definition-flow-step {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+    }
+    .service-definition-schema-table {
+        width: 100px;
+        height: 60px;
+    }
+}
+
+
+/* why choose us */
+  .why-us-container {
+    max-width: var(--max-width-1200) !important;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    gap: 3rem;
+  }
+  
+  .why-us-methodology-visual {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .why-us-process-diagram {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 2rem 0;
+  }
+   .global-icon {
+    color: var(--section-hero-color) !important;
+   }
+
+   .body-card-paragraph {
+    color: var(--color-white-background-paragraph)
+   }
+  .why-us-process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1;
+    padding: 1.5rem;
+    background: #f9f9f9 !important;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #ccc; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+  }
+  
+  .why-us-process-step span,
+  .why-us-badge-item span {
+    color: var(--color-white-background-header);
+  }
+
+  .why-us-process-step i {
+    font-size: 2rem;
+    color: var(--section-here-color);
+  }
+  
+  .why-us-process-connector {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    height: 2px;
+    background-color: #ddd;
+  }
+  
+  .why-us-compliance-badges {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .why-us-badge-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+  }
+  
+  .why-us-aws i { color: #FF9900; }
+  .why-us-gdpr i { color: var(--section-hero-color); }
+  
+  /* Content Section */
+  .why-us-content {
+    display: grid;
+    gap: 2rem;
+  }
+  
+  .why-us-section-title {
+    text-align: center;
+    color: var(--color-white-background-header);
+  }
+/*   
+  .title-decorator {
+    color: var(--section-here-color);
+    font-size: 1.8rem;
+   
+  } */
+  
+  .why-us-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+.solutions-delivered-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+
+.solutions-delivered-benefits li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--section-hero-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.solutions-delivered-benefits i {
+    color: var(--section-hero-color);
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .why-us-process-diagram {
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+     .why-us-container {
+        padding: 0;
+    }
+    .why-us-process-diagram {
+        padding: 0;
+      }
+    .why-us-process-connector {
+      width: 2px;
+      height: 100%;
+      left: 50%;
+      top: 0;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+  
+    .why-us-cta-content {
+        flex-direction: column-reverse;
+      text-align: center;
+    }
+  
+    .why-us-cta-button {
+      justify-content: center;
+    }
+  }
+
+  /* ===== Database Solutions Section ===== */
+/* ===== Outcome Cards ===== */
+.db-solution-outcomes {
+    display: grid;
+    gap: 3rem;
+    margin-top: 3rem !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    max-width: 800px;
+    margin: auto;
+    padding: 1.2rem;
+}
+.db-outcome-card h4{
+    color: var(--color-white-background-header);
+    font-size: var(--sub-header-font-size);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.db-outcome-card p {
+    color: var(--color-white-background-paragraph);
+    font-size: var(--sub-header-font-size);
+}
+.db-finder-header p {
+    color: #444 !important;
+}
+.db-finder-header h2 {
+    color: var(--color-white-background-header);
+}
+.db-finder-header {
+    text-align: center;
+}
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 768px) {
+    .db-solutions {
+        padding: 4rem 0;
+    }
+
+    .db-finder-header h2 {
+        font-size: 2rem;
+    }
+
+    /* .db-solution-map {
+        height: auto;
+        margin: 2rem 0;
+    } */
+
+    .db-data-node {
+        position: relative;
+        margin: 2rem auto;
+        width: 80px;
+        height: 80px;
+    }
+
+    .db-solution-core {
+        position: relative;
+        transform: none;
+        width: auto;
+        height: auto;
+        margin: 3rem 0;
+    }
+
+    .db-solution-display {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    .db-solution-outcomes {
+        grid-template-columns: 1fr;
+    }
+    .scope-visual-cta {
+        margin: 1rem !important;
+    }
+}
+
+/* Pricing Section Styles */
+
+
+/* case studies */
+.case-study-header {
+    color: var(--color-white-background-header);
+    text-align: center;
+}
+
+.case-study-subtitle {
+    color: var(--color-white-background-paragraph);
+    text-align: center;
+}   

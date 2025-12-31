@@ -1,0 +1,21 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Partner With Us | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/job-form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/partnerships/sections/partnerships.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/partnerships.js' %}?v=1.0"></script>
+{% endblock %}

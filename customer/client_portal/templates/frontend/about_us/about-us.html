@@ -1,0 +1,47 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}About Dycetix | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/about-us.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  <!-- Keep the Organization schema from base -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Dycetix - About Our Mission, Values & Journey",
+    "description": "Learn about Dycetix's mission to deliver innovative technology solutions, our core values of innovation and transparency, and our journey in custom software development.",
+    "url": "https://www.dycetix.com/about",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "Dycetix",
+        "description": "Custom software development, IT support, and graphic design services",
+        "ethicsPolicy": "https://www.dycetix.com/values",
+        "knowsAbout": [
+            "Software Development",
+            "IT Support", 
+            "Graphic Design",
+            "Technology Solutions"
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/about_us/sections/hero.html' %}
+    {% include 'frontend/about_us/sections/mission-values.html' %}
+    {% include 'frontend/about_us/sections/core-principles.html' %}
+    {% include 'frontend/about_us/sections/journey-growth.html' %}
+    {% include 'frontend/about_us/sections/solutions.html' %}
+    {% include 'includes/form/form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

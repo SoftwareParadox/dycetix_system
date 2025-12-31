@@ -1,0 +1,22 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Page Not Found | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/404.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/404/sections/content.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/404.js' %}?v=1.0"></script>
+    <script src="{% static 'js/search-functionality.js' %}?v=1.0"></script>
+{% endblock %}

@@ -1,0 +1,152 @@
+<!-- technologies_custom_software.html -->
+<section class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Custom Software Development Services</h3>
+        <p itemprop="description">Tailored software solutions built from scratch to meet specific business requirements and workflows.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Software Development">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/custom-dev-service.jpg" 
+                    alt="Custom software development solutions tailored to specific business needs"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Custom Software</span> Development
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Bespoke software solutions engineered to solve your unique business challenges and drive efficiency.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-cogs feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Tailored Solutions</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Software built specifically for your workflows, processes, and business requirements from the ground up.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-expand-arrows-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Scalable Architecture</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Future-proof solutions designed to grow with your business and adapt to changing market demands.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-shield-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Secure & Robust</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Enterprise-grade security and reliability with comprehensive testing and quality assurance processes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">C#/.NET</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Java</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Python</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Node.js</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">API Integration</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_CUSTOM_SOLUTION %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom Software Development",
+        "description": "Bespoke software solutions engineered to solve your unique business challenges and drive efficiency",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Software Development",
+        "category": "Technology Services",
+        "knowsAbout": [
+            "C#/.NET",
+            "Java",
+            "Python",
+            "Node.js",
+            "API Integration",
+            "Software Architecture",
+            "System Design",
+            "Quality Assurance"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Tailored Solutions",
+                "description": "Software built specifically for your workflows, processes, and business requirements from the ground up"
+            },
+            {
+                "@type": "Thing",
+                "name": "Scalable Architecture", 
+                "description": "Future-proof solutions designed to grow with your business and adapt to changing market demands"
+            },
+            {
+                "@type": "Thing",
+                "name": "Secure & Robust",
+                "description": "Enterprise-grade security and reliability with comprehensive testing and quality assurance processes"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Start Software Project",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>
+

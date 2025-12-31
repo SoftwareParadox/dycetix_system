@@ -1,0 +1,149 @@
+<!-- industries_logistics.html -->
+<section id="industries-logistics" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Logistics Management Solutions</h3>
+        <p itemprop="description">Supply chain optimization, fleet management, warehouse automation, and logistics tracking systems for efficient operations.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Logistics Technology">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/logistic.jpg" 
+                    alt="Logistics management solutions including supply chain and fleet management"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Logistics</span> Management
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                End-to-end logistics solutions, real-time tracking, and supply chain optimization for modern transportation and distribution.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-truck feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Fleet Management</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Real-time vehicle tracking, route optimization, and maintenance scheduling systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-warehouse feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Warehouse Automation</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Inventory management, automated picking systems, and smart storage solutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-map-marked-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Supply Chain Visibility</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            End-to-end tracking, predictive analytics, and real-time supply chain monitoring.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Fleet Management</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Supply Chain</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Route Optimization</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Warehouse Systems</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Inventory Tracking</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_OPTIMIZE_LOGISTICS %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Logistics Management Solutions",
+        "description": "End-to-end logistics solutions, real-time tracking, and supply chain optimization for modern transportation and distribution",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Logistics Technology",
+        "category": "Logistics IT",
+        "knowsAbout": [
+            "Fleet Management",
+            "Supply Chain",
+            "Route Optimization",
+            "Warehouse Systems",
+            "Inventory Tracking",
+            "Logistics Automation"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Fleet Management",
+                "description": "Real-time vehicle tracking, route optimization, and maintenance scheduling systems"
+            },
+            {
+                "@type": "Thing",
+                "name": "Warehouse Automation", 
+                "description": "Inventory management, automated picking systems, and smart storage solutions"
+            },
+            {
+                "@type": "Thing",
+                "name": "Supply Chain Visibility",
+                "description": "End-to-end tracking, predictive analytics, and real-time supply chain monitoring"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Optimize Logistics",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

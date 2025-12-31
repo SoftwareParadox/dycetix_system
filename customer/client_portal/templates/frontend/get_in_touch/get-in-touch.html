@@ -1,0 +1,45 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Get in Touch | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/get-in-touch.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Get in Touch - Dycetix",
+    "description": "Start your technology project with a free consultation. Get customized quotes for software development, IT support, and graphic design services.",
+    "url": "https://www.dycetix.com/contact",
+    "mainEntity": {
+        "@type": "Organization",
+        "name": "Dycetix",
+        "description": "Custom technology solutions including software development, IT support, and graphic design services"
+    },
+    "potentialAction": {
+        "@type": "ContactPoint",
+        "contactType": "customer service",
+        "telephone": "+1-555-DYCETIX",
+        "email": "contact@dycetix.com",
+        "availableLanguage": ["English"],
+        "areaServed": "Worldwide"
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/get_in_touch/sections/hero.html' %}
+    {% include 'includes/form/form.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/get-in-touch.js' %}?v=1.0"></script>
+{% endblock %}

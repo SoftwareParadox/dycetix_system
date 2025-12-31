@@ -1,0 +1,20 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Accessibility | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/accessibility.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/accessibility/sections/hero.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

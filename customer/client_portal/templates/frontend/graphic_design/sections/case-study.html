@@ -1,0 +1,149 @@
+<!-- frontend/graphic_design/sections/case-study.html -->
+<section id="graphic-design-case-studies"  class="body-section" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container case-study-container">
+        <div class="header-content case-study-header">
+            <h2 class="body-header case-study-header" itemprop="name">Graphic Design Solutions</h2>
+            <p class="body-sub-header case-study-subtitle" itemprop="description">Visual Communication That Drives Engagement</p>
+            <div class="case-study-disclaimer">
+                <i class="fas fa-info-circle"></i>
+                <p>Sample implementations based on design capabilities and industry patterns</p>
+            </div>
+        </div>
+
+        <!-- Case Study Grid -->
+        <div class="case-study-grid" itemprop="subjectOf" itemscope itemtype="https://schema.org/ItemList">
+            <!-- Brand Identity -->
+            <article class="case-study-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Article">
+                <div class="case-study-label">
+                    <i class="fas fa-palette"></i>
+                    Brand Identity
+                </div>
+                <div class="card-content">
+                    <div class="case-study-preview">
+                        <h3 itemprop="headline">Modern Brand Identity System</h3>
+                        <div class="case-study-projection">
+                            <span class="case-study-emphasis">Impact:</span>
+                            <span class="case-study-metric">40%</span>
+                            <span class="case-study-metric-label">Brand Recognition Increase</span>
+                        </div>
+                    </div>
+                    <div class="case-study-details">
+                        <div class="case-study-breakdown">
+                            <h4>Design Strategy</h4>
+                            <ul class="case-study-tech-list">
+                                <li><i class="fas fa-brush"></i> Comprehensive Visual Language</li>
+                                <li><i class="fas fa-object-group"></i> Adaptive Logo System</li>
+                                <li><i class="fas fa-book-open"></i> Brand Application Guidelines</li>
+                            </ul>
+                        </div>
+                        <div class="case-study-quote">
+                            <i class="fas fa-comment-dots"></i>
+                            <p itemprop="description">"The new identity positioned us as innovators in our industry"</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Advertising Campaign -->
+            <article class="case-study-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Article">
+                <div class="case-study-label">
+                    <i class="fas fa-bullhorn"></i>
+                    Advertising Campaign
+                </div>
+                <div class="card-content">
+                    <div class="case-study-preview">
+                        <h3 itemprop="headline">Product Launch Campaign</h3>
+                        <div class="case-study-projection">
+                            <span class="case-study-emphasis">Engagement:</span>
+                            <span class="case-study-metric">250%</span>
+                            <span class="case-study-metric-label">Social Media Lift</span>
+                        </div>
+                    </div>
+                    <div class="case-study-details">
+                        <div class="case-study-breakdown">
+                            <h4>Creative Strategy</h4>
+                            <ul class="case-study-tech-list">
+                                <li><i class="fas fa-cubes"></i> Multi-Platform Asset System</li>
+                                <li><i class="fas fa-video"></i> Animated Social Content</li>
+                                <li><i class="fas fa-chart-line"></i> Performance-Driven Creative</li>
+                            </ul>
+                        </div>
+                        <div class="case-study-quote">
+                            <i class="fas fa-comment-dots"></i>
+                            <p itemprop="description">"The campaign visuals exceeded all performance benchmarks"</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Capabilities Showcase -->
+        <div class="case-study-capabilities" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+            <div class="case-study-capability" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <div class="case-study-cap-icon icon-small"><i class="fas fa-palette"></i></div>
+                <h4 itemprop="name">Brand Identity Systems</h4>
+                <p itemprop="description">Logo design & visual language</p>
+            </div>
+            <div class="case-study-capability" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <div class="case-study-cap-icon icon-small"><i class="fas fa-print"></i></div>
+                <h4 itemprop="name">Print & Digital Design</h4>
+                <p itemprop="description">Multi-platform visual solutions</p>
+            </div>
+            <div class="case-study-capability" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                <div class="case-study-cap-icon icon-small"><i class="fas fa-film"></i></div>
+                <h4 itemprop="name">Motion Graphics</h4>
+                <p itemprop="description">Engaging animated content</p>
+            </div>
+        </div>
+        
+        <div class="body-cta-container">
+            <h3 class="article-header-cta">Ready to Transform Your Visual Identity?</h3>
+            <p class="article-paragraph-cta">Start with a Creative Strategy Session</p>
+            {% include 'includes/body-cta.html' with cta_text=CTA_BEGIN_YOUR_DESIGN_JOURNEY %}
+        </div>
+    </div>
+
+    <!-- Hidden structured data for case studies -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Graphic Design Case Studies</h3>
+        <div itemprop="subjectOf" itemscope itemtype="https://schema.org/ItemList">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Article">
+                <meta itemprop="headline" content="Modern Brand Identity System">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Article">
+                <meta itemprop="headline" content="Product Launch Campaign">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Graphic Design Case Studies",
+        "description": "Visual communication solutions that drive engagement and brand recognition",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                    "@type": "Article",
+                    "headline": "Modern Brand Identity System",
+                    "description": "The new identity positioned us as innovators in our industry",
+                    "about": "Comprehensive Visual Language, Adaptive Logo System, Brand Application Guidelines"
+                }
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                    "@type": "Article",
+                    "headline": "Product Launch Campaign", 
+                    "description": "The campaign visuals exceeded all performance benchmarks",
+                    "about": "Multi-Platform Asset System, Animated Social Content, Performance-Driven Creative"
+                }
+            }
+        ]
+    }
+    </script>
+</section>

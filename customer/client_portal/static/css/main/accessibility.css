@@ -1,0 +1,204 @@
+:root {
+    --primary-blue: #2A5CAA;
+    --accent-blue: #4299E1;
+    --light-bg: #F7FAFC;
+    --dark-text: #2A4365;
+}
+
+.accessibility-content {
+    background: radial-gradient(ellipse at 25% 50%, #365686 40%, #172b47 100%) !important;
+}
+
+.body-section-container {
+    margin-top: 5rem !important;
+}
+/* Header Styles */
+.accessibility-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.accessibility-header h1 {
+    color: var(--color-dark-background-header);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.update-date {
+    color: var(--color-dark-background-paragraph);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+/* Content Blocks */
+.content-block {
+    background-color: #ffffff;
+    box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Numbered Heading System */
+.content-block .section-number {
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    width: 80px;
+    height: 80px;
+    background: var(--section-hero-color);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.section-title {
+    color: var(--color-white-background-header);
+    margin: 0 0 1.5rem 0;
+    padding-left: 60px;
+    position: relative;
+}
+
+.section-title i {
+    color: var(--section-hero-color);
+    margin-right: 0.75rem;
+}
+
+/* Feature List */
+.solutions-delivered-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0;
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+
+.solutions-delivered-benefits li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--section-hero-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.solutions-delivered-benefits i {
+    color: var(--section-hero-color);
+}
+
+/* Table Styles */
+.goal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+    background-color: var(--section-background-color-light);
+    box-shadow: 0 4px 24px 4px rgba(33, 33, 33, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.goal-table th,
+.goal-table td {
+    padding: 1.2rem;
+    border: 1px solid #e2e8f0;
+}
+
+.goal-table th {
+    background: var(--section-hero-color);
+    color: white;
+    font-weight: 600;
+    font-size: var(--paragraph-font-size);
+    text-align: left;
+}
+
+.goal-table td {
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+/* Contact Section */
+.contact-section {
+    background: var(--section-hero-color);
+    color: white;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.contact-section h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1.8rem;
+}
+.contact-section a {
+    color: #0000ff;
+    text-decoration: none;
+}
+.contact-section a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.body-card-paragraph {
+    color: var(--color-white-background-paragraph) !important;
+}
+
+.contact-section-p {
+    color: var(--color-dark-background-paragraph) !important;
+}
+.brand-commitment {
+    text-align: center;
+    color: var(--color-dark-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+
+.accessibility-brand-commitment {
+    text-align: center;
+    color: var(--color-white-background-paragraph);
+    font-size: var(--paragraph-font-size);
+}
+.brand-commitment a {
+    color: var(--section-hero-color);
+    text-decoration: none;
+}
+
+.brand-commitment a:hover {
+    text-decoration: underline;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .content-block {
+        padding: 1.5rem;
+    }
+
+    .content-block .section-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        left: -20px;
+        top: -20px;
+    }
+
+    .section-title {
+        padding-left: 50px;
+        font-size: 1.3rem;
+    }
+
+    .accessibility-header h1 {
+        font-size: 2rem;
+        flex-direction: column;
+    }
+}

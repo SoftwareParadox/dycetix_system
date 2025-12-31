@@ -1,0 +1,274 @@
+blog.html
+<section class="blog-hero-section" id="blog-hero">
+    <div class="blog-hero-background"></div>
+    <div class="blog-hero-content">
+        <h1 class="blog-hero-title">Dycetix Insights</h1>
+        <p class="blog-hero-subtitle">Where Technology Meets Business Strategy</p>
+        
+        <!-- Adaptive Audience Navigator -->
+        <div class="blog-audience-nav">
+            <button class="blog-audience-btn blog-audience-active" data-audience="all">
+                <i class="fas fa-globe"></i> All Readers
+            </button>
+            <button class="blog-audience-btn" data-audience="developers">
+                <i class="fas fa-code"></i> Developers
+            </button>
+            <button class="blog-audience-btn" data-audience="business">
+                <i class="fas fa-chart-line"></i> Business
+            </button>
+            <button class="blog-audience-btn" data-audience="general">
+                <i class="fas fa-users"></i> General Tech
+            </button>
+        </div>
+
+        <!-- Smart Search -->
+        <div class="blog-search-container">
+            <input type="text" class="blog-search-input" placeholder="Search articles, tutorials, insights...">
+            <button class="blog-search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Content Type Filters -->
+<section class="blog-filters-section">
+    <div class="blog-filters-container">
+        <div class="blog-filter-group">
+            <span class="blog-filter-label">Content Type:</span>
+            <button class="blog-filter-btn blog-filter-active" data-type="all">All Content</button>
+            <button class="blog-filter-btn" data-type="tutorial">Tutorials</button>
+            <button class="blog-filter-btn" data-type="business">Business</button>
+            <button class="blog-filter-btn" data-type="news">News</button>
+            <button class="blog-filter-btn" data-type="case-study">Case Studies</button>
+        </div>
+        <div class="blog-filter-group">
+            <span class="blog-filter-label">Sort By:</span>
+            <select class="blog-sort-select">
+                <option value="latest">Latest</option>
+                <option value="popular">Most Popular</option>
+                <option value="trending">Trending</option>
+            </select>
+        </div>
+    </div>
+</section>
+
+<!-- Main Content Grid -->
+<main class="blog-main-container">
+    <div class="blog-content-grid">
+        <!-- Article Card 1 - Tutorial Type -->
+        <article class="blog-article-card" data-type="tutorial" data-audience="developers">
+            <div class="blog-card-badge blog-badge-tutorial">
+                <i class="fas fa-code"></i> Tutorial
+            </div>
+            <div class="blog-card-image">
+                <img src="/static/images/blog/tutorial-1.jpg" alt="React Hooks Tutorial">
+                <div class="blog-card-overlay"></div>
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Mastering React Hooks in 2024</h3>
+                <p class="blog-card-excerpt">Learn how to build modern React applications with hooks, context, and custom hooks for optimal performance.</p>
+                
+                <div class="blog-card-meta">
+                    <span class="blog-meta-item">
+                        <i class="fas fa-clock"></i> 15 min read
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-signal"></i> Intermediate
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fab fa-js"></i> JavaScript
+                    </span>
+                </div>
+                
+                <div class="blog-card-actions">
+                    <button class="blog-action-btn">
+                        <i class="fas fa-bookmark"></i> Save
+                    </button>
+                    <button class="blog-action-btn">
+                        <i class="fas fa-share"></i> Share
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Article Card 2 - Business Type -->
+        <article class="blog-article-card" data-type="business" data-audience="business">
+            <div class="blog-card-badge blog-badge-business">
+                <i class="fas fa-chart-line"></i> Business
+            </div>
+            <div class="blog-card-image">
+                <img src="/static/images/blog/business-1.jpg" alt="AI ROI Analysis">
+                <div class="blog-card-overlay"></div>
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Measuring AI Implementation ROI</h3>
+                <p class="blog-card-excerpt">Comprehensive framework for calculating return on investment when integrating AI solutions into your business workflow.</p>
+                
+                <div class="blog-card-meta">
+                    <span class="blog-meta-item">
+                        <i class="fas fa-clock"></i> 8 min read
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-chart-bar"></i> ROI Analysis
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-industry"></i> Strategy
+                    </span>
+                </div>
+                
+                <div class="blog-card-stats">
+                    <div class="blog-stat">
+                        <span class="blog-stat-value">47%</span>
+                        <span class="blog-stat-label">Avg. Efficiency Gain</span>
+                    </div>
+                    <div class="blog-stat">
+                        <span class="blog-stat-value">6-12</span>
+                        <span class="blog-stat-label">Months ROI</span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Article Card 3 - News Type -->
+        <article class="blog-article-card" data-type="news" data-audience="all">
+            <div class="blog-card-badge blog-badge-news">
+                <i class="fas fa-newspaper"></i> News
+            </div>
+            <div class="blog-card-image">
+                <img src="/static/images/blog/news-1.jpg" alt="Tech Industry Update">
+                <div class="blog-card-overlay"></div>
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Quantum Computing Breakthrough 2024</h3>
+                <p class="blog-card-excerpt">Latest developments in quantum computing and what it means for the future of encryption and data processing.</p>
+                
+                <div class="blog-card-meta">
+                    <span class="blog-meta-item">
+                        <i class="fas fa-clock"></i> 6 min read
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-bolt"></i> Breaking
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-calendar"></i> 2 hours ago
+                    </span>
+                </div>
+                
+                <div class="blog-card-tags">
+                    <span class="blog-tag">Quantum</span>
+                    <span class="blog-tag">Innovation</span>
+                    <span class="blog-tag">Future Tech</span>
+                </div>
+            </div>
+        </article>
+
+        <!-- Article Card 4 - Case Study Type -->
+        <article class="blog-article-card" data-type="case-study" data-audience="business,developers">
+            <div class="blog-card-badge blog-badge-case-study">
+                <i class="fas fa-clipboard-check"></i> Case Study
+            </div>
+            <div class="blog-card-image">
+                <img src="/static/images/blog/case-study-1.jpg" alt="E-commerce Platform Case Study">
+                <div class="blog-card-overlay"></div>
+            </div>
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Scaling E-commerce Platform to 1M Users</h3>
+                <p class="blog-card-excerpt">How we helped RetailCorp scale their platform while maintaining 99.9% uptime during peak shopping seasons.</p>
+                
+                <div class="blog-card-meta">
+                    <span class="blog-meta-item">
+                        <i class="fas fa-clock"></i> 12 min read
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-user-tie"></i> Client: RetailCorp
+                    </span>
+                    <span class="blog-meta-item">
+                        <i class="fas fa-calendar-alt"></i> 6 month project
+                    </span>
+                </div>
+                
+                <div class="blog-card-results">
+                    <div class="blog-result">
+                        <strong>300%</strong> Traffic Increase
+                    </div>
+                    <div class="blog-result">
+                        <strong>99.9%</strong> Uptime
+                    </div>
+                    <div class="blog-result">
+                        <strong>2s</strong> Load Time
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="blog-sidebar">
+        <!-- Newsletter Signup -->
+        <div class="blog-sidebar-widget">
+            <h4 class="blog-widget-title">Stay Updated</h4>
+            <p class="blog-widget-desc">Get the latest articles on tech and business delivered to your inbox.</p>
+            <form class="blog-newsletter-form">
+                <input type="email" class="blog-newsletter-input" placeholder="Your email address">
+                <button type="submit" class="blog-newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Popular Posts -->
+        <div class="blog-sidebar-widget">
+            <h4 class="blog-widget-title">Trending Now</h4>
+            <div class="blog-popular-list">
+                <a href="#" class="blog-popular-item">
+                    <span class="blog-popular-rank">1</span>
+                    <span class="blog-popular-title">The Future of Web3 Development</span>
+                </a>
+                <a href="#" class="blog-popular-item">
+                    <span class="blog-popular-rank">2</span>
+                    <span class="blog-popular-title">AI Ethics in 2024</span>
+                </a>
+                <a href="#" class="blog-popular-item">
+                    <span class="blog-popular-rank">3</span>
+                    <span class="blog-popular-title">Microservices vs Monolith</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="blog-sidebar-widget">
+            <h4 class="blog-widget-title">Categories</h4>
+            <div class="blog-categories-list">
+                <a href="#" class="blog-category-item">
+                    <span class="blog-category-name">Web Development</span>
+                    <span class="blog-category-count">24</span>
+                </a>
+                <a href="#" class="blog-category-item">
+                    <span class="blog-category-name">Business Strategy</span>
+                    <span class="blog-category-count">18</span>
+                </a>
+                <a href="#" class="blog-category-item">
+                    <span class="blog-category-name">AI & Machine Learning</span>
+                    <span class="blog-category-count">15</span>
+                </a>
+                <a href="#" class="blog-category-item">
+                    <span class="blog-category-name">Cloud Computing</span>
+                    <span class="blog-category-count">12</span>
+                </a>
+            </div>
+        </div>
+    </aside>
+</main>
+
+<!-- Load More / Pagination -->
+<div class="blog-pagination-container">
+    <button class="blog-load-more-btn">
+        <i class="fas fa-sync-alt"></i> Load More Articles
+    </button>
+    <div class="blog-pagination">
+        <button class="blog-page-btn blog-page-active">1</button>
+        <button class="blog-page-btn">2</button>
+        <button class="blog-page-btn">3</button>
+        <span class="blog-page-ellipsis">...</span>
+        <button class="blog-page-btn">12</button>
+    </div>
+</div>

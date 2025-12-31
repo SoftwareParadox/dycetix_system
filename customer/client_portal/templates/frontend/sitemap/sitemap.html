@@ -1,0 +1,22 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Sitemap | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/sitemap.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/accessibility.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/sitemap/sections/hero.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/sitemap.js' %}?v=1.0"></script>
+{% endblock %}

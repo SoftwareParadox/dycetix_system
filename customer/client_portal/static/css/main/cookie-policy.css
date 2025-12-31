@@ -1,0 +1,9 @@
+.intro p {
+    color: var(--color-dark-background-paragraph) !important;
+}
+
+
+.special-notice i {
+    color: var(--section-hero-color);
+    margin-right: 0.5rem;
+}

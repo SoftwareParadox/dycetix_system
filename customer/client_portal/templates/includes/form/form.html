@@ -1,0 +1,244 @@
+<!-- form.html - Modified for no conflicts -->
+<!-- CHANGE 1: Update section ID for clarity -->
+<section class="body-section form-section" id="global-quote-form" itemscope itemtype="https://schema.org/ContactPage">
+    <div class="body-section-container index-quote-container">
+        <!-- Left Instruction Panel (unchanged) -->
+        <div class="index-quote-instruction-panel">
+            <div class="index-quote-instruction-content">
+                <div class="index-quote-step-indicator">
+                    <div class="index-quote-step active">1</div>
+                    <div class="index-quote-step-line"></div>
+                    <div class="index-quote-step">2</div>
+                    <div class="index-quote-step-line"></div>
+                    <div class="index-quote-step">3</div>
+                </div>
+                <h2 class="body-header" itemprop="name">Start Your Project</h2>
+                <ul class="index-quote-instruction-list">
+                    <li itemprop="step"><i class="fas fa-check"></i> Fill in basic project details</li>
+                    <li itemprop="step"><i class="fas fa-check"></i> Attach relevant documents</li>
+                    <li itemprop="step"><i class="fas fa-check"></i> Submit the form</li>
+                    <li itemprop="step"><i class="fas fa-check"></i> Get customized quote in 48/hr</li>
+                </ul>
+                <div class="index-quote-feature-badge">
+                    <div class="icon-feature-badge">
+                    </div>                         
+                    <div class="body-sub-header header-feature-badge">
+                        SSL Encrypted Submission
+                    </div>
+                </div>
+            </div>
+            <img src="../../static/images/main/ssl_encrypt-big.jpg" alt="Secure SSL encrypted form submission for project quotes" class="form-image" itemprop="image">
+        </div>
+
+        <!-- Right Form Panel -->
+        <div class="index-quote-form-panel">
+            <!-- CHANGE 2: Add data-form-type attribute -->
+            <form class="index-quote-quote-form" data-form-type="global-quote" itemprop="mainEntity" itemscope itemtype="https://schema.org/ContactPoint">
+                <div class="header-content index-quote-form-header">
+                    <h2 class="body-header index-quote-quote-title" itemprop="name">Let's Build Something Extraordinary</h2>
+                    <p class="body-sub-header index-quote-quote-subtitle" itemprop="description">Share your vision, and we'll craft the perfect solution for you.</p>
+                </div>
+                
+                <!-- CHANGE 3: Add "global-" prefix to all IDs -->
+                <!-- Floating Label Form Groups -->
+                <div class="index-quote-form-group floating-label form-first-name">
+                    <input type="text" id="global-firstName" name="firstName" required itemprop="givenName">
+                    <label for="global-firstName">Your First Name <span class="required-asterisk">*</span></label>
+                </div>
+                
+                <div class="index-quote-form-group floating-label">
+                    <input type="text" id="global-lastName" name="lastName" required itemprop="familyName">
+                    <label for="global-lastName">Your Last Name <span class="required-asterisk">*</span></label>
+                </div>
+                
+                <div class="index-quote-form-group floating-label">
+                    <input type="email" id="global-email" name="email" required itemprop="email">
+                    <label for="global-email">Your Email Address <span class="required-asterisk">*</span></label>
+                </div>
+                
+                <!-- CHANGE 4: Phone input with "global-" prefix -->
+                <div class="index-quote-form-group floating-label phone-input-wrapper">
+                    <input type="tel" 
+                        id="global-phone" 
+                        name="phone" 
+                        required 
+                        placeholder=" "
+                        itemprop="telephone"
+                        autocomplete="tel">
+                    <label for="global-phone">Phone Number</label>
+                </div>
+                
+                <div class="index-quote-form-group floating-label">
+                    <input type="text" id="global-company" name="company" itemprop="worksFor">
+                    <label for="global-company">Company Name (optional)</label>
+                </div>
+                
+                <!-- CHANGE 5: Services with "global-" prefix in IDs -->
+                <div class="index-quote-form-group service-selection-group" required>
+                    <label class="service-label">Services Type <span class="required-asterisk">*</span></label>
+                    <div class="service-options-container">
+                        <div class="service-option-row">
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="software" id="global-service-software" data-service="Software Development">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-code service-icon"></i>
+                                    Software Development
+                                </span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="it" id="global-service-it" data-service="IT Support">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-server service-icon"></i>
+                                    IT Support
+                                </span>
+                            </label>
+                        </div>
+                        <div class="service-option-row">
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="design" id="global-service-design" data-service="Graphic Design">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-palette service-icon"></i>
+                                    Graphic Design
+                                </span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="photography" id="global-service-photography" data-service="Photography">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-camera service-icon"></i>
+                                    Photography
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <!-- Add this new row for "Other Service" -->
+                        <div class="service-option-row other-options-main-form">
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="videography" id="global-service-videography" data-service="Videography">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-video service-icon"></i>
+                                    Videography
+                                </span>
+                            </label>
+                            <label class="service-option">
+                                <input type="checkbox" name="services" value="other" id="global-service-other" data-service="Other">
+                                <span class="service-option-checkbox"></span>
+                                <span class="service-option-text">
+                                    <i class="fas fa-ellipsis-h service-icon"></i>
+                                    Other (Specify)
+                                </span>
+                            </label>
+                        </div>
+                        
+                        <!-- This container will be shown when "Other" is checked -->
+                        <div class="service-option other-option" id="global-other-service-container" style="display: none;">
+                            <div class="index-quote-form-group floating-label" style="margin-top: 10px;">
+                                <input type="text" id="global-other-service-input" name="otherService" placeholder="Specify service">
+                                <label for="global-other-service-input">Specify Service</label>
+                            </div>
+                        </div>
+                        
+                        <!-- This button is now optional since we use checkbox interaction -->
+                        <!-- <button type="button" id="global-show-other" class="job-show-other-btn">
+                            <i class="fas fa-plus"></i> Not listed? Specify another service
+                        </button> -->
+                    </div>
+                </div>
+                
+                <!-- CHANGE 6: Textarea with "global-" prefix -->
+                <div class="index-quote-form-group floating-label form-description-textarea">
+                    <textarea id="global-projectDetails" rows="4" name="projectDetails" required itemprop="description"></textarea>
+                    <label for="global-projectDetails">Project details (timeline, budget, special requirements) <span class="required-asterisk">*</span></label>
+                </div>
+                
+                <!-- CHANGE 7: File upload with "global-" prefix -->
+                <div class="index-quote-form-group">
+                    <div class="index-quote-upload-header">
+                        <span>File Upload (Optional)</span>
+                        <div class="index-quote-tooltip">Attach relevant files (max 5)</div>
+                    </div>
+                    <div class="index-quote-file-upload-container">
+                        <input type="file" id="global-fileUpload" hidden multiple 
+                            accept=".pdf,.docx,.zip,.png,.jpg,.jpeg" name="fileUpload">
+                        <label for="global-fileUpload" class="index-quote-upload-box">
+                            <div class="icon-tooltip-wrapper">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span class="index-quote-tooltip">Add files</span>
+                            </div>
+                            <span class="index-quote-upload-text">
+                                <span class="index-quote-drag-text">Drag & drop files or</span>
+                                <span class="index-quote-browse-text">Click to browse</span>
+                            </span>
+                            <span class="index-quote-file-types">PDF, DOCX, ZIP, PNG, JPG (max 25MB each)</span>
+                            <small class="upload-instruction">You can add files one by one and remove any if needed</small>
+                        </label>
+                        <div class="index-quote-upload-preview" id="global-uploadPreview">
+                            <div class="no-files">No files selected</div>
+                        </div>
+                        <div class="upload-stats">
+                            <span class="file-count">Files: <span id="global-fileCount">0</span>/5</span>
+                            <span class="total-size">Total: <span id="global-totalSize">0 MB</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHANGE 8: Submit button with "global-" prefix in any IDs if needed -->
+                <button type="submit" class="body-cta index-quote-submit-btn" id="global-submitBtn" itemprop="potentialAction" itemscope itemtype="https://schema.org/CommunicateAction">
+                    <span itemprop="name">Get Precise Quote</span>
+                    <div class="body-cta-hover"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Additional JSON-LD for Contact Form -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Request a Project Quote",
+        "description": "Get a customized quote for your software development, IT support, or graphic design project",
+        "url": "https://www.dycetix.com/quote",
+        "mainEntity": {
+            "@type": "ContactPoint",
+            "contactType": "sales",
+            "email": "contact@dycetix.com",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide",
+            "hoursAvailable": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday"
+                ],
+                "opens": "09:00",
+                "closes": "17:00"
+            }
+        },
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://www.dycetix.com"
+                },
+                {
+                    "@type": "ListItem", 
+                    "position": 2,
+                    "name": "Get Quote",
+                    "item": "https://www.dycetix.com/quote"
+                }
+            ]
+        }
+    }
+    </script>
+</section>

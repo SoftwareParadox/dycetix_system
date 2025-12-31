@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>{% block title %}Dycetix{% endblock %}</title>
+    
+    <!-- Load static files -->
+    {% load static %}
+    {% now "Y" as current_year %}
+    
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="{% static 'css/variables.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/body-global.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/3-global.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/nav/nav.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/main-global.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/main/hero.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/main/hero-split.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'css/footer/footer.css' %}?v=1.0">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS Libraries -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/dycetix-icon.png' %}" sizes="32x32">
+    
+    <!-- Page-specific CSS -->
+    {% block extra_css %}{% endblock %}
+    
+    <!-- Structured Data -->
+    {% block structured_data %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dycetix",
+        "url": "https://www.dycetix.com",
+        "logo": "{% static 'images/dycetix-logo.png' %}",
+        "description": "Dycetix provides comprehensive software development, IT support, graphic design and photography and videography solutions",
+        "foundingDate": "2023",
+        "sameAs": [
+            "https://linkedin.com/company/dycetix",
+            "https://twitter.com/dycetix",
+            "https://facebook.com/dycetix"
+        ]
+    }
+    </script>
+    {% endblock %}
+</head>
+<body data-page="{% block page_name %}default{% endblock %}">
+    <!-- web structure-->
+    <div class="wrapper">
+        {% include 'includes/nav/nav.html' %}
+        
+        <main>
+            {% block content %}
+            <!-- Page content will go here -->
+            {% endblock %}
+        </main>
+        
+        {% include 'includes/footer/footer.html' %}
+    </div>
+
+    <!-- Add this to your base.html AFTER footer, BEFORE scripts -->
+    <div id="form-modal" class="form-modal">
+        <div class="form-modal-overlay"></div>
+        <div class="form-modal-container">
+            <button class="form-modal-close" aria-label="Close form">&times;</button>
+            <div class="form-modal-content">
+                <!-- Embedded Modal Form - Always Available -->
+                <form class="modal-quote-form" id="modal-quote-form" method="post">
+                    <!-- Same structure as your form.html but with modal- IDs -->
+                    <div class="modal-form-header">
+                        <h2 class="body-header">Start Your Project</h2>
+                        <p class="body-sub-header">Share your vision, and we'll craft the perfect solution.</p>
+                    </div>
+                    
+                    <!-- Name Fields -->
+                    <div class="index-quote-form-group floating-label form-first-name">
+                        <input type="text" id="modal-firstName" name="firstName" required>
+                        <label for="modal-firstName">Your First Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="modal-lastName" name="lastName" required>
+                        <label for="modal-lastName">Your Last Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Contact Fields -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="email" id="modal-email" name="email" required>
+                        <label for="modal-email">Your Email Address <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <div class="index-quote-form-group floating-label phone-input-wrapper">
+                        <input type="tel" id="modal-phone" name="phone">
+                        <label for="modal-phone">Phone Number</label>
+                    </div>
+                    
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="modal-company" name="company">
+                        <label for="modal-company">Company Name (optional)</label>
+                    </div>
+                    
+                    <!-- Services - Same as your form.html -->
+                    <div class="index-quote-form-group service-selection-group">
+                        <label class="service-label">Services Type <span class="required-asterisk">*</span></label>
+                        <div class="service-options-container">
+                            <div class="service-option-row">
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="software" id="modal-service-software">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-code service-icon"></i>
+                                        Software Development
+                                    </span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="it" id="modal-service-it">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-server service-icon"></i>
+                                        IT Support
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="service-option-row">
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="design" id="modal-service-design">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-palette service-icon"></i>
+                                        Graphic Design
+                                    </span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="photography" id="modal-service-photography">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-camera service-icon"></i>
+                                        Photography
+                                    </span>
+                                </label>
+                            </div>
+                            <div class="service-option-row other-options-main-form">
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="videography" id="modal-service-videography">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-video service-icon"></i>
+                                        Videography
+                                    </span>
+                                </label>
+                                <label class="service-option">
+                                    <input type="checkbox" name="services" value="other" id="modal-service-other">
+                                    <span class="service-option-checkbox"></span>
+                                    <span class="service-option-text">
+                                        <i class="fas fa-ellipsis-h service-icon"></i>
+                                        Other (Specify)
+                                    </span>
+                                </label>
+                            </div>
+                            
+                            <!-- Other service container -->
+                            <div class="service-option other-option" id="modal-other-service-container" style="display: none;">
+                                <div class="index-quote-form-group floating-label">
+                                    <input type="text" id="modal-other-service-input" name="otherService" placeholder="Specify service">
+                                    <label for="modal-other-service-input">Specify Service</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Details -->
+                    <div class="index-quote-form-group floating-label form-description-textarea">
+                        <textarea id="modal-projectDetails" rows="4" name="projectDetails" required></textarea>
+                        <label for="modal-projectDetails">Project details (timeline, budget, special requirements) <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- File Upload -->
+                    <div class="index-quote-form-group">
+                        <div class="index-quote-upload-header">
+                            <span>File Upload (Optional)</span>
+                            <div class="index-quote-tooltip">Attach relevant files (max 5)</div>
+                        </div>
+                        <div class="index-quote-file-upload-container">
+                            <input type="file" id="modal-fileUpload" hidden multiple 
+                                accept=".pdf,.docx,.zip,.png,.jpg,.jpeg" name="fileUpload">
+                            <label for="modal-fileUpload" class="index-quote-upload-box">
+                                <div class="icon-tooltip-wrapper">
+                                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                                    <span class="index-quote-tooltip">Add files</span>
+                                </div>
+                                <span class="index-quote-upload-text">
+                                    <span class="index-quote-drag-text">Drag & drop files or</span>
+                                    <span class="index-quote-browse-text">Click to browse</span>
+                                </span>
+                                <span class="index-quote-file-types">PDF, DOCX, ZIP, PNG, JPG (max 25MB each)</span>
+                            </label>
+                            <div class="index-quote-upload-preview" id="modal-uploadPreview">
+                                <div class="no-files">No files selected</div>
+                            </div>
+                            <div class="upload-stats">
+                                <span class="file-count">Files: <span id="modal-fileCount">0</span>/5</span>
+                                <span class="total-size">Total: <span id="modal-totalSize">0 MB</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Submit Button -->
+                    <button type="submit" class="body-cta index-quote-submit-btn" id="modal-submitBtn">
+                        <span>Get Precise Quote</span>
+                        <div class="body-cta-hover"></div>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== -->
+    <!-- CRITICAL: Load scripts in CORRECT ORDER -->
+    <!-- ==================== -->
+    
+    <!-- 1. External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    
+    <!-- 2. Core Global JS (No DOM manipulation) -->
+    <script src="{% static 'js/dycetix-global.js' %}?v=1.0"></script>
+    
+    <!-- 3. Form Utils FIRST (Functions only, no auto-execution) -->
+    <script src="{% static 'js/form-utils.js' %}?v=1.0"></script>
+    
+    <!-- 4. Page-specific Form JS (Loaded conditionally via blocks) -->
+    {% block form_js %}{% endblock %}
+    
+    <!-- 5. Modal JS (Depends on Form Utils) -->
+    <script src="{% static 'js/form-service.js' %}?v=1.0"></script>
+
+    <!-- 2. Form.js for pages with form section -->
+    <script src="{% static 'js/form.js' %}?v=1.0"></script>
+
+    <!-- 3. Modal form (always loads) -->
+    <script src="{% static 'js/modal-form.js' %}?v=1.0"></script>
+    <!-- 6. Other functionality -->
+    <script src="{% static 'js/search-functionality.js' %}?v=1.0"></script>
+    
+    <!-- 7. External utils (loaded async) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js" async></script>
+    
+    <!-- Page-specific JS -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Blogs | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/blog.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/blog.js' %}?v=1.0"></script>
+{% endblock %}

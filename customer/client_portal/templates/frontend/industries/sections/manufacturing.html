@@ -1,0 +1,150 @@
+<!-- industries_manufacturing.html -->
+<section id="industries-manufacturing" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Manufacturing Technology Solutions</h3>
+        <p itemprop="description">Industry 4.0 solutions, IoT integration, supply chain optimization, and smart factory systems for modern manufacturing.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Manufacturing Technology">
+    </div>
+
+    <div class="tech-stack-content tech-stack-right">
+        <!-- Content on left, image on right -->
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Manufacturing</span> Technology
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Smart factory solutions, industrial automation, and supply chain digitization for Industry 4.0.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-robot feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Industrial Automation</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            IoT-enabled machinery, robotic process automation, and smart manufacturing systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-tasks feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Supply Chain Management</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            End-to-end supply chain visibility, logistics optimization, and inventory forecasting.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-chart-bar feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Quality Control</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Real-time quality monitoring, defect detection, and production analytics.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Industry 4.0</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">IoT Integration</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Supply Chain</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Predictive Maintenance</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Digital Twins</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_OPTIMIZE_MANUFACTURING %}
+            </div>
+        </div>
+
+        <!-- Image on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/manufacturing.jpg" 
+                    alt="Manufacturing technology solutions including industrial automation and smart factories"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Manufacturing Technology Solutions",
+        "description": "Smart factory solutions, industrial automation, and supply chain digitization for Industry 4.0",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Manufacturing Technology",
+        "category": "Industrial IT",
+        "knowsAbout": [
+            "Industry 4.0",
+            "IoT Integration",
+            "Supply Chain",
+            "Predictive Maintenance",
+            "Digital Twins",
+            "Industrial Automation"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Industrial Automation",
+                "description": "IoT-enabled machinery, robotic process automation, and smart manufacturing systems"
+            },
+            {
+                "@type": "Thing",
+                "name": "Supply Chain Management", 
+                "description": "End-to-end supply chain visibility, logistics optimization, and inventory forecasting"
+            },
+            {
+                "@type": "Thing",
+                "name": "Quality Control",
+                "description": "Real-time quality monitoring, defect detection, and production analytics"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Optimize Manufacturing",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

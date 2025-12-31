@@ -1,0 +1,150 @@
+<!-- industries_financial.html -->
+<section id="industries-finance" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Financial Technology Solutions</h3>
+        <p itemprop="description">Secure banking systems, fintech applications, trading platforms, and financial data analytics for modern finance.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Financial Technology">
+    </div>
+
+    <div class="tech-stack-content tech-stack-right">
+        <!-- Content on left, image on right -->
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Financial</span> Technology
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Secure, scalable fintech solutions for banking, trading, payments, and financial data management.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-university feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Banking Systems</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Core banking solutions, mobile banking apps, and secure online banking platforms.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-hand-holding-usd feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Payment Processing</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Secure payment gateways, digital wallets, and transaction processing systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-shield-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Regulatory Compliance</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            KYC/AML solutions, audit trails, and compliance reporting for financial regulations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Core Banking</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Payment Systems</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">KYC/AML</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Trading Platforms</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Risk Management</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_MODERNIZE_FINANCE %}
+            </div>
+        </div>
+
+        <!-- Image on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/finance.jpg" 
+                    alt="Financial technology solutions including banking systems and payment processing"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Financial Technology Solutions",
+        "description": "Secure, scalable fintech solutions for banking, trading, payments, and financial data management",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Financial Technology",
+        "category": "Fintech",
+        "knowsAbout": [
+            "Core Banking",
+            "Payment Systems",
+            "KYC/AML",
+            "Trading Platforms",
+            "Risk Management",
+            "Financial Compliance"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Banking Systems",
+                "description": "Core banking solutions, mobile banking apps, and secure online banking platforms"
+            },
+            {
+                "@type": "Thing",
+                "name": "Payment Processing", 
+                "description": "Secure payment gateways, digital wallets, and transaction processing systems"
+            },
+            {
+                "@type": "Thing",
+                "name": "Regulatory Compliance",
+                "description": "KYC/AML solutions, audit trails, and compliance reporting for financial regulations"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Modernize Finance",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

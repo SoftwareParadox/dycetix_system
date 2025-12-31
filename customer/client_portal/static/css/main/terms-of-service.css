@@ -1,0 +1,24 @@
+.intro p {
+    color: var(--color-dark-background-paragraph) !important;
+}
+
+.special-notice i {
+    color: var(--section-hero-color);
+    margin-right: 0.5rem;
+}
+
+.body-card-paragraph {
+    color: var(--color-white-background-paragraph);
+}
+
+.body-card-header,
+.strong {
+    color: var(--color-white-background-header);
+}
+
+.contact-section h3 {
+    color: var(--color-dark-background-header);
+}
+.contact-section p {
+    color: var(--color-dark-background-paragraph);
+}

@@ -1,0 +1,71 @@
+<!-- about_us_hero.html -->
+<section id="about-us-hero" class="hero-section" itemscope itemtype="https://schema.org/AboutPage">
+    <div class="about-hero-background">
+        <video class="about-hero-bg-video" autoplay muted loop playsinline aria-label="Abstract technology visualization">
+            <source src="../../static/videos/about-us-hero.mp4" type="video/mp4">
+        </video>
+        <div class="about-hero-gradient-overlay"></div>
+    </div>
+    
+    <div class="visually-hidden">
+        <h2 itemprop="description">Software Development, IT Support, and Graphic Design Services</h2>
+    </div>
+
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="headline">
+                    Engineering Tomorrow's
+                    <span class="hero-title-part">Custom Tech Solutions</span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Bridging Visionary Concepts with Cutting-Edge Technology
+                </p>
+            </div>
+            <!-- CTA Buttons -->
+            {% include 'includes/hero-cta.html' %}
+        </div>
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for the hero section -->
+    <div itemscope itemtype="https://schema.org/AboutPage" style="display: none;">
+        <h3 itemprop="headline">About Dycetix - Engineering Tomorrow's Custom Tech Solutions</h3>
+        <p itemprop="description">Bridging visionary concepts with cutting-edge technology through custom software development, IT support, and graphic design services.</p>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "headline": "Engineering Tomorrow's Custom Tech Solutions",
+        "description": "Bridging Visionary Concepts with Cutting-Edge Technology",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "description": "Custom software development, IT support, and graphic design services"
+        },
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action", 
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

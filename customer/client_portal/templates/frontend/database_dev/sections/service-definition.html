@@ -1,0 +1,119 @@
+<!-- frontend/database_dev/sections/service-definition.html -->
+<section id="database-development-definition" class="body-section service-definition" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container service-definition-container">
+        <div class="service-definition-visual">
+            <div class="service-definition-data-architecture">
+                <div class="service-definition-data-flow">
+                    <div class="service-definition-flow-step service-definition-raw-data">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="service-definition-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="service-definition-flow-step service-definition-structured-data">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <div class="service-definition-flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="service-definition-flow-step service-definition-insights">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <div class="service-definition-schema-diagram">
+                    <div class="service-definition-schema-table primary">
+                        <i class="fas fa-table"></i>
+                    </div>
+                    <div class="service-definition-schema-table service-definition-related">
+                        <i class="fas fa-table"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="service-definition-content">
+            <h2 class="body-header service-definition-section-title" itemprop="name">
+                Adaptive Database Architectures
+            </h2>
+            
+            <div class="body-sub-header service-definition-intro">
+                <p itemprop="description">Custom database systems designed to evolve with your data needs, not constrain them.</p>
+            </div>
+
+            <div class="service-definition-grid" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                <div class="global-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-small">
+                        <i class="fas fa-expand-arrows-alt fa-2x global-icon" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header global-card-title" itemprop="name">Structured for Growth</h3>
+                    <p class="body-card-paragraph global-card-description" itemprop="description">
+                        Foundational systems built for tomorrow's requirements
+                    </p>
+                    <ul class="service-definition-tech-list">
+                        <li><i class="fas fa-code-branch"></i> Schema-as-code versioning</li>
+                        <li><i class="fas fa-shapes"></i> Multi-model flexibility</li>
+                        <li><i class="fas fa-exchange-alt"></i> Zero-downtime migrations</li>
+                    </ul>
+                </div>
+
+                <div class="global-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-small">
+                        <i class="fas fa-tachometer-alt fa-2x global-icon" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header global-card-title" itemprop="name">Optimized Workflows</h3>
+                    <p class="body-card-paragraph global-card-description" itemprop="description">
+                        Intelligent data handling patterns
+                    </p>
+                    <ul class="service-definition-tech-list">
+                        <li><i class="fas fa-search"></i> Query pattern analysis</li>
+                        <li><i class="fas fa-bolt"></i> Cost-aware indexing</li>
+                        <li><i class="fas fa-redo"></i> Usage-driven caching</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for service definition -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Adaptive Database Architectures</h3>
+        <p itemprop="description">Custom database systems designed to evolve with your data needs</p>
+        <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Structured for Growth">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Optimized Workflows">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        "name": "Database Architecture Services",
+        "description": "Adaptive database architectures and optimization services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "Structured for Growth",
+                "description": "Foundational systems built for tomorrow's requirements",
+                "includes": [
+                    "Schema-as-code versioning",
+                    "Multi-model flexibility", 
+                    "Zero-downtime migrations"
+                ]
+            },
+            {
+                "@type": "Offer",
+                "name": "Optimized Workflows",
+                "description": "Intelligent data handling patterns",
+                "includes": [
+                    "Query pattern analysis",
+                    "Cost-aware indexing",
+                    "Usage-driven caching"
+                ]
+            }
+        ]
+    }
+    </script>
+</section>

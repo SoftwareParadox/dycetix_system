@@ -1,0 +1,123 @@
+<!-- desktop_development_hero.html -->
+<section id="desktop-development-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
+    <div class="hero-background" role="img" aria-label="Desktop application development interface showing performance metrics">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+    
+    <div class="hero-content-container">
+        <div class="hero-split-content-container">
+            <div class="hero-content hero-split-content">
+                <div class="text-container">
+                    <h1 class="hero-title" itemprop="name">
+                        <span class="hero-title-part">Native Desktop Excellence:</span>
+                        <span>Business-Critical Apps Engineered for Peak Performance</span>
+                        <span class="hero-title-underline"></span>
+                    </h1>
+                    <p class="hero-subtitle" itemprop="description">
+                        Transform workflows with <strong>offline-capable, hardware-optimized</strong> applications that handle complex operations without browser limitations.
+                    </p>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Performance-Centric Visual -->
+        <div class="hero-mockup-container">
+            <div class="hero-mockups">
+                <div class="desktop-hero-performance-meter" itemprop="mainEntity" itemscope itemtype="https://schema.org/CreativeWork">
+                    <div class="desktop-hero-meter-gauge">
+                        <!-- Added video container and video element -->
+                        <div class="meter-video-container">
+                            <video class="gauge-video" autoplay muted loop playsinline itemprop="video">
+                                <source src="../../static/videos/desktop-hero.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pill Chips -->
+                <div class="pill-chips-container" itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+                    <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">Windows Enterprise</span>
+                    </div>
+                    <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">macOS Optimization</span>
+                    </div>
+                    <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                        <span itemprop="name">Linux Deployment</span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                {% include 'includes/hero-cta.html' %}
+            </div>
+        </div>
+        
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Desktop Application Development Services</h3>
+        <p itemprop="description">Native desktop excellence with business-critical apps engineered for peak performance across multiple platforms.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Windows Enterprise">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="macOS Optimization">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Linux Deployment">
+            </div>
+        </div>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/CreativeWork">
+            <meta itemprop="name" content="Desktop Performance Metrics">
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Desktop Development Hero Section",
+        "description": "Native desktop excellence: Business-critical apps engineered for peak performance across Windows, macOS, and Linux platforms",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com"
+        },
+        "serviceType": "Desktop Application Development",
+        "keywords": [
+            "Windows Enterprise",
+            "macOS Optimization", 
+            "Linux Deployment"
+        ],
+        "mainEntity": {
+            "@type": "CreativeWork",
+            "name": "Desktop Performance Visualization",
+            "description": "Performance metrics and optimization visualization for desktop applications"
+        },
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action",
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

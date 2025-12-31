@@ -1,0 +1,151 @@
+<!-- technologies_mobile_development.html -->
+<section class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Mobile App Development Services</h3>
+        <p itemprop="description">Native and cross-platform mobile applications for iOS and Android with superior performance and user experience.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Mobile Development">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/mobile-dev-services.jpg" 
+                    alt="Mobile app development for iOS and Android platforms"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Mobile</span> Development
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Native and cross-platform mobile applications that deliver exceptional user experiences on every device.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fab fa-apple feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">iOS Development</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Native iOS apps built with Swift and Objective-C, optimized for iPhones and iPads with Apple's latest technologies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fab fa-android feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Android Development</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Native Android applications using Kotlin and Java, designed for diverse device ecosystems and screen sizes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-sync-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Cross-Platform Solutions</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Flutter and React Native apps that run seamlessly on both iOS and Android with native-like performance.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Swift</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Java</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Flutter</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">React Native</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Mobile UI/UX</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_BUILD_YOUR_MOBILE_APP %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Mobile Development",
+        "description": "Native and cross-platform mobile applications that deliver exceptional user experiences on every device",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Mobile Development",
+        "category": "Technology Services",
+        "knowsAbout": [
+            "Swift",
+            "Kotlin",
+            "Flutter",
+            "React Native",
+            "Mobile UI/UX",
+            "iOS Development",
+            "Android Development",
+            "Cross-Platform"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "iOS Development",
+                "description": "Native iOS apps built with Swift and Objective-C, optimized for iPhones and iPads with Apple's latest technologies"
+            },
+            {
+                "@type": "Thing",
+                "name": "Android Development", 
+                "description": "Native Android applications using Kotlin and Java, designed for diverse device ecosystems and screen sizes"
+            },
+            {
+                "@type": "Thing",
+                "name": "Cross-Platform Solutions",
+                "description": "Flutter and React Native apps that run seamlessly on both iOS and Android with native-like performance"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Build Your Mobile App",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

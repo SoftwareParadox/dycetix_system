@@ -1,0 +1,87 @@
+<section class="body-section hero-section-sitemap">
+    <div class="body-section-container sitemap-container">
+        <header class="sitemap-header">
+            <h1 class="body-header"><i class="fas fa-map-signs"></i> Dycetix Digital Roadmap</h1>
+            <p class="body-paragraph">Your GPS to navigating our services – no subscription required</p>
+            <!-- <p class="note">Bookmark this page – it updates as we grow!</p> -->
+        </header>
+
+        <div class="sitemap-section">
+            <h2 class="section-title"><i class="fas fa-sitemap"></i> Core Pages</h2>
+            <ul class="sitemap-list">
+                <li class="sitemap-item"><a href="{% url 'home' %}">Home</a> - Our vision, services, and differentiators</li>
+                <li class="sitemap-item">
+                    <div class="collapsible" onclick="toggleCollapse(this)">
+                        Services - Flexible solutions for your needs
+                    </div>
+                    <div class="collapsible-content">
+                        <ul class="sitemap-list">
+                            <li class="sitemap-item"><a href="{% url 'custom_software' %}">Custom Software Development</a></li>
+                            <li class="sitemap-item"><a href="{% url 'web_development' %}">Website Development</a></li>
+                            <li class="sitemap-item"><a href="{% url 'mobile_development' %}">Mobile Development</a></li>
+                            <li class="sitemap-item"><a href="{% url 'desktop_development' %}">Desktop Development</a></li>
+                            <li class="sitemap-item"><a href="{% url 'database_development' %}">Database Development</a></li>
+                            <li class="sitemap-item"><a href="{% url 'it_maintenance' %}">IT Support & Maintenance</a></li>
+                            <li class="sitemap-item"><a href="{% url 'graphic_design' %}">Graphic Design</a></li>
+                            <li class="sitemap-item"><a href="{% url 'video_photo' %}">Photography and Videography</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sitemap-item"><a href="{% url 'about_us' %}">About Us</a> - Meet the humans behind Dycetix</li>
+                <li class="sitemap-item"><a href="{% url 'get_in_touch' %}">Get In Touch</a> - Start your collaboration</li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2 class="section-title"><i class="fas fa-balance-scale"></i> Legal & Compliance</h2>
+            <ul class="sitemap-list">
+                <li class="sitemap-item"><a href="{% url 'privacy_policy' %}">Privacy Policy</a> - Data protection commitment</li>
+                <li class="sitemap-item"><a href="{% url 'terms_of_service' %}">Terms of Service</a> - Fair engagement rules</li>
+                <li class="sitemap-item"><a href="{% url 'cookie_policy' %}">Cookie Policy</a> - Digital cookie explanation</li>
+                <li class="sitemap-item"><a href="{% url 'accessibility' %}">Accessibility Statement</a> - Inclusivity roadmap</li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2 class="section-title"><i class="fas fa-chart-line"></i> Growth & Community</h2>
+            <ul class="sitemap-list">
+                <li class="sitemap-item"><a href="{% url 'careers' %}">Careers</a> - Future opportunities</li>
+                <li class="sitemap-item"><a href="{% url 'blog' %}">Blog/Resources</a> - Tech insights & best practices</li>
+                <!-- <li class="sitemap-item"><a href="/projects">Project Showcase</a> <em>(Coming Q4 2024)</em></li> -->
+                <li class="sitemap-item"><a href="/#faq">FAQ</a> - Common questions answered</li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2 class="section-title"><i class="fas fa-cogs"></i> Technical Pages</h2>
+            <ul class="sitemap-list">
+                <li class="sitemap-item"><a href="/sitemap">Sitemap</a> - You are here!</li>
+                <li class="sitemap-item"><a href="{% url '404' %}">Custom 404 Page</a> - Helpful redirection</li>
+            </ul>
+        </div>
+
+        <div class="sitemap-section">
+            <h2 class="section-title"><i class="fas fa-industry"></i> Industries & Technologies</h2>
+            <ul class="sitemap-list">
+                <li class="sitemap-item"><a href="{% url 'technologies' %}">Technology Stack</a> - Our tools & platforms</li>
+                <li class="sitemap-item"><a href="{% url 'industries' %}">Industry Solutions</a> - Custom-built digital systems for every sector</li>
+            </ul>
+        </div>
+
+        <div class="newsletter-section-sitemap">
+            <h3 class="body-card-header">Stay Updated on Our Growth</h3>
+            <p class="body-card-paragraph global-card-description">Get sitemap updates and company news directly in your inbox</p>
+            <form class="newsletter-form-sitemap">
+                <input type="email" class="newsletter-input-sitemap" placeholder="Enter your email" aria-label="Email address">
+                <button type="submit" class="body-cta  submit-btn-sitemap">
+                            Subscribe
+                            <i class="fas fa-arrow-right"></i>
+                            <div class="body-cta-hover"></div>
+                </button>
+            </form>
+            <p class="note">We respect your privacy – view our <a href="{% url 'privacy_policy' %}">Privacy Policy</a></p>
+        </div>
+
+        <p class="note-p">Building transparency note: Some sections are under active development. Thanks for being part of our journey!</p>
+    </div>
+</section>

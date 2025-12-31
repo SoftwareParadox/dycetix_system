@@ -1,0 +1,93 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Home | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/index.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/tech-industries-software-global.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }} 
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage", 
+    "name": "Dycetix - Custom Software Development, IT Support & Graphic Design",
+    "description": "Custom software development, IT support, graphic design, photography and videography services. Transform your business with Dycetix Tech Solutions.",
+    "url": "https://www.dycetix.com",
+    "primaryImageOfPage": "https://www.dycetix.com/static/images/og-image.jpg",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "Dycetix",
+        "url": "https://www.dycetix.com"
+    },
+    "mainEntity": {
+        "@type": "Service",
+        "serviceType": "Technology Solutions",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "areaServed": "Worldwide",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Technology Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Software Development",
+                        "description": "Tailored applications for web, mobile, and desktop platforms"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "IT Support & Maintenance",
+                        "description": "24/7 technical support and system maintenance"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Graphic Design Services",
+                        "description": "Brand identity, marketing materials, and visual content"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Photography & Videography",
+                        "description": "Professional visual storytelling for brands and businesses"
+                    }
+                }
+            ]
+        }
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/home/sections/hero.html' %}
+    {% include 'frontend/home/sections/why-us.html' %}
+    {% include 'frontend/home/sections/software-development-services.html' %}
+    {% include 'frontend/home/sections/it-support-maintenance.html' %}
+    {% include 'frontend/home/sections/graphic-design.html' %}
+    {% include 'frontend/home/sections/videography-photography.html' %}
+    {% include 'frontend/home/sections/industries.html' %}
+    {% include 'frontend/home/sections/tech-stack.html' %}
+    {% include 'frontend/home/sections/processes.html' %}
+    {% include 'includes/form/form.html' %}
+    {% include 'frontend/home/sections/faq.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

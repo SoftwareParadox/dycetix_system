@@ -1,0 +1,96 @@
+<!-- custom_software_hero.html -->
+<section id="custom-software-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
+    <!-- Service-Specific Hero Background -->
+    <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="name">
+                    <span>Tailored <span class="hero-title-part">Software Development</span></span>
+                    <span>Solutions for Scalable Growth</span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Transform your vision into secure, high-performance software with end-to-end expertise
+                </p>
+            </div>
+            <!-- Service Highlights -->
+            <div class="pill-chips-container" itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">AI-Driven Architecture</span>
+                </div>
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">Cloud-Native Solutions</span>
+                </div>
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">Enterprise Scalability</span>
+                </div>
+            </div>
+            <!-- CTA Buttons -->
+            {% include 'includes/hero-cta.html' %}
+            <div class="hero-split-scroll-indicator">
+                <div class="hero-split-chevron"></div>
+                <div class="hero-split-chevron"></div>
+                <div class="hero-split-chevron"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden SEO Text -->
+    <div class="custom-software-hero-sr-only" itemprop="description">
+        Dycetix provides custom software development services for businesses seeking scalable growth solutions. 
+        Expert in AI-driven development, cloud-native applications, and enterprise-grade systems.
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Custom Software Development Services</h3>
+        <p itemprop="description">Tailored software development solutions for scalable business growth with AI-driven architecture and cloud-native solutions.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="serviceType" itemscope itemtype="https://schema.org/ItemList">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="AI-Driven Architecture">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Cloud-Native Solutions">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                <meta itemprop="name" content="Enterprise Scalability">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Custom Software Development Hero",
+        "description": "Tailored software development solutions for scalable growth with AI-driven architecture and cloud-native solutions",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com"
+        },
+        "serviceType": "Software Development",
+        "areaServed": "Worldwide",
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action",
+                "name": "Estimate Project Cost", 
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

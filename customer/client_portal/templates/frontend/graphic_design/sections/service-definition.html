@@ -1,0 +1,95 @@
+<!-- frontend/graphic_design/sections/service-definition.html -->
+<section id="graphic-design-definition" class="body-section gd-service-definition" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container gd-service-container">
+        <!-- Definition Column -->
+        <div class="gd-definition-content">
+            <div class="header-content gd-section-head">
+                <h3 class="gd-subheading">Creative Precision</h3>
+                <h2 class="body-header gd-heading" itemprop="name">
+                    Visual Solutions That Speak Volumes
+                </h2>
+                <p class="body-sub-header gd-service-blurb" itemprop="description">
+                    <strong>Dycetix Graphic Design:</strong> Strategic visual storytelling crafted to amplify your brand's unique voice and drive audience engagement.
+                </p>
+            </div>
+            <!-- Process Breakdown -->
+            <div class="global-card-small-grid" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                <!-- Concept & Strategy -->
+                <div class="global-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-small">
+                        <i class="fas fa-lightbulb global-icon" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header global-card-title" itemprop="name">Concept & Strategy</h3>
+                    <p class="body-card-paragraph global-card-description" itemprop="description">Brand audits, mood boards, and creative direction</p>
+                </div>
+
+                <!-- Visual Development -->
+                <div class="global-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-small">
+                        <i class="fas fa-drafting-compass global-icon" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header global-card-title" itemprop="name">Visual Development</h3>
+                    <p class="body-card-paragraph global-card-description" itemprop="description">Logo design, typography systems, color palettes</p>
+                </div>
+
+                <!-- Implementation -->
+                <div class="global-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="index-card-overlay"></div>
+                    <div class="icon-small">
+                        <i class="fas fa-rocket global-icon" itemprop="image"></i>
+                    </div>
+                    <h3 class="body-card-header global-card-title" itemprop="name">Implementation</h3>
+                    <p class="body-card-paragraph global-card-description" itemprop="description">Full brand package delivery and style guides</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for service definition -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Graphic Design Service Definition</h3>
+        <p itemprop="description">Strategic visual storytelling crafted to amplify your brand's unique voice</p>
+        <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Concept & Strategy">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Visual Development">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Implementation">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "OfferCatalog",
+        "name": "Graphic Design Process",
+        "description": "Our comprehensive graphic design service workflow",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "name": "Concept & Strategy",
+                "description": "Brand audits, mood boards, and creative direction",
+                "includes": ["Brand analysis", "Creative direction", "Mood board development"]
+            },
+            {
+                "@type": "Offer",
+                "name": "Visual Development", 
+                "description": "Logo design, typography systems, color palettes",
+                "includes": ["Logo design", "Typography systems", "Color palette development"]
+            },
+            {
+                "@type": "Offer",
+                "name": "Implementation",
+                "description": "Full brand package delivery and style guides", 
+                "includes": ["Brand package delivery", "Style guide creation", "Asset preparation"]
+            }
+        ]
+    }
+    </script>
+</section>

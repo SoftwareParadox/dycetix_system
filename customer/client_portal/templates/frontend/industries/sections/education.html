@@ -1,0 +1,150 @@
+<!-- industries_education.html -->
+<section id="industries-education" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Education Technology Solutions</h3>
+        <p itemprop="description">Learning management systems, virtual classrooms, educational apps, and institutional management platforms for modern education.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Education Technology">
+    </div>
+
+    <div class="tech-stack-content tech-stack-right">
+        <!-- Content on left, image on right -->
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Education</span> Technology
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Digital learning platforms, institutional management systems, and educational innovation for schools and universities.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-laptop-code feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Learning Management</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Custom LMS platforms, course delivery systems, and student progress tracking.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-video feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Virtual Classrooms</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Live streaming, interactive sessions, and collaborative online learning environments.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-user-graduate feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Student Management</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Enrollment systems, academic records, and comprehensive student information systems.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">LMS Platforms</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">E-Learning</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Virtual Classrooms</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Student Portals</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Educational Apps</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_ENHANCE_EDUCATION %}
+            </div>
+        </div>
+
+        <!-- Image on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/education.jpg" 
+                    alt="Education technology solutions including learning management and virtual classrooms"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Education Technology Solutions",
+        "description": "Digital learning platforms, institutional management systems, and educational innovation for schools and universities",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Education Technology",
+        "category": "Edtech",
+        "knowsAbout": [
+            "LMS Platforms",
+            "E-Learning",
+            "Virtual Classrooms",
+            "Student Portals",
+            "Educational Apps",
+            "Learning Management"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Learning Management",
+                "description": "Custom LMS platforms, course delivery systems, and student progress tracking"
+            },
+            {
+                "@type": "Thing",
+                "name": "Virtual Classrooms", 
+                "description": "Live streaming, interactive sessions, and collaborative online learning environments"
+            },
+            {
+                "@type": "Thing",
+                "name": "Student Management",
+                "description": "Enrollment systems, academic records, and comprehensive student information systems"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Transform Education",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

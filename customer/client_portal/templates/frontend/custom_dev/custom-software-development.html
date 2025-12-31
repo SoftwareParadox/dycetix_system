@@ -1,0 +1,68 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Custom Software Solutions | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/custom-software-development.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/case-study.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  <!-- Keep the Organization schema from base -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Custom Software Development Services",
+    "description": "Tailored software development solutions for scalable business growth. Expert in AI-driven development, cloud-native applications, and enterprise-grade systems.",
+    "url": "https://www.dycetix.com/custom-software-development",
+    "serviceType": "Custom Software Development",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dycetix"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Software Development Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Enterprise Systems"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service", 
+                    "name": "SaaS Development"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Process Automation"
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/custom_dev/sections/hero.html' %}
+    {% include 'frontend/custom_dev/sections/solutions.html' %}
+    {% include 'frontend/custom_dev/sections/why-us.html' %}
+    {% include 'frontend/custom_dev/sections/solutions-we-deliver.html' %}
+    {% include 'frontend/custom_dev/sections/case-studies.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

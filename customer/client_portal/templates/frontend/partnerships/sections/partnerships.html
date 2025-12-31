@@ -1,0 +1,74 @@
+<!-- partnership-proposal-form.html -->
+<section class="body-section form-section" id="partnership-proposal-form">
+    <div class="body-section-container">
+
+        <!-- Right Form Panel -->
+        <div class="index-quote-form-panel">
+             <form class="index-quote-quote-form" id="partnership-form" data-form-type="partnership">
+                <div class="header-content index-quote-form-header">
+                    <h2 class="body-header index-quote-quote-title">Partner With Us</h2>
+                    <p class="body-sub-header index-quote-quote-subtitle">Let's explore how we can create value together.</p>
+                </div>
+                
+                <!-- Grid layout for basic information -->
+                <div class="job-form-grid-container">
+                    <!-- Email Field -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="email" id="partnership-email" name="email" required>
+                        <label for="partnership-email">Email Address <span class="required-asterisk">*</span></label>
+                    </div>
+                    <!-- Company/Organization (Optional) -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="partnership-company" name="company">
+                        <label for="partnership-company">Company/Organization (Optional)</label>
+                    </div>
+                </div>
+                
+                <!-- Position/Job Type Selection -->
+                <div class="index-quote-form-group floating-label form-description-textarea">
+                    <textarea id="partnership-skills" name="skills" rows="4" required></textarea>
+                    <label for="partnership-skills">Your Skills/Expertise <span class="required-asterisk">*</span></label>
+                    <small class="form-help-text">Briefly describe your skills, expertise, or what you bring to the partnership.</small>
+                </div>
+                
+                <!-- Portfolio URLs Textarea -->
+                <div class="index-quote-form-group floating-label form-description-textarea">
+                    <textarea id="partnership-portfolio" name="portfolioUrls" rows="3" required></textarea>
+                    <label for="partnership-portfolio">Portfolio/Website URLs <span class="required-asterisk">*</span></label>
+                    <small class="form-help-text">Please provide links to your portfolio, company website, LinkedIn, or relevant work (one per line).</small>
+                </div>
+                
+                <!-- Proposal Details Textarea -->
+                <div class="index-quote-form-group floating-label form-description-textarea">
+                    <textarea id="partnership-proposal" name="proposalDetails" rows="4"></textarea>
+                    <label for="partnership-proposal">Partnership Proposal (Optional)</label>
+                    <small class="form-help-text">Share your vision for how we could collaborate (goals, timeline, expectations).</small>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="body-cta index-quote-submit-btn" id="partnership-submitBtn">
+                    <span>Submit Partnership Proposal</span>
+                    <div class="body-cta-hover"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JSON-LD for Partnership Opportunity -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Partnership Proposal Submission",
+        "description": "Submit a partnership proposal to collaborate with Dycetix on strategic alliances, joint ventures, or technology partnerships.",
+        "url": "https://www.dycetix.com/partnerships",
+        "mainEntity": {
+            "@type": "ContactPoint",
+            "contactType": "partnerships",
+            "email": "partnerships@dycetix.com",
+            "availableLanguage": "English",
+            "areaServed": "Worldwide"
+        }
+    }
+    </script>
+</section>

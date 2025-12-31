@@ -1,0 +1,105 @@
+<!-- box to display the web logo, search bar, and navigation bar  -->
+<div class="menu-container" id="menu-scroll">
+    <div class="menu-data">
+        <a href="{% url 'home' %}" class="logo" aria-label="Go to Dycetix Home" itemprop="url"></a>
+
+        <div class="contact-toggle-wrapper">
+            <div class="nav-toggle" id="nav-toggle" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                <i class="fa-solid fa-bars nav-burger" itemprop="name"></i>
+                <i class="fa-solid fa-x nav-close" itemprop="name"></i>
+            </div>
+        </div>
+    
+        <nav class="menu-bar" id="menu-bar-id" itemscope itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="menu-bar-list">
+                <li class="about">
+                    <a href="{% url 'about_us' %}" class="menu-list" itemprop="url">About Us</a>
+                </li>
+    
+                <li class="services">
+                    <a class="menu-list" itemprop="url">Services<i class="fas fa-chevron-down icon dropdown-arrow" itemprop="name"></i></a>
+                    <div class="services-sub-menu">
+                        <div class="submenu-group" itemscope itemtype="http://schema.org/Service">
+                            <strong itemprop="name">
+                                Software Development
+                                <i class="fa fa-plus" itemprop="name"></i>
+                            </strong>
+                            <ul class="submenu-list">
+                                <li><a href="{% url 'custom_software' %}" itemprop="url">Custom software development</a></li>
+                                <li><a href="{% url 'web_development' %}" itemprop="url">Web development</a></li>
+                                <li><a href="{% url 'mobile_development' %}" itemprop="url">Mobile development</a></li>
+                                <li><a href="{% url 'desktop_development' %}" itemprop="url">Desktop development</a></li>
+                            </ul>
+                        </div>
+                        <div class="submenu-group" itemscope itemtype="http://schema.org/Service">
+                            <strong itemprop="name">
+                                Other Services
+                                <i class="fa fa-plus" itemprop="name"></i>
+                            </strong>
+                            <ul class="submenu-list">
+                                <li><a href="{% url 'database_development' %}" itemprop="url">Database development</a></li>
+                                <li><a href="{% url 'it_maintenance' %}" itemprop="url">IT Support and Maintenance</a></li>
+                                <li><a href="{% url 'graphic_design' %}" itemprop="url">Graphic Design</a></li>
+                                <li><a href="{% url 'video_photo' %}" itemprop="url">Photography and Videography</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+    
+                <li class="technologies">
+                    <a href="{% url 'technologies' %}" class="menu-list" itemprop="url">Technologies</a>
+                </li>
+    
+                <li class="industries">
+                    <a href="{% url 'industries' %}" class="menu-list" itemprop="url">Industries</a>
+                </li>
+            
+                <li class="about">
+                    <a href="{% url 'blog' %}" class="menu-list" itemprop="url">Blog</a>
+                </li>
+            
+                <li class="button-wrapper">
+                    <div class="button-inner-wrapper">
+                        <div class="button-pulse" itemprop="potentialAction"></div>
+                        <a href="{% url 'get_in_touch' %}" class="menu-list get-in-touch" itemprop="potentialAction">Get In Touch</a>
+                    </div>
+                </li>
+
+            
+                <div class="footer-menu">
+                    <div class="footer-menu-section" itemscope itemtype="http://schema.org/ContactPoint">
+                        <h3>Contact Us</h3>
+                        <ul>
+                            <li><a href="#" itemprop="telephone"><i class="fa-solid fa-phone phone-footer"></i><span>+27 67 038 2734</span></a></li>
+                            <li><a href="#" itemprop="contactOption"><i class="fa-brands fa-whatsapp"></i><span>+27 67 038 2734</span></a></li>
+                            <li><a href="#" itemprop="email"><i class="fa-regular fa-envelope"></i><span>techsolutions@dycetix.co.za</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-menu-container">
+                    <div class="footer-menu-social">
+                        <hr class="social-menu-line-left">
+                        <div class="social-icons-nav">
+                            <a href="#" aria-label="Facebook" itemprop="sameAs"><i class="fab fa-facebook"></i></a>
+                            <a href="#" aria-label="YouTube" itemprop="sameAs"><i class="fa-brands fa-square-youtube"></i></a>
+                            <a href="#" aria-label="LinkedIn" itemprop="sameAs"><i class="fab fa-linkedin"></i></a>
+                            <a href="#" aria-label="Instagram" itemprop="sameAs"><i class="fab fa-instagram"></i></a>
+                            <a href="#" target="_blank" aria-label="Telegram" itemprop="sameAs"><i class="fa-brands fa-telegram"></i></a>
+                        </div>
+                        <hr class="social-menu-line-right">
+                    </div>
+                
+                    <div class="footer-menu-bottom">
+                        <p itemprop="copyrightNotice">© {% now "Y" %} Dycetix. All Rights Reserved.</p>
+                        <p>
+                            <a href="privacy-policy.html" itemprop="url">Privacy Policy</a> |
+                            <a href="terms-of-service.html" itemprop="url">Terms of Service</a> |
+                            <a href="cookie-policy.html" itemprop="url">Cookie Policy</a>
+                        </p>
+                    </div>
+                </div>
+            </ul>
+        </nav><!-- Navigation Bar Ends -->
+    {% include 'includes/nav/search-bar.html' %}
+    </div> <!-- menu-data ends here -->
+</div><!-- menu-container ends here -->

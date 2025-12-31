@@ -1,0 +1,149 @@
+<!-- industries_healthcare.html -->
+<section id="industries-healthcare" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Healthcare Technology Solutions</h3>
+        <p itemprop="description">Digital health platforms, telemedicine solutions, EHR systems, and healthcare data management for modern medical practices.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Healthcare Technology">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/health.jpg" 
+                    alt="Healthcare technology solutions including telemedicine and digital health platforms"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-heartbeat"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Healthcare</span> Technology
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Digital transformation for medical practices, hospitals, and healthcare providers with compliant, secure solutions.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-laptop-medical feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Telemedicine Platforms</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Secure video consultations, remote patient monitoring, and virtual healthcare delivery systems.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-file-medical feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">EHR Systems</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Electronic Health Records management with HIPAA compliance and seamless data integration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-shield-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">HIPAA Compliance</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Secure data handling, encrypted communications, and regulatory compliance for healthcare data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Telemedicine</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">EHR Systems</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">HIPAA Compliance</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Patient Portals</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Medical Billing</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_TRANSFORM_HEALTHCARE %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Healthcare Technology Solutions",
+        "description": "Digital transformation for medical practices, hospitals, and healthcare providers with compliant, secure solutions",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Healthcare Technology",
+        "category": "Healthcare IT",
+        "knowsAbout": [
+            "Telemedicine",
+            "EHR Systems",
+            "HIPAA Compliance",
+            "Patient Portals",
+            "Medical Billing",
+            "Healthcare Data Security"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Telemedicine Platforms",
+                "description": "Secure video consultations, remote patient monitoring, and virtual healthcare delivery systems"
+            },
+            {
+                "@type": "Thing",
+                "name": "EHR Systems", 
+                "description": "Electronic Health Records management with HIPAA compliance and seamless data integration"
+            },
+            {
+                "@type": "Thing",
+                "name": "HIPAA Compliance",
+                "description": "Secure data handling, encrypted communications, and regulatory compliance for healthcare data"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Transform Healthcare",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

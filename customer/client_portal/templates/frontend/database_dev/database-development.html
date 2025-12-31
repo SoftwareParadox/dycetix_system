@@ -1,0 +1,76 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Enterprise Database Solutions | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/database-development.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/case-study.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Enterprise Database Solutions",
+    "description": "Architecting robust data foundations for mission-critical operations including real-time analytics, GDPR compliance, and distributed systems.",
+    "url": "https://www.dycetix.com/database-development",
+    "serviceType": "Database Development",
+    "provider": {
+        "@type": "Organization",
+        "name": "Dycetix"
+    },
+    "areaServed": "Worldwide",
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Database Development Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Real-time Analytics"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service", 
+                    "name": "GDPR Compliance"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Distributed Systems"
+                }
+            },
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "Query Optimization"
+                }
+            }
+        ]
+    }
+}
+</script>
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/database_dev/sections/hero.html' %}
+    {% include 'frontend/database_dev/sections/service-definition.html' %}
+    {% include 'frontend/database_dev/sections/why-us.html' %}
+    {% include 'frontend/database_dev/sections/solutions.html' %}
+    {% include 'frontend/database_dev/sections/case-study.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'js/database-development.js' %}?v=1.0"></script>
+{% endblock %}

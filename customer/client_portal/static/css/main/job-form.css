@@ -1,0 +1,235 @@
+/* Grid layout for input fields */
+.form-section {
+    position: relative;
+    background: #ffffff; 
+    overflow: hidden;
+}
+
+.form-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: radial-gradient(
+        ellipse at 25% 50%, 
+        #365686 40%, 
+        #172b47 100%
+    );
+    pointer-events: none;
+}
+.index-quote-form-panel {
+    margin-top: 6rem;
+}
+.job-form-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .job-form-grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    .index-quote-form-panel {
+        padding: 0;
+    }
+}
+
+/* Position options grid layout - Fixed */
+.job-position-container {
+    margin-bottom: 30px;
+}
+
+.job-options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.job-options-grid .service-option-row {
+    display: contents; 
+}
+
+.job-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    margin: 0;
+    height: 100%;
+    min-height: 60px;
+}
+
+
+/* Hide the radio button visually but keep it accessible */
+.job-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom radio button indicator */
+.job-option::after {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 2px solid #6c757d;
+    border-radius: 50%;
+    background: white;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Checked state for custom radio */
+.job-option:has(input[type="radio"]:checked) {
+    border-color: var(--section-hero-color);
+    background: #f0f7ff;
+}
+
+.job-option:has(input[type="radio"]:checked)::after {
+    border-color: var(--section-hero-color);
+    background: var(--section-hero-color);
+    box-shadow: inset 0 0 0 4px white;
+}
+
+/* Text styling */
+.job-option .service-option-text {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    color: #495057;
+    flex-grow: 1;
+}
+
+.job-option .service-icon {
+    font-size: 18px;
+    color: #6c757d;
+    width: 24px;
+    text-align: center;
+}
+
+/* Color change when checked */
+.job-option:has(input[type="radio"]:checked) .service-option-text {
+    color: var(--section-hero-color);
+    font-weight: 600;
+}
+
+.job-option:has(input[type="radio"]:checked) .service-icon {
+    color: var(--section-hero-color);
+}
+
+/* Remove any focus outlines from the container */
+.job-option:focus,
+.job-option:focus-within {
+    outline: none;
+}
+
+/* Ensure the actual radio button doesn't show focus */
+.job-option input[type="radio"]:focus {
+    outline: none;
+}
+
+/* "Not listed" button styling */
+.job-show-other-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 12px 20px;
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    color: #495057;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+    grid-column: span 2;
+}
+
+.job-show-other-btn:hover {
+    background: #e9ecef;
+    border-color: #dee2e6;
+    color: var(--section-hero-color);
+}
+
+.job-show-other-btn i {
+    font-size: 14px;
+}
+
+/* Other position container */
+#job-other-position-container {
+    grid-column: span 2;
+    margin-top: 10px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border: 2px solid #e9ecef;
+}
+
+#job-other-position-container .service-option {
+    background: transparent;
+    border: none;
+    padding: 0 0 15px 0;
+}
+
+#job-other-position-container .floating-label {
+    margin-top: 0;
+}
+#job-other-position-container .floating-label label{
+    background: #f8f9fa;
+}
+
+.index-quote-submit-btn {
+    max-width: 300px !important;
+    margin: auto;
+}
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .job-options-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .job-show-other-btn,
+    #job-other-position-container {
+        grid-column: 1;
+    }
+    
+    .job-option {
+        padding: 14px 16px;
+        min-height: 56px;
+    }
+    
+    .job-option .service-option-text {
+        font-size: 14px;
+    }
+    
+    .job-option .service-icon {
+        font-size: 16px;
+    }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+    .job-option {
+        padding: 12px 14px;
+        min-height: 52px;
+    }
+}

@@ -1,0 +1,158 @@
+<!-- industries -->
+<section id="industries" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <div class="tech-stack-content tech-stack-right">
+        <!-- Content on left, video on right -->
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="name">
+                    <span class="tech-accent">Industry-Specific</span> Solutions
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Tailored Technology for Sector-Specific Challenges.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-hospital feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Healthcare Technology</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            HIPAA-compliant solutions for medical providers and healthcare institutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-dollar-sign feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Financial Systems</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Secure fintech solutions and regulatory compliance for financial institutions.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-store feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Retail Technology</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Smart POS systems and in-store experience optimization for retail businesses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Education</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Insurance</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Media</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Manufacturing</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Logistics</span>
+                </span>
+            </div>
+
+            <div class="index-tech-stack-cta ">
+                <a href="/industries/" class="body-cta" itemprop="url">
+                    {% if cta_text %}{{ cta_text }}{% else %}{{ CTA_LEARN_MORE }}{% endif %} <i class="fas fa-arrow-right"></i>
+                    <div class="body-cta-hover"></div>
+                </a>
+                <meta itemprop="availableChannel" content="https://schema.org/ContactPoint">
+            </div>
+        </div>
+
+        <!-- Video on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <video 
+                    autoplay
+                    loop
+                    muted
+                    playsinline
+                    class="tech-stack-image"
+                    itemprop="video"
+                    poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                >
+                    <source src="../../static/videos/industries.mp4" type="video/mp4">
+                    <img 
+                        src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                        alt="Modern factory with automation and robotics showcasing manufacturing technology"
+                        class="tech-stack-image"
+                    >
+                </video>
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Industry-Specific Solutions",
+        "description": "Tailored Technology for Sector-Specific Challenges.",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Industry Technology Solutions",
+        "category": "Business Solutions",
+        "knowsAbout": [
+            "Healthcare Technology",
+            "Financial Systems",
+            "Retail Technology",
+            "Manufacturing Solutions",
+            "Insurance Technology",
+            "Education Technology",
+            "Logistics Management",
+            "Media Solutions"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Healthcare Technology",
+                "description": "HIPAA-compliant solutions for medical providers and healthcare institutions."
+            },
+            {
+                "@type": "Thing",
+                "name": "Financial Systems",
+                "description": "Secure fintech solutions and regulatory compliance for financial institutions."
+            },
+            {
+                "@type": "Thing",
+                "name": "Retail Technology",
+                "description": "Smart POS systems and in-store experience optimization for retail businesses."
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Explore Industry Solutions",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>
+<!-- end of industries -->

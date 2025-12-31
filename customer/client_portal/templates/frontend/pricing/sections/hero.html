@@ -1,0 +1,82 @@
+<section  id="pricing-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
+    <!-- Service-Specific Hero Background -->
+    <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="name">
+                    <span>Straightforward Pricing, <span class="hero-title-part">Tailored to Your Vision</span></span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+                <p class="hero-subtitle" itemprop="description">
+                    Navigating tech costs shouldn't feel like deciphering code. At Dycetix, we believe in transparent, value-driven pricing that aligns with your business goals.
+                </p>
+            </div>
+            <!-- Service Highlights -->
+            <div class="pill-chips-container" itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">Transparent Quotes</span>
+                </div>
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">No Hidden Fees</span>
+                </div>
+                <div class="pill-chip" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <span itemprop="name">Flexible Models</span>
+                </div>
+            </div>
+            <!-- CTA Buttons -->
+            {% include 'includes/hero-cta.html' %}
+            <div class="hero-split-scroll-indicator">
+                <div class="hero-split-chevron"></div>
+                <div class="hero-split-chevron"></div>
+                <div class="hero-split-chevron"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h2 itemprop="name">Dycetix Pricing - Straightforward Pricing Tailored to Your Vision</h2>
+        <p itemprop="description">Transparent, value-driven pricing for software development, IT support, and graphic design services that aligns with your business goals.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="serviceType">Software Development Pricing</div>
+        <div itemprop="areaServed">Worldwide</div>
+        <div itemprop="audience" itemscope itemtype="https://schema.org/Audience">
+            <meta itemprop="audienceType" content="Businesses seeking technology services">
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Dycetix Pricing - Transparent Technology Service Pricing",
+        "description": "Straightforward pricing for custom software development, IT support, and graphic design services tailored to your business vision and goals.",
+        "url": "https://www.dycetix.com/pricing",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com",
+            "description": "Custom software development, IT support, and graphic design services"
+        },
+        "serviceType": ["Software Development Pricing", "IT Support Pricing", "Graphic Design Pricing"],
+        "areaServed": "Worldwide",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Businesses seeking transparent technology service pricing"
+        },
+        "keywords": ["Transparent Quotes", "No Hidden Fees", "Flexible Models", "Value-Driven Pricing"],
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "name": "Dycetix Pricing"
+        }
+    }
+    </script>
+</section>

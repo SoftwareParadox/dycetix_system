@@ -1,0 +1,223 @@
+<!-- software development section -->
+<section id="software-development-services" class="body-section software-development-services" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container software-development-services-container">
+        <span class="s-section-badge software-dev-sol">Our Software Solutions</span>
+        <div class="header-content software-development-description-container">
+            <h2 class="body-header software-development-description-header" itemprop="name">
+                Dycetix Custom Software Development Solutions
+            </h2>
+            <p class="body-sub-header software-development-description-paragraph" itemprop="description">
+                At Dycetix, we specialize in crafting custom software that solves real business challenges. 
+                Our full-cycle development process combines cutting-edge technologies with industry expertise 
+                to deliver scalable solutions that grow with your needs.
+            </p>
+            <meta itemprop="serviceType" content="Software Development">
+            <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+                <meta itemprop="name" content="Dycetix">
+            </div>
+            <div itemprop="areaServed" itemscope itemtype="https://schema.org/Place">
+                <meta itemprop="name" content="Worldwide">
+            </div>            
+        </div>
+        
+        <div class="software-development-carousel-container" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <meta itemprop="name" content="Software Development Services">
+            
+            <!-- First batch of carousel items -->
+            <div class="software-development-carousel">
+                <a href="{% url 'custom_software' %}" class="software-development-carousel-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="icon-small">
+                        <i class="fas fa-code fa-3x" aria-hidden="true" itemprop="image"></i>
+                    </div>
+                    <p class="body-card-paragraph" itemprop="name">Custom software development</p>
+                    <meta itemprop="category" content="Software Development">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <meta itemprop="name" content="Custom Software Development">
+                        <meta itemprop="serviceType" content="Software Development">
+                    </div>
+                </a>
+                
+                <a href="{% url 'web_development' %}" class="software-development-carousel-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="icon-small">
+                        <i class="fas fa-laptop-code fa-3x" aria-hidden="true" itemprop="image"></i>
+                    </div>
+                    <p class="body-card-paragraph" itemprop="name">Web development</p>
+                    <meta itemprop="category" content="Web Development">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <meta itemprop="name" content="Web Development">
+                        <meta itemprop="serviceType" content="Web Development">
+                    </div>
+                </a>
+                
+                <a href="{% url 'mobile_development' %}" class="software-development-carousel-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="icon-small">
+                        <i class="fas fa-mobile-alt fa-3x" aria-hidden="true" itemprop="image"></i>
+                    </div>
+                    <p class="body-card-paragraph" itemprop="name">Mobile development</p>
+                    <meta itemprop="category" content="Mobile Development">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <meta itemprop="name" content="Mobile Development">
+                        <meta itemprop="serviceType" content="Mobile Development">
+                    </div>
+                </a>
+                
+                <a href="{% url 'desktop_development' %}" class="software-development-carousel-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="icon-small">
+                        <i class="fas fa-desktop fa-3x" aria-hidden="true" itemprop="image"></i>
+                    </div>
+                    <p class="body-card-paragraph" itemprop="name">Desktop development</p>
+                    <meta itemprop="category" content="Desktop Development">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <meta itemprop="name" content="Desktop Development">
+                        <meta itemprop="serviceType" content="Desktop Development">
+                    </div>
+                </a>
+                
+                <a href="{% url 'database_development' %}" class="software-development-carousel-item" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                    <div class="icon-small">
+                        <i class="fas fa-database fa-3x" aria-hidden="true" itemprop="image"></i>
+                    </div>
+                    <p class="body-card-paragraph" itemprop="name">Database development</p>
+                    <meta itemprop="category" content="Database Development">
+                    <div itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                        <meta itemprop="name" content="Database Development">
+                        <meta itemprop="serviceType" content="Database Development">
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Duplicate carousel items for infinite scroll (no SEO markup to avoid duplication) -->
+            <div class="software-development-carousel" aria-hidden="true">
+                <a href="{% url 'custom_software' %}" class="software-development-carousel-item">
+                    <div class="icon-small">
+                        <i class="fas fa-code fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <p class="body-card-paragraph">Custom software development</p>
+                </a>
+                <a href="{% url 'web_development' %}" class="software-development-carousel-item">
+                    <div class="icon-small">
+                        <i class="fas fa-laptop-code fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <p class="body-card-paragraph">Web development</p>
+                </a>
+                <a href="{% url 'mobile_development' %}" class="software-development-carousel-item">
+                    <div class="icon-small">
+                        <i class="fas fa-mobile-alt fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <p class="body-card-paragraph">Mobile development</p>
+                </a>
+                <a href="{% url 'desktop_development' %}" class="software-development-carousel-item">
+                    <div class="icon-small">
+                        <i class="fas fa-desktop fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <p class="body-card-paragraph">Desktop development</p>
+                </a>
+                <a href="{% url 'database_development' %}" class="software-development-carousel-item">
+                    <div class="icon-small">
+                        <i class="fas fa-database fa-3x" aria-hidden="true"></i>
+                    </div>
+                    <p class="body-card-paragraph">Database development</p>
+                </a>
+            </div>
+        </div>
+        
+        <div class="software-development-cta">
+            <p class="body-paragraph">
+                You want to build the perfect solution for your business? Our team is ready to help you create innovative software tailored to your needs. 
+                {% include 'includes/no-wrap-cta.html' with cta_text=GET_IN_TOUCH_CTA %}&nbsp; to start your journey with a free consultation.
+            </p>
+            <meta itemprop="availableChannel" content="https://schema.org/ContactPoint">
+        </div>
+    </div>
+    
+    <!-- Additional JSON-LD for the service catalog -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Dycetix Custom Software Development Solutions",
+        "description": "Professional custom software development services including web, mobile, desktop, and cloud applications tailored to business needs.",
+        "serviceType": "Software Development",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com"
+        },
+        "areaServed": {
+            "@type": "Country",
+            "name": "Worldwide"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Software Development Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Software Development",
+                        "description": "Tailored software solutions for unique business requirements"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Web Development",
+                        "description": "Responsive web applications and websites"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Mobile Development", 
+                        "description": "iOS and Android mobile applications"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Desktop Development",
+                        "description": "Windows and macOS desktop applications"
+                    }
+                },
+                {
+                    "@type": "Offer", 
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Database Development",
+                        "description": "Database design, optimization and management"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Cloud Development",
+                        "description": "Cloud-based applications and infrastructure"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "API Development",
+                        "description": "Custom API solutions and integration services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service", 
+                        "name": "Software Testing",
+                        "description": "Quality assurance and software testing services"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
+</section>
+<!-- end of software development services -->

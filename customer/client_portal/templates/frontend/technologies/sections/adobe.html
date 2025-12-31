@@ -1,0 +1,152 @@
+<!-- technologies_adobe.html -->
+<section id="technologies-adobe" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
+    <!-- Hidden structured data for microdata -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Adobe Creative Solutions</h3>
+        <p itemprop="description">Professional graphic design, video editing, and digital media solutions using Adobe Creative Cloud applications.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <meta itemprop="serviceType" content="Graphic Design">
+    </div>
+
+    <div class="tech-stack-content">
+        <!-- Image on left, content on right -->
+        <div class="tech-stack-image-container">
+            <div class="tech-stack-image-wrapper">
+                <img 
+                    src="../../static/images/main/adobe.jpg" 
+                    alt="Adobe Creative Cloud solutions for graphic design, video editing and digital media"
+                    class="tech-stack-image"
+                    itemprop="image"
+                    loading="lazy"
+                >
+                <div class="tech-stack-image-overlay"></div>
+            </div>
+        </div>
+
+        <div class="tech-stack-description">
+            <div class="tech-stack-header">
+                <div class="icon-medium">
+                    <i class="fa-solid fa-palette"></i>
+                </div>
+                <h2 class="body-header tech-stack-title" itemprop="headline">
+                    <span class="tech-accent">Adobe</span> Creative Excellence
+                </h2>
+            </div>
+            
+            <p class="body-sub-header tech-stack-subtitle" itemprop="description">
+                Professional design, video production, and digital media solutions with Adobe Creative Cloud suite.
+            </p>
+
+            <div class="tech-stack-features" itemprop="featureList" itemscope itemtype="https://schema.org/ItemList">
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-paint-brush feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Graphic Design</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Brand identity, marketing materials, and visual content creation with Photoshop, Illustrator, and InDesign.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-film feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">Video Production</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            Professional video editing, motion graphics, and visual effects with Premiere Pro and After Effects.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="tech-feature" itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
+                    <div class="icon-small">
+                        <i class="fas fa-pencil-alt feature-icon" itemprop="image"></i>
+                    </div>
+                    <div class="feature-content">
+                        <h4 class="body-card-header global-card-title" itemprop="name">UI/UX Design</h4>
+                        <p class="body-card-paragraph global-card-description" itemprop="description">
+                            User interface design, prototyping, and user experience optimization with Adobe XD and Figma integration.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="technologies-stack" itemprop="additionalProperty" itemscope itemtype="https://schema.org/ItemList">
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Photoshop</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Illustrator</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Premiere Pro</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">After Effects</span>
+                </span>
+                <span class="technologies-pill" itemprop="itemListElement" itemscope itemtype="https://schema.org/PropertyValue">
+                    <span itemprop="name">Adobe XD</span>
+                </span>
+            </div>
+
+            <div class="tech-stack-cta">
+                {% include 'includes/body-cta.html' with cta_text=CTA_START_CREATIVE_PROJECT %}
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Adobe Creative Excellence",
+        "description": "Professional design, video production, and digital media solutions with Adobe Creative Cloud suite",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "Graphic Design",
+        "category": "Creative Services",
+        "knowsAbout": [
+            "Photoshop",
+            "Illustrator",
+            "Premiere Pro",
+            "After Effects",
+            "Adobe XD",
+            "InDesign",
+            "Graphic Design",
+            "Video Editing",
+            "UI/UX Design"
+        ],
+        "featureList": [
+            {
+                "@type": "Thing",
+                "name": "Graphic Design",
+                "description": "Brand identity, marketing materials, and visual content creation with Photoshop, Illustrator, and InDesign"
+            },
+            {
+                "@type": "Thing",
+                "name": "Video Production", 
+                "description": "Professional video editing, motion graphics, and visual effects with Premiere Pro and After Effects"
+            },
+            {
+                "@type": "Thing",
+                "name": "UI/UX Design",
+                "description": "User interface design, prototyping, and user experience optimization with Adobe XD and Figma integration"
+            }
+        ],
+        "potentialAction": {
+            "@type": "Action",
+            "name": "Start Creative Project",
+            "url": "https://www.dycetix.com#contact"
+        }
+    }
+    </script>
+</section>

@@ -1,0 +1,169 @@
+<!-- frontend/it_maintenance/sections/hero.html -->
+<section id="it-support-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service" aria-label="Reliable IT Support Solutions">
+    <div class="hero-background" role="img" aria-label="IT support team monitoring network systems">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+    
+    <div class="hero-content-container">
+        <!-- Left Content Column -->
+        <div class="hero-split-content-container">
+            <div class="hero-content hero-split-content">
+                <div class="text-container">
+                    <h1 class="hero-title" itemprop="name">
+                        <span class="hero-title-part">Smarter Systems,</span>
+                        <span>Stress-Free Operations</span>
+                        <span class="hero-title-underline"></span>
+                    </h1>
+                    
+                    <p class="hero-subtitle" itemprop="description">
+                        Proactive maintenance and responsive support that grows<br>
+                        with your business - sleep better knowing your tech works
+                    </p> 
+                </div>
+                <!-- Solutions Grid -->
+                <div class="hero-mockups">
+                    <div class="it-hero-content-grid">
+                        <div class="hero-mockup it-hero-content-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="it-hero-content-icon">
+                                <i class="fas fa-shield-alt fa-2x" aria-hidden="true" itemprop="image"></i>
+                            </div>
+                            <div class="it-hero-content">
+                                <h2 itemprop="name">Preventative Care</h2>
+                                <ul class="it-hero-content-service-list">
+                                    <li><i class="fas fa-check-circle"></i>24/7 System Monitoring</li>
+                                    <li><i class="fas fa-check-circle"></i>Security Patch Management</li>
+                                    <li><i class="fas fa-check-circle"></i>Performance Optimization</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="hero-mockup it-hero-content-card" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+                            <div class="it-hero-content-icon">
+                                <i class="fas fa-tools fa-2x" aria-hidden="true" itemprop="image"></i>
+                            </div>
+                            <div class="it-hero-content">
+                                <h2 itemprop="name">Emergency Support</h2>
+                                <ul class="it-hero-content-service-list">
+                                    <li><i class="fas fa-check-circle"></i>Emergency Troubleshooting</li>
+                                    <li><i class="fas fa-check-circle"></i>Hardware/Software Support</li>
+                                    <li><i class="fas fa-check-circle"></i>Data Recovery Assistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Visual Column -->
+        <div class="hero-mockup-container">
+            <div class="hero-mockups">
+                <div class="it-hero-value-visual">
+                    <!-- Process Highlights -->
+                    <div class="it-hero-process-highlight">
+                        <div class="it-hero-process-step">
+                            <div class="hero-process-step">
+                                <div class="it-hero-step-icon">
+                                    <i class="fas fa-headset fa-2x"></i>
+                                </div>
+                                <div class="it-hero-step-text">
+                                    <h3>Always Available</h3>
+                                    <p>Day/Night Support Coverage</p>
+                                </div>
+                            </div>
+                            <div class="hero-process-step">
+                                <div class="it-hero-step-icon">
+                                    <i class="fas fa-user-cog fa-2x"></i>
+                                </div>
+                                <div class="it-hero-step-text">
+                                    <h3>Tailored Solutions</h3>
+                                    <p>Customized to Your Stack</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% include 'includes/hero-cta.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">IT Support & Maintenance Services</h3>
+        <p itemprop="description">Proactive maintenance and responsive support with 24/7 monitoring and preventive care.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+        </div>
+        <div itemprop="serviceType">IT Support & Maintenance</div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "IT Support & Maintenance Services",
+        "description": "Proactive maintenance and responsive support that grows with your business",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix"
+        },
+        "serviceType": "IT Support & Maintenance",
+        "hasOfferCatalog": [
+            {
+                "@type": "OfferCatalog",
+                "name": "Preventative Care Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "name": "24/7 System Monitoring"
+                    },
+                    {
+                        "@type": "Offer", 
+                        "name": "Security Patch Management"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Performance Optimization"
+                    }
+                ]
+            },
+            {
+                "@type": "OfferCatalog", 
+                "name": "Emergency Support Services",
+                "itemListElement": [
+                    {
+                        "@type": "Offer",
+                        "name": "Emergency Troubleshooting"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Hardware/Software Support"
+                    },
+                    {
+                        "@type": "Offer",
+                        "name": "Data Recovery Assistance"
+                    }
+                ]
+            }
+        ],
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact"
+            },
+            {
+                "@type": "Action", 
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

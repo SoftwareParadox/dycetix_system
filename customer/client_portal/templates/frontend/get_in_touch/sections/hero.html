@@ -1,0 +1,91 @@
+<!-- frontend/contact/sections/hero.html -->
+<section id="get-in-touch-hero"class="hero-section" itemscope itemtype="https://schema.org/ContactPage">
+    <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
+        <div class="hero-gradient-overlay"></div>
+    </div>
+
+    <!-- Structured Data for SEO -->
+    <div class="visually-hidden" itemprop="mainEntity" itemscope itemtype="https://schema.org/Organization">
+        <h2 itemprop="name">Dycetix Tech Solutions</h2>
+        <meta itemprop="url" content="https://www.dycetix.com">
+        <p itemprop="description">Dycetix provides custom technology solutions including software development, IT support, and graphic design services to help businesses thrive in the digital age.</p>
+        <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="name" content="Custom Software Development">
+            <meta itemprop="category" content="Technology Solutions">
+        </div>
+        <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="name" content="24/7 IT Support">
+            <meta itemprop="category" content="Technical Maintenance">
+        </div>
+        <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="name" content="Impactful Graphic Design">
+            <meta itemprop="category" content="Creative Services">
+        </div>
+    </div>
+    
+    <div class="hero-content-container">
+        <div class="hero-content">
+            <div class="text-container">
+                <h1 class="hero-title" itemprop="headline">
+                    Let's Build 
+                    <span class="hero-title-part" itemprop="knowsAbout">Your Technology Future</span>
+                    <span class="hero-title-underline"></span>
+                </h1>
+            </div>
+
+            <div class="pill-chips-container">
+                <span class="pill-chip" itemprop="serviceType">
+                    100% Confidential Consultation
+                </span>
+                <span class="pill-chip" itemprop="serviceType">
+                    24h Response Time
+                </span>
+            </div>
+
+            {% include 'includes/hero-cta.html' %}
+        </div>
+
+        <div class="hero-split-scroll-indicator">
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+            <div class="hero-split-chevron"></div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for hero section -->
+    <div itemscope itemtype="https://schema.org/ContactPage" style="display: none;">
+        <h3 itemprop="headline">Let's Build Your Technology Future</h3>
+        <p itemprop="description">Start your technology project with Dycetix - custom software development, IT support, and graphic design services.</p>
+        <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "headline": "Let's Build Your Technology Future",
+        "description": "Start your technology project with a free consultation from Dycetix",
+        "mainEntity": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "description": "Custom technology solutions including software development, IT support, and graphic design services"
+        },
+        "serviceType": ["100% Confidential Consultation", "24h Response Time"],
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "name": "Schedule Free Consultation",
+                "url": "https://www.dycetix.com#contact-form"
+            },
+            {
+                "@type": "Action", 
+                "name": "Estimate Project Cost",
+                "url": "https://www.dycetix.com#pricing"
+            }
+        ]
+    }
+    </script>
+</section>

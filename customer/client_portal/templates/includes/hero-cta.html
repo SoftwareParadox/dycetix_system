@@ -1,0 +1,10 @@
+<div class="hero-cta-btn-container">
+    <a href="/get-in-touch/#project-quote-form" class="hero-cta-btn primary form-trigger" itemprop="potentialAction" itemscope itemtype="http://schema.org/CommunicateAction">
+        <span itemprop="name">{% if cta_text %}{{ cta_text }}{% else %}{{ HERO_CTA_SCHEDULE }}{% endif %}</span> →
+        <div class="hero-cta-btn-hover-fill"></div>
+    </a>
+    <a href="{% url 'pricing' %}" class="hero-cta-btn secondary" itemprop="potentialAction" itemscope itemtype="http://schema.org/GetEstimateAction">
+        <span itemprop="name">{% if cta_text %}{{ cta_text }}{% else %}{{ HERO_CTA_ESTIMATE }}{% endif %}</span>↗
+        <div class="hero-cta-btn-hover-fill"></div>
+    </a>
+</div>

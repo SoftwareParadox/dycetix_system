@@ -1,0 +1,21 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block title %}Cookie Policy | Dycetix Technology Solutions{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/cookie-policy.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/main/accessibility.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    {% include 'frontend/cookie_policy/sections/hero.html' %}
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

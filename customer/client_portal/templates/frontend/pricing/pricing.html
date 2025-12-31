@@ -1,0 +1,121 @@
+{% extends 'includes/base.html' %}
+{% load static %} 
+
+{% block page_name %}pricing{% endblock %}
+
+{% block title %}Transparent Pricing | Dycetix Technology Solutions{% endblock %}
+
+{% block meta_description %}
+Comprehensive pricing for custom software development, web development, mobile apps, IT support, graphic design, and photography services. Transparent, predictable costs for all your technology needs.
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/main/pricing.css' %}?v=1.0">
+<link rel="stylesheet" href="{% static 'css/form/form.css' %}?v=1.0">
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Service Pricing - Dycetix Technology Solutions",
+    "description": "Transparent pricing for custom software development, web development, mobile apps, IT support, graphic design, and photography services",
+    "url": "https://www.dycetix.com/pricing",
+    "mainEntity": {
+        "@type": "ItemList",
+        "numberOfItems": 9,
+        "itemListElement": [
+            {
+                "@type": "Service",
+                "name": "Custom Software Development",
+                "description": "Enterprise-grade custom software solutions for businesses",
+                "url": "https://www.dycetix.com/pricing#custom-software"
+            },
+            {
+                "@type": "Service", 
+                "name": "Web Development",
+                "description": "Responsive websites, e-commerce solutions, and web applications",
+                "url": "https://www.dycetix.com/pricing#web-development"
+            },
+            {
+                "@type": "Service",
+                "name": "Mobile App Development", 
+                "description": "Native and cross-platform mobile applications",
+                "url": "https://www.dycetix.com/pricing#mobile-development"
+            },
+            {
+                "@type": "Service",
+                "name": "Desktop Application Development",
+                "description": "Windows desktop applications and business software",
+                "url": "https://www.dycetix.com/pricing#desktop-development"
+            },
+            {
+                "@type": "Service",
+                "name": "Database Development",
+                "description": "Custom database solutions and data management systems",
+                "url": "https://www.dycetix.com/pricing#database-development"
+            },
+            {
+                "@type": "Service",
+                "name": "IT Support & Maintenance", 
+                "description": "Ongoing technical support and system maintenance",
+                "url": "https://www.dycetix.com/pricing#it-support"
+            },
+            {
+                "@type": "Service",
+                "name": "Graphic Design",
+                "description": "Brand identity, marketing materials, and digital assets",
+                "url": "https://www.dycetix.com/pricing#graphic-design"
+            },
+            {
+                "@type": "Service", 
+                "name": "Photography & Videography",
+                "description": "Professional photography and video production services",
+                "url": "https://www.dycetix.com/pricing#photography-videography"
+            }
+        ]
+    },
+    "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://www.dycetix.com"
+            },
+            {
+                "@type": "ListItem", 
+                "position": 2,
+                "name": "Pricing",
+                "item": "https://www.dycetix.com/pricing"
+            }
+        ]
+    }
+}
+</script>
+{{ block.super }}  
+{% endblock %}
+
+{% block content %}
+    <!-- Hero Section -->
+    {% include 'frontend/pricing/sections/hero.html' %}
+    
+        {% include 'frontend/pricing/sections/custom-dev-pricing.html' %}
+        {% include 'frontend/pricing/sections/web-dev-pricing.html' %}
+        {% include 'frontend/pricing/sections/mobile-dev-pricing.html' %}
+        {% include 'frontend/pricing/sections/desktop-dev-pricing.html' %}
+        {% include 'frontend/pricing/sections/database-dev-pricing.html' %}
+        {% include 'frontend/pricing/sections/it-support-maintenance-pricing.html' %}
+        {% include 'frontend/pricing/sections/graphic-design-pricing.html' %}
+        {% include 'frontend/pricing/sections/video-photo-pricing.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <!-- Production Currency Converter -->
+    <script src="{% static 'js/currency-converter.js' %}?v=1.0"></script>
+    
+    <!-- Optional: Remove debug script for production -->
+    <!-- <script src="{% static 'js/debug-pricing.js' %}?v=1.0"></script> -->
+{% endblock %}

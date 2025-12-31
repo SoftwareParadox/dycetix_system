@@ -1,0 +1,183 @@
+<!-- about_innovative_solutions.html -->
+<section id="about-us-solutions" class="body-section" itemscope itemtype="https://schema.org/Service">
+    <div class="body-section-container solutions-container">
+        <div class="header-content solutions-section-intro">
+            <h2 class="body-header solutions-section-heading" itemprop="name">Turning <span class="solutions-accent">Tech Challenges</span> into Strategic Advantages</h2>
+            <p class="body-sub-header solutions-section-subhead" itemprop="description">Precision-engineered solutions for digital transformation</p>
+        </div>
+        
+        <!-- CTA lead to the pages of each services -->
+        <div class="larger-global-grid solutions-grid" itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <!-- Software Development Card -->
+            <div class="larger-global-card solution-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <div class="index-card-overlay"></div>
+                <div class="icon-medium">
+                    <i class="fas fa-code fa-2x" itemprop="image"></i>
+                </div>
+                <h3 class="body-card-header larger-global-card-title solution-title" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                    <span itemprop="name">Agile Software Development</span>
+                </h3>
+                <p class="body-card-paragraph larger-global-card-desc solution-description" itemprop="description">
+                    Struggling with slow development cycles? Our Agile approach speeds up deployment and keeps you ahead of competitors.
+                </p>
+                <a href="{% url 'software_dev_services' %}" class="solution-cta" itemprop="url">
+                    Explore Dev Solutions
+                    <i class="fas fa-arrow-right solutions-cta-arrow"></i>
+                </a>
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <div itemprop="businessFunction" itemscope itemtype="https://schema.org/BusinessFunction">
+                    <meta itemprop="name" content="Software Development">
+                </div>
+            </div>
+
+            <!-- IT Support Card -->
+            <div class="larger-global-card solution-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <div class="index-card-overlay"></div>
+                <div class="icon-medium">
+                    <i class="fas fa-shield-alt fa-2x" itemprop="image"></i>
+                </div>
+                <h3 class="body-card-header larger-global-card-title solution-title" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                    <span itemprop="name">Proactive IT Support</span>
+                </h3>
+                <p class="body-card-paragraph larger-global-card-desc solution-description" itemprop="description">
+                    Our 24/7 monitoring and proactive maintenance prevent issues before they happen—minimizing downtime and preventing costly disruptions.
+                </p>
+                <a href="{% url 'it_maintenance' %}" class="solution-cta" itemprop="url">
+                    Discover IT Solutions
+                    <i class="fas fa-arrow-right solutions-cta-arrow"></i>
+                </a>
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <div itemprop="businessFunction" itemscope itemtype="https://schema.org/BusinessFunction">
+                    <meta itemprop="name" content="IT Support">
+                </div>
+            </div>
+
+            <!-- Graphic Design Card -->
+            <div class="larger-global-card solution-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <div class="index-card-overlay"></div>
+                <div class="icon-medium">
+                    <i class="fas fa-palette fa-2x" itemprop="image"></i>
+                </div>
+                <h3 class="body-card-header larger-global-card-title solution-title" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                    <span itemprop="name">Strategic Design Solutions</span>
+                </h3>
+                <p class="body-card-paragraph larger-global-card-desc solution-description" itemprop="description">
+                    Conversion-focused designs that are crafted to increase user engagement through strategic storytelling.
+                </p>
+                <a href="{% url 'graphic_design' %}" class="solution-cta" itemprop="url">
+                    View Design Packages
+                    <i class="fas fa-arrow-right solutions-cta-arrow"></i>
+                </a>
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <div itemprop="businessFunction" itemscope itemtype="https://schema.org/BusinessFunction">
+                    <meta itemprop="name" content="Graphic Design">
+                </div>
+            </div>
+
+            <!-- Photography and videography -->
+            <div class="larger-global-card solution-card" itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <div class="index-card-overlay"></div>
+                <div class="icon-medium">
+                    <i class="fas fa-photo-video fa-2x" itemprop="image"></i>
+                </div>
+                <h3 class="body-card-header larger-global-card-title solution-title" itemprop="itemOffered" itemscope itemtype="https://schema.org/Service">
+                    <span itemprop="name">Photography & Videography</span>
+                </h3>
+                <p class="body-card-paragraph larger-global-card-desc solution-description" itemprop="description">
+                    Complete visual storytelling through professional photography and cinematic videography for brands and businesses.
+                </p>
+                <a href="{% url 'video_photo' %}" class="solution-cta" itemprop="url">
+                    View Visual Packages
+                    <i class="fas fa-arrow-right solutions-cta-arrow"></i>
+                </a>
+                <meta itemprop="availability" content="https://schema.org/InStock">
+                <div itemprop="businessFunction" itemscope itemtype="https://schema.org/BusinessFunction">
+                    <meta itemprop="name" content="Photography & Videography Services">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden structured data for services section -->
+    <div itemscope itemtype="https://schema.org/Service" style="display: none;">
+        <h3 itemprop="name">Dycetix Innovative Solutions</h3>
+        <p itemprop="description">Turning tech challenges into strategic advantages through precision-engineered solutions.</p>
+        <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
+            <meta itemprop="name" content="Dycetix">
+            <meta itemprop="url" content="https://www.dycetix.com">
+        </div>
+        <div itemprop="hasOfferCatalog" itemscope itemtype="https://schema.org/OfferCatalog">
+            <meta itemprop="name" content="Technology Services">
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Agile Software Development">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Proactive IT Support">
+            </div>
+            <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Offer">
+                <meta itemprop="name" content="Strategic Design Solutions">
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Dycetix Technology Solutions",
+        "description": "Turning tech challenges into strategic advantages through precision-engineered solutions for digital transformation",
+        "provider": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "url": "https://www.dycetix.com"
+        },
+        "serviceType": "Technology Solutions",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Our Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Agile Software Development",
+                        "description": "Struggling with slow development cycles? Our Agile approach speeds up deployment and keeps you ahead of competitors.",
+                        "url": "https://www.dycetix.com/software-development"
+                    },
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Proactive IT Support",
+                        "description": "Our 24/7 monitoring and proactive maintenance prevent issues before they happen—minimizing downtime and preventing costly disruptions.",
+                        "url": "https://www.dycetix.com/it-support"
+                    },
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Photography & Videography",
+                        "description": "Complete visual storytelling through professional photography and cinematic videography for brands and businesses.",
+                        "url": "https://www.dycetix.com/graphic-design"
+                    },
+                    "availability": "https://schema.org/InStock"
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Strategic Design Solutions",
+                        "description": "Conversion-focused designs that are crafted to increase user engagement through strategic storytelling.",
+                        "url": "https://www.dycetix.com/graphic-design"
+                    },
+                    "availability": "https://schema.org/InStock"
+                }
+            ]
+        }
+    }
+    </script>
+</section>

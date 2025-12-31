@@ -1,0 +1,190 @@
+<!-- job-application-form.html -->
+<section class="body-section form-section" id="job-application-form">
+    <div class="body-section-container">
+
+        <!-- Right Form Panel -->
+        <div class="index-quote-form-panel">
+            <form class="index-quote-quote-form" id="job-form" data-form-type="job">
+                <div class="header-content index-quote-form-header">
+                    <h2 class="body-header index-quote-quote-title">Apply for Your Dream Role</h2>
+                    <p class="body-sub-header index-quote-quote-subtitle">We're excited to learn more about you and your potential.</p>
+                </div>
+                
+                <!-- Grid layout for basic information -->
+                <div class="job-form-grid-container">
+                    <!-- Floating Label Form Groups with job- prefix -->
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="job-firstName" name="firstName" required>
+                        <label for="job-firstName">First Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <div class="index-quote-form-group floating-label">
+                        <input type="text" id="job-lastName" name="lastName" required>
+                        <label for="job-lastName">Last Name <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <div class="index-quote-form-group floating-label">
+                        <input type="email" id="job-email" name="email" required>
+                        <label for="job-email">Email Address <span class="required-asterisk">*</span></label>
+                    </div>
+                    
+                    <!-- Phone Input with job- prefix -->
+                    <div class="index-quote-form-group floating-label phone-input-wrapper">
+                        <input type="tel" 
+                            id="job-phone" 
+                            name="phone" 
+                            required 
+                            placeholder=" "
+                            autocomplete="tel">
+                        <label for="job-phone">Phone Number <span class="required-asterisk">*</span></label>
+                    </div>
+                </div>
+                
+                <!-- Position/Job Type Selection -->
+                <div class="index-quote-form-group job-position-container">
+                    <label class="service-label">Position You're Applying For <span class="required-asterisk">*</span></label>
+                    <div class="service-options-container job-options-grid">
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-code service-icon"></i>
+                                    Frontend Developer
+                                </span>
+                                <input type="radio" name="position" value="frontend" id="job-position-frontend" required>
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-server service-icon"></i>
+                                    Backend Developer
+                                </span>
+                                <input type="radio" name="position" value="backend" id="job-position-backend">
+                            </label>
+                        </div>
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-layer-group service-icon"></i>
+                                    Full Stack Developer
+                                </span>
+                                <input type="radio" name="position" value="fullstack" id="job-position-fullstack">
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-paint-brush service-icon"></i>
+                                    UI/UX Designer
+                                </span>
+                                <input type="radio" name="position" value="uiux" id="job-position-uiux">
+                            </label>
+                        </div>
+                        <div class="service-option-row">
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-cloud service-icon"></i>
+                                    DevOps Engineer
+                                </span>
+                                <input type="radio" name="position" value="devops" id="job-position-devops">
+                            </label>
+                            <label class="service-option job-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-bug service-icon"></i>
+                                    QA Engineer
+                                </span>
+                                <input type="radio" name="position" value="qa" id="job-position-qa">
+                            </label>
+                        </div>
+                        <!-- Other Option with Text Input -->
+                        <div class="service-option other-option" id="job-other-position-container" style="display: none;">
+                            <label class="service-option">
+                                <span class="service-option-text">
+                                    <i class="fas fa-ellipsis-h service-icon"></i>
+                                    Other Position
+                                </span>
+                                <input type="radio" name="position" value="other" id="job-position-other">
+                            </label>
+                            <div class="index-quote-form-group floating-label" style="margin-top: 10px;">
+                                <input type="text" id="job-other-position-input" name="otherPosition" placeholder="Specify position">
+                                <label for="job-other-position-input">Specify Position</label>
+                            </div>
+                        </div>
+                        <button type="button" id="job-show-other" class="job-show-other-btn">
+                            <i class="fas fa-plus"></i> Not listed? Specify another position
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Resume File Upload (Job Specific) -->
+                <div class="index-quote-form-group">
+                    <div class="index-quote-upload-header">
+                        <span>Resume Upload <span class="required-asterisk">*</span></span>
+                        <div class="index-quote-tooltip">Upload your resume (required)</div>
+                    </div>
+                    <div class="index-quote-file-upload-container">
+                        <input type="file" id="job-fileUpload" hidden 
+                            accept=".pdf,.doc,.docx,.txt">
+                        <label for="job-fileUpload" class="index-quote-upload-box">
+                            <div class="icon-tooltip-wrapper">
+                                <i class="fa-solid fa-cloud-arrow-up"></i>
+                                <span class="index-quote-tooltip">Add resume</span>
+                            </div>
+                            <span class="index-quote-upload-text">
+                                <span class="index-quote-drag-text">Drag & drop your resume or</span>
+                                <span class="index-quote-browse-text">Click to browse</span>
+                            </span>
+                            <span class="index-quote-file-types">PDF, DOC, DOCX, TXT (max 10MB)</span>
+                            <small class="upload-instruction">Only one resume file allowed</small>
+                        </label>
+                        <div class="index-quote-upload-preview" id="job-uploadPreview">
+                            <div class="no-files">No file selected</div>
+                        </div>
+                        <div class="upload-stats">
+                            <span class="file-count">File: <span id="job-fileCount">0</span>/1</span>
+                            <span class="total-size">Size: <span id="job-totalSize">0 MB</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="body-cta index-quote-submit-btn" id="job-submitBtn">
+                    <span>Submit Application</span>
+                    <div class="body-cta-hover"></div>
+                </button>
+            </form>
+        </div>
+    </div>
+    <!-- JSON-LD for Job Posting -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "JobPosting",
+        "title": "Multiple Positions Available",
+        "description": "Join our team of talented professionals. We're hiring for various positions including Frontend Developer, Backend Developer, Full Stack Developer, UI/UX Designer, DevOps Engineer, and QA Engineer.",
+        "hiringOrganization": {
+            "@type": "Organization",
+            "name": "Dycetix",
+            "sameAs": "https://www.dycetix.com"
+        },
+        "employmentType": "FULL_TIME",
+        "datePosted": "2024-01-01",
+        "validThrough": "2024-12-31",
+        "jobLocation": {
+            "@type": "Place",
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Remote",
+                "addressRegion": "Global",
+                "addressCountry": "Worldwide"
+            }
+        },
+        "baseSalary": {
+            "@type": "MonetaryAmount",
+            "currency": "USD",
+            "value": {
+                "@type": "QuantitativeValue",
+                "minValue": 60000,
+                "maxValue": 150000,
+                "unitText": "YEAR"
+            }
+        }
+    }
+    </script>
+</section>
