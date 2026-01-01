@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: dycetix_db
+      POSTGRES_USER: dycetix
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  admin:
+    build: .
+    command: >
+      sh -c "python admin/manage.py migrate &&
+             python admin/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - ./admin:/app/admin
+    depends_on:
+      - postgres
+    ports:
+      - "8000:8000"
+
+volumes:
+  postgres_data:

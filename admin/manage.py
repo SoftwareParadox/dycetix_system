@@ -9,11 +9,11 @@ from pathlib import Path
 # Add parent directory to Python path
 current_dir = Path(__file__).resolve().parent
 parent_dir = current_dir.parent
-sys.path.insert(0, str(parent_dir))
+sys.path.insert(0, os.path.abspath('.'))
 
 def main():
     """Run administrative tasks."""
-    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'admin.config.settings')
+    os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
