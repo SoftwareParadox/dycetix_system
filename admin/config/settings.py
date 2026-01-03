@@ -10,12 +10,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'dev-key-change-in-production'  # Will use env var in Docker
 SECRET_KEY = os.environ.get('ADMIN_SECRET_KEY', 'dev-secret-key-change-me')
-DEBUG = os.environ.get('DEBUG', 'True') == 'True'
+DEBUG = os.environ.get('DEBUG', 'True').lower() in ('true', '1', 't')
+ALLOWED_HOSTS = os.environ.get('ADMIN_ALLOWED_HOSTS', 'localhost,127.0.0.1,0.0.0.0').split(',')
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
-
+# ALLOWED_HOSTS = ['localhost', '127.0.0.1', '0.0.0.0']
+AUTH_USER_MODEL = 'accounts.AdminUser'
 # Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -24,7 +25,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'admin.apps.accounts',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,11 +63,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dycetix_db',
-        'USER': 'dycetix',
-        'PASSWORD': 'admin123',
-        'HOST': 'postgres',  # ← This is the Docker service name
-        'PORT': '5432',
+        'NAME': os.environ.get('POSTGRES_DB', 'dycetix_db'),
+        'USER': os.environ.get('POSTGRES_USER', 'dycetix'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', ''),
+        'HOST': os.environ.get('POSTGRES_HOST', 'postgres'),
+        'PORT': os.environ.get('POSTGRES_PORT', '5432'),
     }
 }
 

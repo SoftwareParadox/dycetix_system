@@ -1,0 +1,694 @@
+dycetix_system/
+├── docker-compose.yml
+├── requirements.txt
+├── Dockerfile
+├── .env
+├── .env.example
+├── README.md
+├── .dockerignore
+└── .gitignore
+│
+├── admin/
+│   ├── config/
+│   │   ├── __init__.py
+│   │   ├── settings.py           # MOVED FROM settings/ folder
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   ├── asgi.py
+│   │   └── celery.py
+│   │
+│   ├── apps/
+│   │   ├── accounts/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   ├── admin.py
+│   │   │   ├── urls.py
+│   │   │   ├── permissions.py
+│   │   │   ├── signals.py
+│   │   │   ├── receivers.py
+│   │   │   ├── constants.py
+│   │   │   ├── exceptions.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── admin_user.py
+│   │   │   │   ├── admin_role.py
+│   │   │   │   ├── admin_profile.py
+│   │   │   │   └── admin_session.py
+│   │   │   │
+│   │   │   ├── api/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── viewsets.py
+│   │   │   │   ├── serializers.py
+│   │   │   │   ├── permissions.py
+│   │   │   │   ├── filters.py
+│   │   │   │   └── urls.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── user_service.py
+│   │   │   │   ├── auth_service.py
+│   │   │   │   ├── permission_service.py
+│   │   │   │   ├── two_factor_service.py
+│   │   │   │   └── audit_service.py
+│   │   │   │
+│   │   │   ├── managers/
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── user_manager.py
+│   │   │   │
+│   │   │   ├── forms/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── user_forms.py
+│   │   │   │   ├── auth_forms.py
+│   │   │   │   └── profile_forms.py
+│   │   │   │
+│   │   │   ├── templatetags/
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── account_tags.py
+│   │   │   │
+│   │   │   ├── templates/
+│   │   │   │   ├── accounts/
+│   │   │   │   │   ├── login.html
+│   │   │   │   │   ├── profile.html
+│   │   │   │   │   ├── change_password.html
+│   │   │   │   │   └── partials/
+│   │   │   │   │       ├── user_list.html
+│   │   │   │   │       ├── user_form.html
+│   │   │   │   │       └── permissions_form.html
+│   │   │   │   └── emails/
+│   │   │   │       ├── welcome.html
+│   │   │   │       ├── password_reset.html
+│   │   │   │       └── two_factor_setup.html
+│   │   │   │
+│   │   │   ├── tests/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── factories.py
+│   │   │   │   ├── test_models.py
+│   │   │   │   ├── test_views.py
+│   │   │   │   ├── test_api.py
+│   │   │   │   ├── test_services.py
+│   │   │   │   └── conftest.py
+│   │   │   │
+│   │   │   └── migrations/
+│   │   │       └── __init__.py
+│   │   │
+│   │   ├── forms/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   ├── admin.py
+│   │   │   ├── urls.py
+│   │   │   ├── signals.py
+│   │   │   ├── constants.py
+│   │   │   ├── exceptions.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── form_submission.py
+│   │   │   │   ├── client_requirement.py
+│   │   │   │   ├── job_application.py
+│   │   │   │   ├── subscription.py
+│   │   │   │   ├── partnership.py
+│   │   │   │   ├── referral.py
+│   │   │   │   └── form_attachment.py
+│   │   │   │
+│   │   │   ├── api/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── views.py
+│   │   │   │   ├── serializers.py
+│   │   │   │   ├── permissions.py
+│   │   │   │   └── urls.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── form_validator.py
+│   │   │   │   ├── auto_responder.py
+│   │   │   │   ├── lead_processor.py
+│   │   │   │   ├── file_handler.py
+│   │   │   │   ├── status_manager.py
+│   │   │   │   └── notification_service.py
+│   │   │   │
+│   │   │   ├── admin/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── client_requirement_admin.py
+│   │   │   │   ├── job_application_admin.py
+│   │   │   │   └── base_admin.py
+│   │   │   │
+│   │   │   ├── utils/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── field_mappings.py
+│   │   │   │   ├── export_utils.py
+│   │   │   │   └── template_utils.py
+│   │   │   │
+│   │   │   ├── templates/
+│   │   │   │   └── forms/
+│   │   │   │       └── partials/
+│   │   │   │           ├── form_submission.html
+│   │   │   │           └── form_status.html
+│   │   │   │
+│   │   │   ├── tests/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── test_models.py
+│   │   │   │   ├── test_api.py
+│   │   │   │   └── test_services.py
+│   │   │   │
+│   │   │   └── migrations/
+│   │   │       └── __init__.py
+│   │   │
+│   │   ├── content/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   ├── admin.py
+│   │   │   ├── urls.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── blog_post.py
+│   │   │   │   ├── blog_category.py
+│   │   │   │   ├── blog_comment.py
+│   │   │   │   ├── page.py
+│   │   │   │   └── content_block.py
+│   │   │   │
+│   │   │   ├── api/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── views.py
+│   │   │   │   ├── serializers.py
+│   │   │   │   └── urls.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── blog_service.py
+│   │   │   │   ├── search_service.py
+│   │   │   │   ├── seo_service.py
+│   │   │   │   └── sitemap_service.py
+│   │   │   │
+│   │   │   ├── templatetags/
+│   │   │   │   ├── __init__.py
+│   │   │   │   └── content_tags.py
+│   │   │   │
+│   │   │   ├── templates/
+│   │   │   │   └── content/
+│   │   │   │       ├── blog_list.html
+│   │   │   │       ├── blog_detail.html
+│   │   │   │       └── partials/
+│   │   │   │           ├── blog_card.html
+│   │   │   │           └── comment_form.html
+│   │   │   │
+│   │   │   └── tests/
+│   │   │       └── __init__.py
+│   │   │
+│   │   ├── finance/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   ├── admin.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── invoice.py
+│   │   │   │   ├── payment.py
+│   │   │   │   ├── expense.py
+│   │   │   │   ├── tax_rate.py
+│   │   │   │   └── payment_gateway.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── invoice_service.py
+│   │   │   │   ├── payment_service.py
+│   │   │   │   └── report_service.py
+│   │   │   │
+│   │   │   └── templates/
+│   │   │       └── finance/
+│   │   │           ├── invoice_template.html
+│   │   │           └── payment_receipt.html
+│   │   │
+│   │   ├── analytics/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── page_view.py
+│   │   │   │   ├── event_tracking.py
+│   │   │   │   └── analytics_report.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── tracking_service.py
+│   │   │   │   ├── report_service.py
+│   │   │   │   └── export_service.py
+│   │   │   │
+│   │   │   └── utils/
+│   │   │       ├── __init__.py
+│   │   │       └── chart_generator.py
+│   │   │
+│   │   ├── communications/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── email_template.py
+│   │   │   │   ├── email_queue.py
+│   │   │   │   ├── sent_email.py
+│   │   │   │   └── notification.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── email_service.py
+│   │   │   │   ├── template_service.py
+│   │   │   │   ├── sms_service.py
+│   │   │   │   └── notification_service.py
+│   │   │   │
+│   │   │   └── templates/
+│   │   │       └── communications/
+│   │   │           ├── emails/
+│   │   │           │   ├── base.html
+│   │   │           │   ├── newsletter.html
+│   │   │           │   └── notification.html
+│   │   │           └── sms/
+│   │   │               └── alert.txt
+│   │   │
+│   │   ├── portfolio/
+│   │   │   ├── __init__.py
+│   │   │   ├── apps.py
+│   │   │   │
+│   │   │   ├── models/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── project.py
+│   │   │   │   ├── service.py
+│   │   │   │   ├── testimonial.py
+│   │   │   │   └── technology.py
+│   │   │   │
+│   │   │   ├── services/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── project_service.py
+│   │   │   │   └── gallery_service.py
+│   │   │   │
+│   │   │   └── templates/
+│   │   │       └── portfolio/
+│   │   │           ├── project_list.html
+│   │   │           └── project_detail.html
+│   │   │
+│   │   └── core/
+│   │       ├── __init__.py
+│   │       ├── apps.py
+│   │       ├── exceptions.py
+│   │       ├── constants.py
+│   │       ├── context_processors.py
+│   │       │
+│   │       ├── middleware/
+│   │       │   ├── __init__.py
+│   │       │   ├── audit_middleware.py
+│   │       │   ├── security_middleware.py
+│   │       │   ├── htmx_middleware.py
+│   │       │   ├── rate_limit_middleware.py
+│   │       │   └── maintenance_middleware.py
+│   │       │
+│   │       ├── templatetags/
+│   │       │   ├── __init__.py
+│   │       │   ├── core_tags.py
+│   │       │   ├── htmx_tags.py
+│   │       │   └── form_tags.py
+│   │       │
+│   │       ├── utils/
+│   │       │   ├── __init__.py
+│   │       │   ├── date_utils.py
+│   │       │   ├── file_utils.py
+│   │       │   ├── validation_utils.py
+│   │       │   ├── export_utils.py
+│   │       │   ├── search_utils.py
+│   │       │   └── encryption_utils.py
+│   │       │
+│   │       ├── management/
+│   │       │   ├── __init__.py
+│   │       │   └── commands/
+│   │       │       ├── __init__.py
+│   │       │       ├── setup_dev_data.py
+│   │       │       ├── backup_database.py
+│   │       │       ├── generate_sitemap.py
+│   │       │       ├── cleanup_old_data.py
+│   │       │       └── health_check.py
+│   │       │
+│   │       └── tests/
+│   │           └── __init__.py
+│   │
+│   ├── templates/
+│   │   ├── admin/
+│   │   │   ├── base.html
+│   │   │   ├── dashboard.html
+│   │   │   ├── login.html
+│   │   │   ├── 404.html
+│   │   │   ├── 500.html
+│   │   │   │
+│   │   │   ├── partials/
+│   │   │   │   ├── sidebar.html
+│   │   │   │   ├── header.html
+│   │   │   │   ├── notifications.html
+│   │   │   │   ├── modal.html
+│   │   │   │   ├── pagination.html
+│   │   │   │   └── breadcrumbs.html
+│   │   │   │
+│   │   │   ├── components/
+│   │   │   │   ├── cards/
+│   │   │   │   │   ├── stat_card.html
+│   │   │   │   │   ├── info_card.html
+│   │   │   │   │   └── chart_card.html
+│   │   │   │   ├── tables/
+│   │   │   │   │   ├── data_table.html
+│   │   │   │   │   ├── action_table.html
+│   │   │   │   │   └── filter_table.html
+│   │   │   │   ├── forms/
+│   │   │   │   │   ├── form_group.html
+│   │   │   │   │   ├── input_field.html
+│   │   │   │   │   └── select_field.html
+│   │   │   │   └── alerts/
+│   │   │   │       ├── success.html
+│   │   │   │       ├── error.html
+│   │   │   │       └── warning.html
+│   │   │   │
+│   │   │   └── layouts/
+│   │   │       ├── two_column.html
+│   │   │       ├── full_width.html
+│   │   │       └── centered.html
+│   │   │
+│   │   ├── htmx/
+│   │   │   ├── forms/
+│   │   │   │   ├── client_list.html
+│   │   │   │   ├── client_detail.html
+│   │   │   │   ├── client_form.html
+│   │   │   │   └── client_actions.html
+│   │   │   ├── dashboard/
+│   │   │   │   ├── stats.html
+│   │   │   │   ├── recent_activity.html
+│   │   │   │   └── quick_actions.html
+│   │   │   └── notifications/
+│   │   │       ├── notification_list.html
+│   │   │       └── notification_count.html
+│   │   │
+│   │   ├── emails/
+│   │   │   ├── base_email.html
+│   │   │   ├── layout.html
+│   │   │   ├── header.html
+│   │   │   ├── footer.html
+│   │   │   ├── form_auto_response.html
+│   │   │   ├── invoice_reminder.html
+│   │   │   └── newsletter_template.html
+│   │   │
+│   │   └── search/
+│   │       ├── search_results.html
+│   │       └── search_suggestions.html
+│   │
+│   ├── static/
+│   │   ├── css/
+│   │   │   ├── admin.css
+│   │   │   ├── dashboard.css
+│   │   │   ├── forms.css
+│   │   │   ├── tables.css
+│   │   │   ├── charts.css
+│   │   │   ├── responsive.css
+│   │   │   └── darkmode.css
+│   │   │
+│   │   ├── js/
+│   │   │   ├── admin/
+│   │   │   │   ├── main.js
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── forms.js
+│   │   │   │   ├── tables.js
+│   │   │   │   ├── charts.js
+│   │   │   │   └── search.js
+│   │   │   │
+│   │   │   ├── htmx/
+│   │   │   │   ├── htmx.config.js
+│   │   │   │   ├── forms.js
+│   │   │   │   ├── dashboard.js
+│   │   │   │   ├── notifications.js
+│   │   │   │   └── modals.js
+│   │   │   │
+│   │   │   ├── vendor/
+│   │   │   │   ├── chart.js
+│   │   │   │   ├── flatpickr.js
+│   │   │   │   ├── sortable.js
+│   │   │   │   └── toast.js
+│   │   │   │
+│   │   │   └── utils/
+│   │   │       ├── ajax.js
+│   │   │       ├── validation.js
+│   │   │       ├── notifications.js
+│   │   │       └── cookies.js
+│   │   │
+│   │   ├── images/
+│   │   │   ├── logos/
+│   │   │   │   ├── logo.png
+│   │   │   │   ├── favicon.ico
+│   │   │   │   └── apple-touch-icon.png
+│   │   │   ├── icons/
+│   │   │   │   ├── dashboard.svg
+│   │   │   │   ├── forms.svg
+│   │   │   │   ├── content.svg
+│   │   │   │   └── finance.svg
+│   │   │   └── avatars/
+│   │   │       └── default.png
+│   │   │
+│   │   └── vendor/
+│   │       ├── htmx/
+│   │       │   ├── htmx.min.js
+│   │       │   └── htmx.extensions.js
+│   │       ├── hyperscript/
+│   │       │   └── hyperscript.min.js
+│   │       ├── bootstrap/
+│   │       │   ├── css/
+│   │       │   └── js/
+│   │       └── fontawesome/
+│   │           ├── css/
+│   │           └── webfonts/
+│   │
+│   ├── media/
+│   │   ├── blog/
+│   │   │   ├── featured/
+│   │   │   └── content/
+│   │   ├── portfolio/
+│   │   │   ├── projects/
+│   │   │   └── gallery/
+│   │   ├── avatars/
+│   │   ├── documents/
+│   │   │   ├── invoices/
+│   │   │   ├── resumes/
+│   │   │   └── contracts/
+│   │   └── temp/
+│   │
+│   ├── locale/
+│   │   ├── en/
+│   │   │   └── LC_MESSAGES/
+│   │   │       ├── django.po
+│   │   │       └── django.mo
+│   │   └── fr/
+│   │       └── LC_MESSAGES/
+│   │           ├── django.po
+│   │           └── django.mo
+│   │
+│   └── manage.py
+│
+└── customer/
+    ├── dycetix_project/
+    │   ├── __init__.py
+    │   ├── settings.py           # MOVED FROM settings/ folder
+    │   ├── urls.py
+    │   ├── wsgi.py
+    │   ├── asgi.py
+    │   └── gunicorn.conf.py
+    │
+    ├── client_portal/
+    │   ├── static/
+    │   │   ├── css/
+    │   │   │   ├── base/
+    │   │   │   │   ├── reset.css
+    │   │   │   │   ├── typography.css
+    │   │   │   │   ├── colors.css
+    │   │   │   │   └── layout.css
+    │   │   │   │
+    │   │   │   ├── components/
+    │   │   │   │   ├── buttons.css
+    │   │   │   │   ├── forms.css
+    │   │   │   │   ├── cards.css
+    │   │   │   │   ├── navigation.css
+    │   │   │   │   └── footer.css
+    │   │   │   │
+    │   │   │   ├── pages/
+    │   │   │   │   ├── home.css
+    │   │   │   │   ├── about.css
+    │   │   │   │   ├── services.css
+    │   │   │   │   ├── portfolio.css
+    │   │   │   │   ├── blog.css
+    │   │   │   │   ├── contact.css
+    │   │   │   │   └── search.css
+    │   │   │   │
+    │   │   │   ├── responsive/
+    │   │   │   │   ├── mobile.css
+    │   │   │   │   ├── tablet.css
+    │   │   │   │   └── desktop.css
+    │   │   │   │
+    │   │   │   └── vendor/
+    │   │   │       ├── fontawesome.css
+    │   │   │       └── animate.css
+    │   │   │
+    │   │   ├── js/
+    │   │   │   ├── modules/
+    │   │   │   │   ├── form-validator.js
+    │   │   │   │   ├── phone-input.js
+    │   │   │   │   ├── search.js
+    │   │   │   │   ├── animations.js
+    │   │   │   │   ├── navigation.js
+    │   │   │   │   ├── contact-form.js
+    │   │   │   │   └── newsletter-signup.js
+    │   │   │   │
+    │   │   │   ├── pages/
+    │   │   │   │   ├── home.js
+    │   │   │   │   ├── services.js
+    │   │   │   │   ├── portfolio.js
+    │   │   │   │   └── blog.js
+    │   │   │   │
+    │   │   │   ├── vendor/
+    │   │   │   │   ├── jquery.min.js
+    │   │   │   │   ├── swiper.min.js
+    │   │   │   │   ├── lightbox.min.js
+    │   │   │   │   └── aos.js
+    │   │   │   │
+    │   │   │   └── utils/
+    │   │   │       ├── debounce.js
+    │   │   │       ├── cookies.js
+    │   │   │       └── analytics.js
+    │   │   │
+    │   │   ├── images/
+    │   │   │   ├── logos/
+    │   │   │   │   ├── logo.png
+    │   │   │   │   ├── logo-white.png
+    │   │   │   │   └── favicon.ico
+    │   │   │   ├── home/
+    │   │   │   │   ├── hero-bg.jpg
+    │   │   │   │   ├── features/
+    │   │   │   │   └── testimonials/
+    │   │   │   ├── about/
+    │   │   │   │   ├── team/
+    │   │   │   │   └── office/
+    │   │   │   ├── services/
+    │   │   │   │   └── icons/
+    │   │   │   ├── portfolio/
+    │   │   │   │   ├── projects/
+    │   │   │   │   └── thumbnails/
+    │   │   │   └── blog/
+    │   │   │       └── featured/
+    │   │   │
+    │   │   ├── videos/
+    │   │   │   ├── hero/
+    │   │   │   │   ├── hero-video.mp4
+    │   │   │   │   └── hero-video.webm
+    │   │   │   └── testimonials/
+    │   │   │       └── client-testimonial.mp4
+    │   │   │
+    │   │   └── fonts/
+    │   │       ├── opensans/
+    │   │       │   ├── OpenSans-Regular.woff2
+    │   │       │   └── OpenSans-Bold.woff2
+    │   │       └── montserrat/
+    │   │           ├── Montserrat-Regular.woff2
+    │   │           └── Montserrat-Bold.woff2
+    │   │
+    │   ├── templates/
+    │   │   ├── frontend/
+    │   │   │   ├── home/
+    │   │   │   │   ├── sections/
+    │   │   │   │   │   ├── hero.html
+    │   │   │   │   │   ├── features.html
+    │   │   │   │   │   ├── services.html
+    │   │   │   │   │   ├── portfolio.html
+    │   │   │   │   │   ├── testimonials.html
+    │   │   │   │   │   ├── blog-preview.html
+    │   │   │   │   │   └── cta.html
+    │   │   │   │   └── index.html
+    │   │   │   │
+    │   │   │   ├── about_us/
+    │   │   │   │   ├── sections/
+    │   │   │   │   │   ├── our-story.html
+    │   │   │   │   │   ├── mission-vision.html
+    │   │   │   │   │   ├── team.html
+    │   │   │   │   │   ├── values.html
+    │   │   │   │   │   └── timeline.html
+    │   │   │   │   ├── about-us.html
+    │   │   │   │   └── team.html
+    │   │   │   │
+    │   │   │   ├── services/
+    │   │   │   │   ├── list.html
+    │   │   │   │   ├── detail/
+    │   │   │   │   │   ├── software-development.html
+    │   │   │   │   │   ├── web-design.html
+    │   │   │   │   │   └── it-support.html
+    │   │   │   │   └── process.html
+    │   │   │   │
+    │   │   │   ├── portfolio/
+    │   │   │   │   ├── list.html
+    │   │   │   │   ├── detail/
+    │   │   │   │   │   ├── project-1.html
+    │   │   │   │   │   ├── project-2.html
+    │   │   │   │   │   └── project-3.html
+    │   │   │   │   └── categories.html
+    │   │   │   │
+    │   │   │   ├── blog/
+    │   │   │   │   ├── list.html
+    │   │   │   │   ├── detail.html
+    │   │   │   │   ├── categories.html
+    │   │   │   │   ├── tags.html
+    │   │   │   │   └── search.html
+    │   │   │   │
+    │   │   │   ├── contact/
+    │   │   │   │   ├── contact.html
+    │   │   │   │   ├── locations.html
+    │   │   │   │   └── success.html
+    │   │   │   │
+    │   │   │   └── search/
+    │   │   │       ├── search.html
+    │   │   │       └── results.html
+    │   │   │
+    │   │   ├── includes/
+    │   │   │   ├── base.html
+    │   │   │   ├── header.html
+    │   │   │   ├── footer.html
+    │   │   │   ├── meta.html
+    │   │   │   ├── scripts.html
+    │   │   │   ├── styles.html
+    │   │   │   ├── navigation.html
+    │   │   │   ├── breadcrumbs.html
+    │   │   │   ├── pagination.html
+    │   │   │   └── messages.html
+    │   │   │
+    │   │   ├── components/
+    │   │   │   ├── cards/
+    │   │   │   │   ├── service-card.html
+    │   │   │   │   ├── project-card.html
+    │   │   │   │   ├── blog-card.html
+    │   │   │   │   └── team-card.html
+    │   │   │   ├── forms/
+    │   │   │   │   ├── contact-form.html
+    │   │   │   │   ├── newsletter-form.html
+    │   │   │   │   ├── quote-form.html
+    │   │   │   │   └── application-form.html
+    │   │   │   ├── modals/
+    │   │   │   │   ├── image-modal.html
+    │   │   │   │   └── contact-modal.html
+    │   │   │   └── sections/
+    │   │   │       ├── cta-section.html
+    │   │   │       └── testimonials-section.html
+    │   │   │
+    │   │   └── emails/
+    │   │       ├── contact-confirmation.html
+    │   │       ├── newsletter-welcome.html
+    │   │       └── quote-request.html
+    │   │
+    │   ├── media/
+    │   │   └── uploads/
+    │   │
+    │   └── locale/
+    │       └── en/
+    │           └── LC_MESSAGES/
+    │               ├── django.po
+    │               └── django.mo
+    │
+    └── manage.py
