@@ -14,6 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy only admin app for now (we'll add customer later)
 COPY admin/ /app/admin/
+COPY customer/ /app/customer/
 
 # Set Python path
 ENV PYTHONPATH=/app

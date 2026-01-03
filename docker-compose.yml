@@ -1,4 +1,4 @@
-version: '3.8'
+# version: '3.8'
 
 services:
   postgres:
@@ -29,6 +29,23 @@ services:
       - "8000:8000"
     env_file:
       - .env  # This is the KEY - loads ALL variables from .env
-
+    environment:
+      - DJANGO_SETTINGS_MODULE=config.settings
+  customer:
+    build: .
+    command: >
+      sh -c "sleep 10 &&
+             python customer/manage.py migrate &&
+             python customer/manage.py runserver 0.0.0.0:8001"
+    volumes:
+      - ./customer:/app/customer
+    depends_on:
+      - postgres
+    ports:
+      - "8001:8001"
+    env_file:
+      - .env
+    environment:
+      - DJANGO_SETTINGS_MODULE=dycetix_project.settings
 volumes:
   postgres_data:
