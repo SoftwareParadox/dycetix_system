@@ -6,9 +6,9 @@ from django.utils.translation import gettext_lazy as _
 
 class DyceTixAdminSite(AdminSite):
     """Custom admin site for DyceTix"""
-    site_header = "DyceTix Admin"
-    site_title = "DyceTix Administration"
-    index_title = "Welcome to DyceTix Admin"
+    site_header = "Dycetix Admin"
+    site_title = "Dycetix Administration"
+    index_title = "Welcome to Dycetix Admin"
     
     # Optional: Set custom login template
     # login_template = "admin/login.html"

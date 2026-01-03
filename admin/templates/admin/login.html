@@ -1,29 +1,132 @@
-<!-- {% extends "admin/base_site.html" %}
+<!-- admin/templates/admin/login.html -->
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+
+{% block extrastyle %}
+{{ block.super }}
+<link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+<link rel="stylesheet" href="{% static 'admin/css/themes/synthwave.css' %}" id="theme-css">
+
+<!-- Google Fonts for Themes -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Audiowide&family=Quantico&family=Michroma&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block bodyclass %}login {{ block.super }}{% endblock %}
+
+{% block usertools %}{% endblock %}
+{% block nav-global %}{% endblock %}
+{% block nav-sidebar %}{% endblock %}
+{% block content_title %}{% endblock %}
+{% block breadcrumbs %}{% endblock %}
 
 {% block content %}
-{% if form.errors and not form.non_field_errors %}
-<p class="errornote">
-    Please enter a correct email address and password.
-</p>
-{% endif %}
+<div id="content-main">
+<video autoplay muted loop playsinline id="bg-video">
+    <source src="{% static 'admin/images/background.mp4' %}" type="video/mp4">
+</video>
+  {% if form.errors and not form.non_field_errors %}
+    <p class="errornote">
+      {% blocktranslate count counter=form.errors.items|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktranslate %}
+    </p>
+  {% endif %}
 
-<form action="{{ app_path }}" method="post" id="login-form">
-    {% csrf_token %}
-    
-    <div class="form-row">
+  {% if form.non_field_errors %}
+    {% for error in form.non_field_errors %}
+      <p class="errornote">
+        {{ error }}
+      </p>
+    {% endfor %}
+  {% endif %}
+
+  <div id="login-container">
+    <!-- Theme 1: Cyberpunk 2077 Elements (Comment/Uncomment to use) -->
+    {% comment %}
+    <div class="matrix-rain"></div>
+    <div class="hologram"></div>
+    <div class="hologram"></div>
+    {% endcomment %}
+
+    <!-- Theme 2: Blade Runner Elements (Comment/Uncomment to use) -->
+    {% comment %}
+    <div class="rain-effect"></div>
+    <div class="neon-grid"></div>
+    <div class="holo-billboard"></div>
+    <div class="holo-billboard" style="top: 200px; animation-delay: 10s;"></div>
+    {% endcomment %}
+
+    <!-- Theme 3: Synthwave Elements (Active by default) -->
+    <div class="sun-container">
+        <div class="sun-gradient"></div>
+    </div>
+    <div class="grid-lines"></div>
+    <!-- <div class="palm-trees">
+        <div class="palm-tree" style="left: 10%;"></div>
+        <div class="palm-tree" style="left: 30%;"></div>
+        <div class="palm-tree" style="left: 50%;"></div>
+        <div class="palm-tree" style="left: 70%;"></div>
+        <div class="palm-tree" style="left: 90%;"></div>
+    </div> -->
+
+    <!-- Theme Toggle Button (Hidden by default) -->
+    {% comment %}
+    <button class="theme-toggle" onclick="toggleTheme()">THEME</button>
+    {% endcomment %}
+
+    <form action="{{ app_path }}" method="post" id="login-form">
+      {% csrf_token %}
+      
+      <div class="login-header">
+        <h1>
+          {% block branding %}
+          <!-- <img src="{% static 'admin/images/logo.png' %}" alt="Dycetix Logo" class="login-logo"> -->
+          <span>Dycetix Admin</span>
+          {% endblock %}
+        </h1>
+      </div>
+
+      <div class="form-row">
         {{ form.username.errors }}
-        <label for="id_username" class="required">{{ form.username.label }}:</label>
-        {{ form.username }}
-    </div>
-    
-    <div class="form-row">
+        <label for="id_username" class="required">{% translate 'Email:' %}</label>
+        <input type="text" 
+               name="username" 
+               id="id_username" 
+               autofocus 
+               autocapitalize="none" 
+               autocomplete="username" 
+               maxlength="150" 
+               required
+               placeholder="admin@dycetix.co.za">
+      </div>
+
+      <div class="form-row">
         {{ form.password.errors }}
-        <label for="id_password" class="required">Password:</label>
-        {{ form.password }}
-    </div>
-    
-    <div class="submit-row">
-        <input type="submit" value="Log in">
-    </div>
-</form>
-{% endblock %} -->
+        <label for="id_password" class="required">{% translate 'Password:' %}</label>
+        <input type="password" 
+               name="password" 
+               id="id_password" 
+               autocomplete="current-password" 
+               required
+               placeholder="••••••••">
+      </div>
+
+      <div class="checkbox-row">
+        <label for="remember-me">
+          <input type="checkbox" name="remember" id="remember-me">
+          <span>{% translate 'Remember me' %}</span>
+        </label>
+      </div>
+
+      <div class="submit-row">
+        <input type="submit" value="{% translate 'Log in' %}">
+      </div>
+
+      <input type="hidden" name="next" value="{{ next }}">
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extrajs %}
+<script src="{% static 'admin/js/login.js' %}"></script>
+{% endblock %}

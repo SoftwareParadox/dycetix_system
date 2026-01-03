@@ -1,0 +1,347 @@
+/* admin/static/admin/css/themes/synthwave.css */
+/* Synthwave Theme - 80s Retro Futuristic */
+
+:root {
+    --synth-primary: #ff00ff;
+    --synth-secondary: #00d4ff;
+    --synth-accent: #ffcc00;
+    --synth-bg-dark: #0a0a2a;
+    --synth-bg-light: #1a1a4a;
+    --synth-text: #ffffff;
+    --synth-text-glow: #ff66cc;
+    --synth-grid: #00ffff;
+    --synth-sun: #ff9900;
+    --synth-font: 'Audiowide', cursive;
+    --synth-font-body: 'Quantico', sans-serif;
+}
+
+/* Base Synthwave Background */
+body.login {
+    /* background: linear-gradient(
+        to bottom,
+        var(--synth-bg-dark) 0%,
+        #1a0033 50%,
+        var(--synth-bg-dark) 100%
+    ); */
+    font-family: var(--synth-font-body);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+}
+
+#login-container {
+    background: rgba(26, 26, 74, 0.7);
+    border: 3px solid var(--synth-primary);
+    box-shadow: 
+        0 0 40px var(--synth-primary),
+        0 0 80px rgba(255, 0, 255, 0.3),
+        inset 0 0 40px rgba(255, 0, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+    animation: containerGlow 3s ease-in-out infinite;
+}
+
+@keyframes containerGlow {
+    0%, 100% { box-shadow: 
+        0 0 40px var(--synth-primary),
+        0 0 80px rgba(255, 0, 255, 0.3),
+        inset 0 0 40px rgba(255, 0, 255, 0.2); }
+    50% { box-shadow: 
+        0 0 60px var(--synth-primary),
+        0 0 120px rgba(255, 0, 255, 0.5),
+        inset 0 0 60px rgba(255, 0, 255, 0.3); }
+}
+
+/* Header with Retro Neon */
+.login-header h1 {
+    color: var(--synth-text);
+    font-family: var(--synth-font);
+    font-size: 36px;
+    font-weight: 400;
+    text-shadow: 
+        0 0 10px var(--synth-primary),
+        0 0 20px var(--synth-primary),
+        0 0 30px var(--synth-primary),
+        0 0 40px var(--synth-primary);
+    letter-spacing: 3px;
+    position: relative;
+    animation: textFlicker 2s infinite;
+}
+
+@keyframes textFlicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 
+            0 0 10px var(--synth-primary),
+            0 0 20px var(--synth-primary),
+            0 0 30px var(--synth-primary),
+            0 0 40px var(--synth-primary);
+    }
+    20%, 24%, 55% {
+        text-shadow: 
+            0 0 5px var(--synth-primary),
+            0 0 10px var(--synth-primary);
+    }
+}
+
+/* Form Elements - Retro Futuristic */
+.form-row label {
+    color: var(--synth-text);
+    font-family: var(--synth-font);
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 25px;
+}
+
+.form-row label::before {
+    content: '◈';
+    position: absolute;
+    left: 0;
+    color: var(--synth-secondary);
+    animation: diamondSpin 2s linear infinite;
+}
+
+@keyframes diamondSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--synth-secondary);
+    color: var(--synth-text);
+    font-family: 'Courier New', monospace;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 212, 255, 0.1),
+        0 0 20px rgba(0, 212, 255, 0.2);
+}
+
+.form-row input:focus {
+    outline: none;
+    border-color: var(--synth-primary);
+    box-shadow: 
+        inset 0 0 30px rgba(255, 0, 255, 0.2),
+        0 0 40px rgba(255, 0, 255, 0.4);
+    background: rgba(255, 0, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Checkbox - Retro Switch */
+.checkbox-row input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 60px;
+    height: 30px;
+    background: linear-gradient(90deg, #333, #666);
+    border: 2px solid var(--synth-secondary);
+    border-radius: 15px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-row input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(45deg, #999, #ccc);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.checkbox-row input[type="checkbox"]:checked {
+    background: linear-gradient(90deg, var(--synth-primary), var(--synth-secondary));
+    box-shadow: 0 0 20px var(--synth-primary);
+}
+
+.checkbox-row input[type="checkbox"]:checked::before {
+    transform: translateX(30px);
+    background: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.checkbox-row span {
+    color: var(--synth-text);
+    font-family: var(--synth-font);
+}
+
+/* Submit Button - VHS Tape Style */
+.submit-row input[type="submit"] {
+    background: linear-gradient(
+        45deg,
+        var(--synth-primary) 0%,
+        var(--synth-secondary) 50%,
+        var(--synth-accent) 100%
+    );
+    border: none;
+    color: #000;
+    font-family: var(--synth-font);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.submit-row input[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+    );
+    transition: 0.5s;
+}
+
+.submit-row input[type="submit"]:hover::before {
+    left: 100%;
+}
+
+.submit-row input[type="submit"]:hover {
+    transform: translateY(-5px);
+    box-shadow: 
+        0 20px 40px rgba(255, 0, 255, 0.4),
+        0 0 60px rgba(0, 212, 255, 0.3);
+}
+
+/* Error Messages - Retro TV Static */
+.errornote {
+    background: linear-gradient(
+        45deg,
+        rgba(255, 0, 0, 0.1),
+        rgba(255, 0, 255, 0.1)
+    );
+    border: 2px solid #ff3366;
+    color: #ff66cc;
+    font-family: var(--synth-font);
+    border-radius: 10px;
+    letter-spacing: 2px;
+    animation: tvStatic 0.1s infinite;
+}
+
+@keyframes tvStatic {
+    0%, 100% { background-position: 0 0; }
+    10% { background-position: -5% -5%; }
+    20% { background-position: -10% 5%; }
+    30% { background-position: 5% -10%; }
+    40% { background-position: -5% 15%; }
+    50% { background-position: -10% 5%; }
+    60% { background-position: 15% 0; }
+    70% { background-position: 0 10%; }
+    80% { background-position: -15% 0; }
+    90% { background-position: 10% 5%; }
+}
+
+/* Animated Gradient Sun */
+.sun-container {
+    position: fixed;
+    top: -300px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.sun-gradient {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at center,
+        var(--synth-sun) 0%,
+        transparent 70%
+    );
+    filter: blur(100px);
+    animation: sunPulse 4s ease-in-out infinite;
+}
+
+@keyframes sunPulse {
+    0%, 100% { transform: scale(1); opacity: 0.3; }
+    50% { transform: scale(1.1); opacity: 0.4; }
+}
+
+/* Grid Lines */
+.grid-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -1;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+}
+
+/* Palm Trees Silhouette */
+/* .palm-trees {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    z-index: -1;
+}
+
+.palm-tree {
+    position: absolute;
+    bottom: 0;
+    width: 2px;
+    height: 100px;
+    background: #333;
+}
+
+.palm-tree::before,
+.palm-tree::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.palm-tree::before {
+    left: -20px;
+    border-width: 0 20px 40px 20px;
+    border-color: transparent transparent #333 transparent;
+}
+
+.palm-tree::after {
+    right: -20px;
+    border-width: 0 20px 40px 20px;
+    border-color: transparent transparent #333 transparent;
+} */

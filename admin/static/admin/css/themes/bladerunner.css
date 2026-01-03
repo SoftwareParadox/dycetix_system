@@ -1,0 +1,242 @@
+/* admin/static/admin/css/themes/bladerunner.css */
+/* Blade Runner Theme - Neon Noir */
+
+:root {
+    --blade-primary: #ff5555;
+    --blade-secondary: #ffaa00;
+    --blade-accent: #00aaff;
+    --blade-bg: #1a1a2e;
+    --blade-surface: #16213e;
+    --blade-text: #e6e6e6;
+    --blade-rain: #ff3366;
+    --blade-glow: 0 0 15px currentColor;
+    --blade-font: 'Michroma', sans-serif;
+}
+
+/* Base Styles */
+body.login {
+    background: linear-gradient(135deg, var(--blade-bg) 0%, #0f3460 100%);
+    font-family: var(--blade-font);
+    position: relative;
+    overflow: hidden;
+}
+
+#login-container {
+    background: rgba(22, 33, 62, 0.9);
+    border: 3px solid var(--blade-primary);
+    box-shadow: 
+        0 0 30px var(--blade-primary),
+        inset 0 0 30px rgba(255, 85, 85, 0.2);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header with Neon Sign Effect */
+.login-header h1 {
+    color: var(--blade-text);
+    text-shadow: 
+        0 0 10px var(--blade-primary),
+        0 0 20px var(--blade-primary),
+        0 0 30px var(--blade-primary);
+    font-weight: 400;
+    letter-spacing: 4px;
+    position: relative;
+    animation: neonFlicker 2s infinite;
+}
+
+@keyframes neonFlicker {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        opacity: 1;
+        text-shadow: 
+            0 0 10px var(--blade-primary),
+            0 0 20px var(--blade-primary),
+            0 0 30px var(--blade-primary);
+    }
+    20%, 24%, 55% {
+        opacity: 0.8;
+        text-shadow: none;
+    }
+}
+
+/* Form Elements - Neon Noir Style */
+.form-row label {
+    color: var(--blade-text);
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 15px;
+}
+
+.form-row label::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--blade-primary);
+    animation: blinkArrow 1s infinite;
+}
+
+@keyframes blinkArrow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.form-row input[type="text"],
+.form-row input[type="password"] {
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparent;
+    border-bottom: 2px solid var(--blade-secondary);
+    color: var(--blade-text);
+    font-family: 'Courier New', monospace;
+    border-radius: 0;
+    position: relative;
+}
+
+.form-row input:focus {
+    outline: none;
+    border: 2px solid var(--blade-accent);
+    background: rgba(0, 170, 255, 0.1);
+    box-shadow: 0 0 20px var(--blade-accent);
+}
+
+/* Checkbox - Blade Runner Style */
+.checkbox-row input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 28px;
+    height: 28px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 2px solid var(--blade-secondary);
+    cursor: pointer;
+    position: relative;
+}
+
+.checkbox-row input[type="checkbox"]:checked {
+    background: rgba(255, 170, 0, 0.3);
+    box-shadow: 0 0 15px var(--blade-secondary);
+}
+
+.checkbox-row input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    color: var(--blade-secondary);
+    font-weight: bold;
+    font-size: 18px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-shadow: 0 0 10px var(--blade-secondary);
+}
+
+.checkbox-row span {
+    color: var(--blade-text);
+}
+
+/* Submit Button - Retro Future */
+.submit-row input[type="submit"] {
+    background: linear-gradient(45deg, var(--blade-primary), var(--blade-secondary));
+    border: none;
+    color: #000;
+    font-family: var(--blade-font);
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.submit-row input[type="submit"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: 0.5s;
+}
+
+.submit-row input[type="submit"]:hover::before {
+    left: 100%;
+}
+
+.submit-row input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(255, 85, 85, 0.4);
+    background: linear-gradient(45deg, var(--blade-secondary), var(--blade-accent));
+}
+
+/* Error Messages - Crime Scene Tape */
+.errornote {
+    background: rgba(255, 0, 0, 0.1);
+    border: 2px dashed #ff0000;
+    color: #ff5555;
+    font-family: var(--blade-font);
+    letter-spacing: 1px;
+}
+
+.errornote::before,
+.errornote::after {
+    content: "⚠";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+
+.errornote::before { left: 10px; }
+.errornote::after { right: 10px; }
+
+/* Rain Effect */
+.rain-effect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 95%, var(--blade-rain) 100%);
+    background-size: 2px 50px;
+    animation: rain 0.5s linear infinite;
+    opacity: 0.3;
+    z-index: 1;
+}
+
+@keyframes rain {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 50px; }
+}
+
+/* Neon Grid Background */
+.neon-grid {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(255, 85, 85, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 85, 85, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: 1;
+    opacity: 0.3;
+}
+
+/* Holographic Billboards */
+.holo-billboard {
+    position: absolute;
+    width: 150px;
+    height: 300px;
+    background: linear-gradient(90deg, transparent, rgba(255, 85, 85, 0.1), transparent);
+    transform: perspective(500px) rotateY(45deg);
+    animation: billboardScroll 20s linear infinite;
+    z-index: 2;
+    opacity: 0.2;
+}
+
+@keyframes billboardScroll {
+    0% { left: -200px; }
+    100% { left: 100%; }
+}
