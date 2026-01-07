@@ -1,0 +1,149 @@
+/* admin/static/admin/css/base/core.css */
+/* Core variables and reset */
+
+:root {
+    /* Synthwave Theme Colors */
+    --synth-primary: #ff00ff;
+    --synth-secondary: #00d4ff;
+    --synth-accent: #ffcc00;
+    --synth-danger: #ff3366;
+    --synth-success: #00ff99;
+    --synth-warning: #ffaa00;
+    --synth-info: #00aaff;
+    
+    /* Background Colors */
+    --synth-bg-dark: #0a0a2a;
+    --synth-bg-darker: #05051a;
+    --synth-bg-light: #1a1a4a;
+    --synth-bg-lighter: #2a2a5a;
+    
+    /* Text Colors */
+    --synth-text: #ffffff;
+    --synth-text-muted: #a0a0ff;
+    --synth-text-dark: #0a0a2a;
+    
+    /* Border & Shadow */
+    --synth-border: #00ffff;
+    --synth-glow: 0 0 10px var(--synth-primary);
+    --synth-glow-secondary: 0 0 10px var(--synth-secondary);
+    
+    /* Spacing */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+    
+    /* Typography */
+    --font-heading: 'Audiowide', 'Orbitron', monospace;
+    --font-body: 'Quantico', sans-serif;
+    --font-mono: 'Courier New', monospace;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Z-index layers */
+    --z-background: -1;
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-modal-backdrop: 400;
+    --z-modal: 500;
+    --z-popover: 600;
+    --z-tooltip: 700;
+    --z-toast: 800;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--synth-bg-dark);
+    color: var(--synth-text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Remove default link styles */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Lists */
+ul, ol {
+    list-style: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Buttons */
+button {
+    font-family: inherit;
+    border: none;
+    background: none;
+    cursor: pointer;
+    color: inherit;
+}
+
+/* Inputs */
+input, textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* Focus styles */
+:focus-visible {
+    outline: 2px solid var(--synth-secondary);
+    outline-offset: 2px;
+}
+
+/* Selection */
+::selection {
+    background-color: var(--synth-primary);
+    color: var(--synth-text);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--synth-bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--synth-primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--synth-secondary);
+    box-shadow: var(--synth-glow-secondary);
+}

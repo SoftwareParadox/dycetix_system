@@ -1,5 +1,5 @@
 <!-- admin/templates/admin/login.html -->
-{% extends "admin/base_site.html" %}
+{% extends "admin/layouts/auth_base.html" %}
 {% load i18n static %}
 
 
@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
 <link rel="stylesheet" href="{% static 'admin/css/themes/synthwave.css' %}" id="theme-css">
 
+<link rel="icon" type="image/png" href="{% static 'images/icons/dycetix-icon.png' %}" sizes="32x32">
 <!-- Google Fonts for Themes -->
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&family=Audiowide&family=Quantico&family=Michroma&display=swap" rel="stylesheet">
 {% endblock %}
@@ -22,9 +23,11 @@
 
 {% block content %}
 <div id="content-main">
-<video autoplay muted loop playsinline id="bg-video">
-    <source src="{% static 'admin/images/background.mp4' %}" type="video/mp4">
-</video>
+  <video autoplay muted loop playsinline id="bg-video">
+      <source src="{% static 'admin/images/background.mp4' %}" type="video/mp4">
+      <!-- Fallback image for browsers that don't support video -->
+      <img src="{% static 'admin/images/fallback.jpg' %}" alt="Background">
+  </video>
   {% if form.errors and not form.non_field_errors %}
     <p class="errornote">
       {% blocktranslate count counter=form.errors.items|length %}Please correct the error below.{% plural %}Please correct the errors below.{% endblocktranslate %}
@@ -96,7 +99,7 @@
                autocomplete="username" 
                maxlength="150" 
                required
-               placeholder="admin@dycetix.co.za">
+               placeholder="{% translate 'admin@dycetix.co.za' %}">
       </div>
 
       <div class="form-row">
@@ -107,7 +110,7 @@
                id="id_password" 
                autocomplete="current-password" 
                required
-               placeholder="••••••••">
+               placeholder="{% translate '••••••••' %}">
       </div>
 
       <div class="checkbox-row">
@@ -127,6 +130,7 @@
 </div>
 {% endblock %}
 
-{% block extrajs %}
+{% block extrahead %}
+{{ block.super }}
 <script src="{% static 'admin/js/login.js' %}"></script>
 {% endblock %}

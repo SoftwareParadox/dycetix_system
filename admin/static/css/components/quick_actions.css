@@ -1,0 +1,38 @@
+.quick-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 10px;
+}
+
+.action-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(26, 26, 74, 0.6);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.action-item:hover {
+    border-color: var(--synth-secondary);
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+.action-item i {
+    font-size: 24px;
+    color: var(--synth-secondary);
+    margin-bottom: 10px;
+}
+
+.action-item span {
+    font-size: 14px;
+    color: var(--synth-text);
+    font-weight: 600;
+}

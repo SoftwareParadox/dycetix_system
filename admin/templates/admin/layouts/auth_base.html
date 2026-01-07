@@ -1,0 +1,31 @@
+<!-- admin/templates/admin/layouts/auth_base.html -->
+<!DOCTYPE html>
+{% load static i18n %}
+<html lang="en" data-theme="synthwave">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>{% block title %}{% trans 'DyceTix Admin Login' %}{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'admin/images/favicon.ico' %}" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:wght@400;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'admin/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/themes/synthwave.css' %}" id="theme-css">
+    
+    {% block extrastyle %}{% endblock %}
+</head>
+<body class="login-body">
+    {% block content %}
+    <!-- Login content goes here -->
+    {% endblock %}
+    
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

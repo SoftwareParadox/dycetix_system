@@ -17,7 +17,12 @@ Including another URLconf
 # dycetix_system/admin/config/urls.py
 from django.urls import path
 from admin.apps.accounts.admin_site import admin_site  # Import custom admin site
+# from django.conf import settings
+# from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin_site.urls),  # Use custom admin site
 ]
+
+# if settings.DEBUG:
+#     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

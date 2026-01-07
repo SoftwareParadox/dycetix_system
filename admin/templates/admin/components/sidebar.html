@@ -1,0 +1,175 @@
+<!-- admin/templates/admin/components/sidebar.html -->
+ {% load static %}
+<nav class="admin-sidebar nav-bar">
+    <!-- Logo -->
+    <div class="sidebar-logo">
+        <a href="{% url 'admin:index' %}" class="logo-link">
+            <div class="logo-icon">
+                <img src="{% static 'images/icons/dycetix-icon.png' %}" alt="Dycetix Icon">
+            </div>
+            <div class="logo-text">
+                <span class="logo-primary">Dycetix</span>
+                <span class="logo-secondary">Admin</span>
+            </div>
+        </a>
+    </div>
+
+    <!-- User Profile - ONLY SHOW IF USER IS AUTHENTICATED -->
+    {% if user.is_authenticated %}
+    <div class="sidebar-profile">
+        <div class="profile-info">
+            <div class="profile-avatar">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h3 class="profile-name">{{ user.get_full_name|default:user.email }}</h3>
+            <span class="profile-role">
+                {% if user.role %}
+                    {{ user.role }}
+                {% else %}
+                    Admin
+                {% endif %}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Quick Stats - ONLY SHOW IF USER IS AUTHENTICATED -->
+    {% if user.is_authenticated %}
+    <div class="sidebar-stats">
+        <div class="stat-item">
+            <i class="fas fa-inbox"></i>
+            <span class="stat-label">New Forms</span>
+            <span class="stat-value" id="new-forms-count">0</span>
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-bell"></i>
+            <span class="stat-label">Alerts</span>
+            <span class="stat-value" id="alerts-count">0</span>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Main Navigation -->
+    <ul class="sidebar-menu">
+        <!-- Dashboard -->
+        <li class="menu-item">
+            <a href="{% url 'admin:index' %}" class="menu-link active" data-section="dashboard">
+                <i class="menu-icon fas fa-home"></i>
+                <span class="menu-text">Dashboard</span>
+            </a>
+        </li>
+
+        <!-- Forms Management -->
+        <li class="menu-item has-submenu">
+            <a href="#" class="menu-link" data-section="forms">
+                <i class="menu-icon fas fa-file-alt"></i>
+                <span class="menu-text">Forms</span>
+                <i class="menu-arrow fas fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="#" data-subsection="client-requirements">Client Requirements</a></li>
+                <li><a href="#" data-subsection="job-applications">Job Applications</a></li>
+                <li><a href="#" data-subsection="subscriptions">Subscriptions</a></li>
+                <li><a href="#" data-subsection="partnerships">Partnerships</a></li>
+                <li><a href="#" data-subsection="referrals">Referrals</a></li>
+            </ul>
+        </li>
+
+        <!-- Content Management -->
+        <li class="menu-item has-submenu">
+            <a href="#" class="menu-link" data-section="content">
+                <i class="menu-icon fas fa-newspaper"></i>
+                <span class="menu-text">Content</span>
+                <i class="menu-arrow fas fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="#" data-subsection="blog-posts">Blog Posts</a></li>
+                <li><a href="#" data-subsection="blog-categories">Categories</a></li>
+                <li><a href="#" data-subsection="pages">Pages</a></li>
+                <li><a href="#" data-subsection="media-library">Media Library</a></li>
+            </ul>
+        </li>
+
+        <!-- Portfolio -->
+        <li class="menu-item">
+            <a href="#" class="menu-link" data-section="portfolio">
+                <i class="menu-icon fas fa-briefcase"></i>
+                <span class="menu-text">Portfolio</span>
+            </a>
+        </li>
+
+        <!-- Finance -->
+        <li class="menu-item has-submenu">
+            <a href="#" class="menu-link" data-section="finance">
+                <i class="menu-icon fas fa-chart-line"></i>
+                <span class="menu-text">Finance</span>
+                <i class="menu-arrow fas fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="#" data-subsection="invoices">Invoices</a></li>
+                <li><a href="#" data-subsection="payments">Payments</a></li>
+                <li><a href="#" data-subsection="expenses">Expenses</a></li>
+                <li><a href="#" data-subsection="reports">Reports</a></li>
+            </ul>
+        </li>
+
+        <!-- Analytics -->
+        <li class="menu-item">
+            <a href="#" class="menu-link" data-section="analytics">
+                <i class="menu-icon fas fa-chart-bar"></i>
+                <span class="menu-text">Analytics</span>
+            </a>
+        </li>
+
+        <!-- Communications -->
+        <li class="menu-item has-submenu">
+            <a href="#" class="menu-link" data-section="communications">
+                <i class="menu-icon fas fa-envelope"></i>
+                <span class="menu-text">Communications</span>
+                <i class="menu-arrow fas fa-chevron-down"></i>
+            </a>
+            <ul class="submenu">
+                <li><a href="#" data-subsection="email-templates">Email Templates</a></li>
+                <li><a href="#" data-subsection="newsletters">Newsletters</a></li>
+                <li><a href="#" data-subsection="notifications">Notifications</a></li>
+            </ul>
+        </li>
+
+        <!-- Users & Permissions -->
+        <li class="menu-item">
+            <a href="#" class="menu-link" data-section="users">
+                <i class="menu-icon fas fa-users"></i>
+                <span class="menu-text">Users</span>
+            </a>
+        </li>
+
+        <!-- Settings -->
+        <li class="menu-item">
+            <a href="#" class="menu-link" data-section="settings">
+                <i class="menu-icon fas fa-cog"></i>
+                <span class="menu-text">Settings</span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Sidebar Footer -->
+    <div class="sidebar-footer">
+        <div class="system-status">
+            <div class="status-indicator active" id="system-status"></div>
+            <span class="status-text">System Online</span>
+        </div>
+        <div class="sidebar-actions">
+            <button class="sidebar-action-btn" title="Collapse" onclick="toggleSidebar()">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="sidebar-action-btn" title="Refresh" onclick="window.location.reload()">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </div>
+</nav>
+
+
+
+<!-- Add this backdrop for mobile -->
+<div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleMobileSidebar()"></div>

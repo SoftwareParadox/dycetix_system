@@ -9,7 +9,7 @@
 }
 
 body.login {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 /* Remove "Skip to main content" link */

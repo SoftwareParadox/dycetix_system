@@ -1,0 +1,226 @@
+<!-- admin/templates/admin/layouts/dashboard_base.html -->
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" data-theme="synthwave">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>{% block title %}DyceTix Admin{% endblock %}</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="{% static 'admin/images/favicon.ico' %}" type="image/x-icon">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Quantico:wght@400;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="{% static 'css/base/core.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/typography.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/sidebar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/quick_actions.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/cards.css' %}">
+    <link rel="stylesheet" href="{% static 'css/components/settings_panel.css' %}">
+    <link rel="stylesheet" href="{% static 'admin/css/themes/synthwave.css' %}">
+    <link rel="icon" type="image/png" href="{% static 'images/icons/dycetix-icon.png' %}" sizes="32x32">
+    <!-- HTMX -->
+    <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body class="admin-body">
+    <!-- Background Effects (Synthwave Theme) -->
+    <div class="sun-gradient-bg"></div>
+    <div class="grid-lines-bg"></div>
+    <!-- Mobile Toggle Button -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleMobileSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    <!-- Loading Spinner -->
+    <div class="global-loader" id="global-loader">
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+            {% comment %} <div class="spinner-text">LOADING</div> {% endcomment %}
+        </div>
+    </div> 
+
+    <!-- Notification Container -->
+    <div class="notifications-container" id="notifications-container"></div>
+
+    <!-- Main Wrapper -->
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            {% include 'admin/components/sidebar.html' %}
+        </aside>
+
+        <!-- Main Content Area -->
+        <div class="admin-content">
+            <!-- Header -->
+            <header class="admin-header" id="admin-header">
+                {% include 'admin/components/header.html' %}
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content" id="main-content">
+                <!-- Breadcrumbs -->
+                <nav class="breadcrumb-nav" aria-label="breadcrumb">
+                    {% block breadcrumbs %}{% endblock %}
+                </nav>
+
+                <!-- Page Header -->
+                <header class="page-header">
+                    {% block page_header %}
+                    <h1 class="page-title">{% block page_title %}Dashboard{% endblock %}</h1>
+                    <p class="page-subtitle">{% block page_subtitle %}Welcome back, {{ request.user.first_name|default:"Admin" }}{% endblock %}</p>
+                    {% endblock %}
+                </header>
+
+                <!-- Messages/Alerts -->
+                {% if messages %}
+                <div class="messages-container">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">
+                        <span class="alert-icon">
+                            {% if message.tags == 'success' %}<i class="fas fa-check-circle"></i>
+                            {% elif message.tags == 'error' %}<i class="fas fa-exclamation-circle"></i>
+                            {% elif message.tags == 'warning' %}<i class="fas fa-exclamation-triangle"></i>
+                            {% else %}<i class="fas fa-info-circle"></i>{% endif %}
+                        </span>
+                        <span class="alert-message">{{ message }}</span>
+                        <button class="alert-close" onclick="this.parentElement.remove()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <!-- Content Block -->
+                <div class="content-area">
+                    {% block content %}
+                    <!-- Main content goes here -->
+                     
+                    {% endblock %}
+                </div>
+
+                <!-- Content Footer -->
+                <footer class="content-footer">
+                    {% block content_footer %}
+                    <div class="footer-stats">
+                        <span class="stat-item">
+                            <i class="fas fa-database"></i>
+                            <span id="db-connections">0</span> Active
+                        </span>
+                        <span class="stat-item">
+                            <i class="fas fa-bolt"></i>
+                            <span id="response-time">0</span>ms
+                        </span>
+                        <span class="stat-item">
+                            <i class="fas fa-user"></i>
+                            {{ request.user.email }}
+                        </span>
+                    </div>
+                    {% endblock %}
+                </footer>
+            </main>
+        </div>
+
+        <!-- Settings Panel (Collapsed by default) -->
+        <aside class="settings-panel" id="settings-panel">
+            {% include 'admin/components/settings_panel.html' %}
+        </aside>
+    </div>
+
+    <!-- Quick Action Modal -->
+    {% comment %} <div class="modal" id="quick-action-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Quick Actions</h3>
+                <button class="modal-close" onclick="closeModal('quick-action-modal')">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% include 'admin/components/quick_actions.html' %}
+            </div>
+        </div>
+    </div> {% endcomment %}
+
+    <!-- JavaScript Files -->
+    <script src="{% static 'js/utils/helpers.js' %}"></script>
+    <script src="{% static 'js/admin/themes.js' %}"></script>
+    <script src="{% static 'js/base/core.js' %}"></script>
+    <script src="{% static 'js/base/theme.js' %}"></script>
+    <script src="{% static 'js/components/sidebar.js' %}"></script>
+    <script src="{% static 'js/components/header.js' %}"></script>
+    <script src="{% static 'js/components/notifications.js' %}"></script>
+    
+    
+    <!-- CSRF Token for HTMX -->
+    <meta name="csrf-token" content="{{ csrf_token }}">
+    
+    <!-- User Context (for JavaScript) -->
+    <script>
+        // Safely get user data - FIXED VERSION
+        var userId = {% if request.user.is_authenticated %}{{ request.user.id|default:0 }}{% else %}null{% endif %};
+        var userEmail = "{% if request.user.is_authenticated %}{{ request.user.email|default:''|escapejs }}{% else %}{% endif %}";
+        var userFirstName = "{% if request.user.is_authenticated %}{{ request.user.first_name|default:''|escapejs }}{% else %}{% endif %}";
+        var userLastName = "{% if request.user.is_authenticated %}{{ request.user.last_name|default:''|escapejs }}{% else %}{% endif %}";
+        var userRole = "{% if request.user.is_authenticated %}{{ request.user.role|default:'operations'|escapejs }}{% else %}guest{% endif %}";
+        
+        // Safely get permissions
+        var userPermissions = {};
+        var permissionsElement = document.getElementById('user-permissions');
+        if (permissionsElement && permissionsElement.textContent) {
+            try {
+                userPermissions = JSON.parse(permissionsElement.textContent);
+            } catch(e) {
+                console.error('Failed to parse permissions:', e);
+                userPermissions = {};
+            }
+        }
+        
+        // Set window variables
+        window.user = {
+            id: userId,
+            email: userEmail,
+            firstName: userFirstName,
+            lastName: userLastName,
+            role: userRole,
+            permissions: userPermissions
+        };
+        window.theme = 'synthwave';
+        window.appVersion = '1.0.0';
+    </script>
+    
+    {% block extra_js %}{% endblock %}
+    
+    <!-- Initialize Base JS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize base functionality
+            initAdminBase();
+            initTheme();
+            initNotifications();
+            
+            // Hide loader
+            setTimeout(() => {
+                document.getElementById('global-loader').style.display = 'none';
+            }, 300);
+        });
+        
+        // Global error handler for HTMX
+        document.addEventListener('htmx:responseError', function(event) {
+            console.error('HTMX Error:', event.detail);
+            showNotification('error', 'Something went wrong. Please try again.');
+        });
+    </script>
+</body>
+</html>

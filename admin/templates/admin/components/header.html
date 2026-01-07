@@ -1,0 +1,121 @@
+<!-- admin/templates/admin/components/header.html -->
+<div class="header-container">
+    <!-- Left Section: Search & Quick Actions -->
+    <div class="header-left">
+        <!-- Search -->
+        <div class="search-container">
+            <i class="search-icon fas fa-search"></i>
+            <input type="text" 
+                   class="search-input" 
+                   placeholder="Search across system..." 
+                   id="global-search"
+                   hx-get="/admin/api/search/"
+                   hx-trigger="keyup changed delay:500ms"
+                   hx-target="#search-results"
+                   hx-indicator="#search-spinner">
+            <div class="search-results" id="search-results"></div>
+            <div class="search-spinner" id="search-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="quick-actions">
+            <button class="action-btn" title="Create New" onclick="openModal('quick-action-modal')">
+                <i class="fas fa-plus"></i>
+                <span class="action-text">New</span>
+            </button>
+            <button class="action-btn" title="Refresh Data" onclick="refreshData()">
+                <i class="fas fa-sync-alt"></i>
+                <span class="action-text">Refresh</span>
+            </button>
+            <button class="action-btn" title="Export Data" onclick="exportData()">
+                <i class="fas fa-download"></i>
+                <span class="action-text">Export</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Right Section: User & Notifications -->
+    <div class="header-right">
+        <!-- Theme Toggle -->
+        <button class="header-btn theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+            <i class="fas fa-palette"></i>
+        </button>
+
+        <!-- Notifications -->
+        <div class="notifications-dropdown">
+            <button class="header-btn notifications-btn" onclick="toggleNotifications()">
+                <i class="fas fa-bell"></i>
+                <span class="notification-badge" id="notification-count">0</span>
+            </button>
+            <div class="notifications-popup" id="notifications-popup">
+                <div class="notifications-header">
+                    <h4>Notifications</h4>
+                    <button class="mark-all-read" onclick="markAllAsRead()">Mark all as read</button>
+                </div>
+                <div class="notifications-list" id="notifications-list">
+                    <!-- Notifications will be loaded here via HTMX -->
+                    <div class="notification-empty">
+                        <i class="fas fa-bell-slash"></i>
+                        <p>No new notifications</p>
+                    </div>
+                </div>
+                <div class="notifications-footer">
+                    <a href="#" class="view-all">View all notifications</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help -->
+        <button class="header-btn" title="Help" onclick="openHelp()">
+            <i class="fas fa-question-circle"></i>
+        </button>
+
+        <!-- User Menu -->
+        <div class="user-menu">
+            <button class="user-btn" onclick="toggleUserMenu()">
+                <div class="user-avatar">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <span class="user-name">{{ request.user.first_name|default:"Admin" }}</span>
+                <i class="user-arrow fas fa-chevron-down"></i>
+            </button>
+            <div class="user-dropdown" id="user-dropdown">
+                <div class="user-info">
+                    <div class="user-details">
+                        <div class="user-avatar-lg">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h4>{{ request.user.get_full_name|default:request.user.email }}</h4>
+                        <span class="user-email">{{ request.user.email }}</span>
+                        <span class="user-role">{{ request.user.role|default:"Admin" }}</span>
+                    </div>
+                </div>
+                <div class="user-links">
+                    <a href="#" class="user-link">
+                        <i class="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </a>
+                    <a href="#" class="user-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Account Settings</span>
+                    </a>
+                    <a href="#" class="user-link">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Security</span>
+                    </a>
+                    <a href="#" class="user-link">
+                        <i class="fas fa-history"></i>
+                        <span>Activity Log</span>
+                    </a>
+                    <div class="user-divider"></div>
+                    <a href="{% url 'admin:logout' %}" class="user-link logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,169 @@
+/* admin/static/admin/css/base/layout.css */
+/* Layout structure and grid */
+
+.admin-body {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Effects */
+.sun-gradient-bg {
+    position: fixed;
+    top: -50vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(
+        circle at center,
+        var(--synth-primary) 0%,
+        transparent 70%
+    );
+    opacity: 0.05;
+    filter: blur(100px);
+    z-index: var(--z-background);
+    pointer-events: none;
+}
+
+.grid-lines-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    z-index: var(--z-background);
+    pointer-events: none;
+    animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0 0; }
+    100% { background-position: 40px 40px; }
+}
+
+/* Admin Wrapper */
+.admin-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: 1fr;
+    min-height: 100vh;
+    position: relative;
+    z-index: var(--z-base);
+    background: rgba(10, 10, 42, 0.95);
+    box-shadow: 
+        5px 0 20px rgba(0, 0, 0, 0.5),
+        inset -1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Main Content Area */
+.admin-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: rgba(10, 10, 42, 0.85);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(0, 212, 255, 0.2);
+    border-right: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: var(--spacing-xl);
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Content Area */
+.content-area {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-lg);
+    background: rgba(26, 26, 74, 0.6);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Content Footer */
+.content-footer {
+    margin-top: var(--spacing-xl);
+    padding: var(--spacing-md);
+    border-top: 1px solid rgba(0, 212, 255, 0.2);
+    font-size: 0.9rem;
+    color: var(--synth-text-muted);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-stats {
+    display: flex;
+    gap: var(--spacing-xl);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: 0.85rem;
+}
+
+.stat-item i {
+    color: var(--synth-secondary);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+    .admin-wrapper {
+        grid-template-columns: auto 1fr;
+    }
+    
+    .settings-panel {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-sidebar {
+        position: fixed;
+        left: -280px;
+        top: 0;
+        z-index: var(--z-modal);
+        transition: left var(--transition-normal);
+    }
+    
+    .admin-sidebar.active {
+        left: 0;
+    }
+    
+    .main-content {
+        padding: var(--spacing-md);
+    }
+    
+    .content-area {
+        padding: var(--spacing-md);
+    }
+    
+    .content-footer {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+    
+    .footer-stats {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: var(--spacing-lg);
+    }
+}
