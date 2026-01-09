@@ -9,6 +9,10 @@
   .hero-background {
     background: url('../../images/main/contact-us.jpg') center/cover;
   }
+
+  /* .primary {
+    display: none;
+  } */
   .contact-hero {
     position: relative;
     min-height: 80vh;

@@ -28,7 +28,12 @@
                 </div>
             </div>
             <!-- CTA Buttons -->
-            {% include 'includes/hero-cta.html' %}
+            <div class="hero-cta-btn-container">
+                <a href="/get-in-touch/#project-quote-form" class="hero-cta-btn primary form-trigger" itemprop="potentialAction" itemscope itemtype="http://schema.org/CommunicateAction">
+                    <span itemprop="name">{% if cta_text %}{{ cta_text }}{% else %}{{ HERO_CTA_SCHEDULE }}{% endif %}</span> →
+                    <div class="hero-cta-btn-hover-fill"></div>
+                </a>
+            </div>
             <div class="hero-split-scroll-indicator">
                 <div class="hero-split-chevron"></div>
                 <div class="hero-split-chevron"></div>
@@ -59,7 +64,7 @@
         "@type": "Service",
         "name": "Dycetix Pricing - Transparent Technology Service Pricing",
         "description": "Straightforward pricing for custom software development, IT support, and graphic design services tailored to your business vision and goals.",
-        "url": "https://www.dycetix.com/pricing",
+        "url": "https://www.dycetix.com/pricing/",
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",

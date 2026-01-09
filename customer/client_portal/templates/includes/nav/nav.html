@@ -54,9 +54,9 @@
                     <a href="{% url 'industries' %}" class="menu-list" itemprop="url">Industries</a>
                 </li>
             
-                <li class="about">
+                {% comment %} <li class="about">
                     <a href="{% url 'blog' %}" class="menu-list" itemprop="url">Blog</a>
-                </li>
+                </li> {% endcomment %}
             
                 <li class="button-wrapper">
                     <div class="button-inner-wrapper">
@@ -70,14 +70,14 @@
                     <div class="footer-menu-section" itemscope itemtype="http://schema.org/ContactPoint">
                         <h3>Contact Us</h3>
                         <ul>
-                            <li><a href="#" itemprop="telephone"><i class="fa-solid fa-phone phone-footer"></i><span>+27 67 038 2734</span></a></li>
-                            <li><a href="#" itemprop="contactOption"><i class="fa-brands fa-whatsapp"></i><span>+27 67 038 2734</span></a></li>
-                            <li><a href="#" itemprop="email"><i class="fa-regular fa-envelope"></i><span>techsolutions@dycetix.co.za</span></a></li>
+                            <li><a href="#" itemprop="telephone"><i class="fa-solid fa-phone phone-footer"></i><span>+27 75 195 5229</span></a></li>
+                            <li><a href="#" itemprop="contactOption"><i class="fa-brands fa-whatsapp"></i><span>+27 75 195 5229</span></a></li>
+                            <li><a href="#" itemprop="email"><i class="fa-regular fa-envelope"></i><span>solutions@dycetix.co.za</span></a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer-menu-container">
-                    <div class="footer-menu-social">
+                    {% comment %} <div class="footer-menu-social">
                         <hr class="social-menu-line-left">
                         <div class="social-icons-nav">
                             <a href="#" aria-label="Facebook" itemprop="sameAs"><i class="fab fa-facebook"></i></a>
@@ -87,19 +87,19 @@
                             <a href="#" target="_blank" aria-label="Telegram" itemprop="sameAs"><i class="fa-brands fa-telegram"></i></a>
                         </div>
                         <hr class="social-menu-line-right">
-                    </div>
+                    </div> {% endcomment %}
                 
                     <div class="footer-menu-bottom">
                         <p itemprop="copyrightNotice">© {% now "Y" %} Dycetix. All Rights Reserved.</p>
                         <p>
-                            <a href="privacy-policy.html" itemprop="url">Privacy Policy</a> |
-                            <a href="terms-of-service.html" itemprop="url">Terms of Service</a> |
-                            <a href="cookie-policy.html" itemprop="url">Cookie Policy</a>
+                            <a href="{% url 'privacy_policy' %}" itemprop="url">Privacy Policy</a> |
+                            <a href="{% url 'terms_of_service' %}" itemprop="url">Terms of Service</a> |
+                            <a href="{% url 'cookie_policy' %}" itemprop="url">Cookie Policy</a>
                         </p>
                     </div>
                 </div>
             </ul>
         </nav><!-- Navigation Bar Ends -->
-    {% include 'includes/nav/search-bar.html' %}
+    {% comment %} {% include 'includes/nav/search-bar.html' %} {% endcomment %}
     </div> <!-- menu-data ends here -->
 </div><!-- menu-container ends here -->

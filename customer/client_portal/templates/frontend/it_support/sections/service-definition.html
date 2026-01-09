@@ -1,4 +1,5 @@
 <!-- frontend/it_maintenance/sections/service-definition.html -->
+{% load static %}
 <section id="it-support-definition" class="body-section it-support-scope" itemscope itemtype="https://schema.org/Service">
     <div class="body-section-container">
         <article class="service-definition-content">
@@ -28,7 +29,7 @@
 
                 <!-- Purposeful Infrastructure Image -->
                 <div class="service-definition-visual">
-                    <img src="../../static/images/main/it-service-def.jpg" 
+                    <img src="{% static 'images/main/it-service-def.jpg' %}" 
                         alt="IT infrastructure management diagram" 
                         class="service-definition-infrastructure-img"
                         itemprop="image">

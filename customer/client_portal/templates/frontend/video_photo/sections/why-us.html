@@ -1,4 +1,5 @@
 <!-- Why Choose Dycetix - Photography & Videography -->
+{% load static %}
 <section id="photography-videography-why-choose" class="body-section dy-why-choose" itemscope itemtype="https://schema.org/Service">
     <div class="body-section-container why-choose-container">
         <!-- Section Header -->
@@ -32,7 +33,7 @@
                 <div class="wc-proof-collage">
                     <!-- Main Trust Visual -->
                     <div class="wc-main-proof" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                        <div class="wc-proof-frame" style="background-image: url('../../static/images/main/trust-showcase.png')">
+                        <div class="wc-proof-frame" style="background-image: url('{% static 'images/main/trust-showcase.png' %}')">
                             <div class="wc-proof-overlay">
                                 <div class="wc-proof-badge">
                                     <i class="fas fa-award"></i>
@@ -224,7 +225,7 @@
         "@type": "Service",
         "name": "Professional Photography and Videography Services",
         "description": "Artistic and technical fusion for visual storytelling with proven client impact and satisfaction",
-        "url": "https://www.dycetix.com/services/photography-videography",
+        "url": "https://www.dycetix.com/photography-and-videography/",
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",

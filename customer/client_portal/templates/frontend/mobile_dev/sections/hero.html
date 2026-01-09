@@ -1,4 +1,5 @@
 <!-- mobile_development_hero.html -->
+{% load static %}
 <section id="mobile-development-hero" class="hero-section hero-split" id="mobile-development" itemscope itemtype="https://schema.org/Service">
     <div class="hero-background" role="img" aria-label="Mobile app development interface showing iOS and Android platforms">
         <div class="hero-gradient-overlay"></div>
@@ -11,7 +12,7 @@
                 <div class="hero-iphone-mockup">
                     <div class="hero-screen">
                         <video autoplay loop muted playsinline itemprop="video">
-                            <source src="../../static/videos/iphone.mp4" type="video/mp4">
+                            <source src="{% static 'videos/iphone.mp4' %}" type="video/mp4">
                         </video>
                     </div>
                 </div>
@@ -90,7 +91,7 @@
         <p itemprop="description">Build apps that define categories with native performance and pixel-perfect design for iOS and Android platforms.</p>
         <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="Dycetix">
-            <meta itemprop="url" content="https://www.dycetix.com">
+            <meta itemprop="url" content="https://www.dycetix.co.za/mobile-application-development">
         </div>
         <div itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
             <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
@@ -131,7 +132,7 @@
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",
-            "url": "https://www.dycetix.com"
+            "url": "https://www.dycetix.com/mobile-application-development/"
         },
         "serviceType": "Mobile App Development",
         "keywords": [
@@ -165,12 +166,12 @@
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action",
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/pricing/"
             }
         ]
     }

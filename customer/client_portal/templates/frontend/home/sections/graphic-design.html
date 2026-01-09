@@ -1,4 +1,5 @@
 <!-- Graphic design -->
+{% load static %}
 <section id="graphic-design" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <div class="tech-stack-content tech-stack-right">
         <!-- Content on left, video on right -->
@@ -93,7 +94,7 @@
                     itemprop="video"
                     poster="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 >
-                    <source src="../../static/videos/graphic-design-index.mp4" type="video/mp4">
+                    <source src="{% static 'videos/graphic-design-index.mp4' %}" type="video/mp4">
                     <img 
                         src="https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                         alt="Graphic designer working on creative project with Adobe software"
@@ -149,7 +150,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Start Creative Project",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

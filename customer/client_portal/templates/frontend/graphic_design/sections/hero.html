@@ -1,4 +1,5 @@
 <!-- frontend/graphic_design/sections/hero.html -->
+{% load static %}
 <section id="graphic-design-hero" class="hero-section" itemscope itemtype="https://schema.org/Service">
     <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
         <div class="hero-gradient-overlay"></div>
@@ -22,17 +23,17 @@
             <div class="gd-visual-preview">
                 <div class="gd-device-mockup gd-phone">
                     <div class="gd-screen">
-                        <img src="../../static/images/main/graphic-design-3.jpg" alt="Graphic Design on Phone" itemprop="image">
+                        <img src="{% static 'images/main/graphic-design-3.jpg' %}" alt="Graphic Design on Phone" itemprop="image">
                     </div>
                 </div>
                 <div class="gd-device-mockup gd-tablet">
                     <div class="gd-screen">
-                        <img src="../../static/images/main/graphic-design-1.jpg" alt="Graphic Design on Tablet" itemprop="image">
+                        <img src="{% static 'images/main/graphic-design-1.jpg' %}" alt="Graphic Design on Tablet" itemprop="image">
                     </div>
                 </div>
                 <div class="gd-device-mockup gd-laptop">
                     <div class="gd-screen">
-                        <img src="../../static/images/main/graphic-design-2.jpg" alt="Graphic Design on Laptop" itemprop="image">
+                        <img src="{% static 'images/main/graphic-design-2.jpg' %}" alt="Graphic Design on Laptop" itemprop="image">
                     </div>
                 </div>
             </div>
@@ -78,12 +79,12 @@
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action", 
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/get-in-touch/"
             }
         ]
     }

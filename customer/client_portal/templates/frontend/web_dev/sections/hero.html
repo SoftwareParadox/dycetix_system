@@ -1,4 +1,5 @@
 <!-- web_development_hero.html -->
+{% load static %}
 <section id="web-development-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
     <!-- Contextual Visual Preview -->
     <!-- <div class="hero-background" role="img" aria-label="Software development team collaborating on a digital interface">
@@ -6,7 +7,7 @@
     </div> -->
      <div class="web-hero-background">
         <video class="web-hero-bg-video" autoplay muted loop playsinline aria-label="Abstract technology visualization">
-            <source src="../../static/videos/web-dev-hero.mp4" type="video/mp4">
+            <source src="{% static 'videos/web-dev-hero.mp4' %}" type="video/mp4">
         </video>
         <div class="web-hero-gradient-overlay"></div>
     </div>
@@ -162,12 +163,12 @@
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action",
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/pricing/"
             }
         ]
     }

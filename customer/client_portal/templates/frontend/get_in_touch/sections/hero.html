@@ -21,6 +21,10 @@
             <meta itemprop="name" content="Impactful Graphic Design">
             <meta itemprop="category" content="Creative Services">
         </div>
+        <div itemprop="makesOffer" itemscope itemtype="https://schema.org/Offer">
+            <meta itemprop="name" content="storytelling Photography & Videography">
+            <meta itemprop="category" content="Visual Services">
+        </div>
     </div>
     
     <div class="hero-content-container">
@@ -42,7 +46,12 @@
                 </span>
             </div>
 
-            {% include 'includes/hero-cta.html' %}
+            <div class="hero-cta-btn-container">
+                <a href="{% url 'pricing' %}" class="hero-cta-btn secondary" itemprop="potentialAction" itemscope itemtype="http://schema.org/GetEstimateAction">
+                    <span itemprop="name">{% if cta_text %}{{ cta_text }}{% else %}{{ HERO_CTA_ESTIMATE }}{% endif %}</span>↗
+                    <div class="hero-cta-btn-hover-fill"></div>
+                </a>
+            </div>
         </div>
 
         <div class="hero-split-scroll-indicator">
@@ -58,7 +67,7 @@
         <p itemprop="description">Start your technology project with Dycetix - custom software development, IT support, and graphic design services.</p>
         <div itemprop="mainEntity" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="Dycetix">
-            <meta itemprop="url" content="https://www.dycetix.com">
+            <meta itemprop="url" content="https://www.dycetix.com/get-in-touch/">
         </div>
     </div>
 
@@ -78,12 +87,12 @@
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact-form"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action", 
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/get-in-touch/"
             }
         ]
     }

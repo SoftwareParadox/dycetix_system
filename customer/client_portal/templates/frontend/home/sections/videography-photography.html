@@ -1,4 +1,5 @@
 <!-- Photography & Videography Solutions Section -->
+{% load static %}
 <section id="photography-videography" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <div class="tech-stack-content">
         <!-- Video on left, content on right -->
@@ -13,7 +14,7 @@
                     itemprop="video"
                     poster="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 >
-                    <source src="../../static/videos/photography-videography.mp4" type="video/mp4">
+                    <source src="{% static 'videos/photography-videography.mp4' %}" type="video/mp4">
                     <img 
                         src="https://images.unsplash.com/photo-1554048612-b6a482bc67e5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                         alt="Professional photographer filming a wedding couple in scenic outdoor setting"
@@ -94,7 +95,7 @@
                 </span>
             </div>
             <div class="index-tech-stack-cta ">
-                <a href="/video-photo/#photography-videography-solutions" class="body-cta" itemprop="url">
+                <a href="/photography-and-videography/#photography-videography-solutions" class="body-cta" itemprop="url">
                     {% if cta_text %}{{ cta_text }}{% else %}{{ CTA_LEARN_MORE }}{% endif %} <i class="fas fa-arrow-right"></i>
                     <div class="body-cta-hover"></div>
                 </a>
@@ -147,7 +148,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Book Photography Session",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

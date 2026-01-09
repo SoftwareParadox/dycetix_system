@@ -1,9 +1,10 @@
+{% load static %} 
 <div class="particles" id="particles"></div>
 
 <div class="body-section-container error-container">
     <div class="header">
         <a href="/" aria-label="Dycetix Home" itemprop="url" class="footer-image">
-            <img src="../../static/images/footer/dycetix-logo.png" alt="Dycetix - Tech Solutions Provider" class="footer-logo" loading="lazy" itemprop="logo">
+            <img src="{% static 'images/footer/dycetix-logo.png' %}" alt="Dycetix - Tech Solutions Provider" class="footer-logo" loading="lazy" itemprop="logo">
         </a>
         <a href="/" class="home-link">
             <i class="fas fa-arrow-left"></i> Back to Home
@@ -19,12 +20,12 @@
             But don't worry - we'll help you navigate back to familiar territory.
         </p>
         
-        <div class="search-container">
+        {% comment %} <div class="search-container">
             <div class="search-box">
                 <input id="dycetix-secondary-search-input" type="text" placeholder="Search our website...">
                 <button id="dycetix-secondary-search-button">Find</button>
             </div>
-        </div>
+        </div> {% endcomment %}
         <!-- <div class="search-content-container search-container">
             <div class="search-container search-box">
                 <i class="fas fa-search" itemprop="name"></i>
@@ -63,12 +64,12 @@
     
     <div class="footer">
         <p itemprop="copyrightNotice">© {% now "Y" %} Dycetix Technology Solutions. All Rights Reserved.</p>
-        <div class="social-links">
+        {% comment %} <div class="social-links">
             <a href="[FB_URL]" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
             <a href="[YouTube_URL]" aria-label="YouTube"><i class="fa-brands fa-square-youtube"></i></a>
             <a href="[LinkedIn_URL]" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="#" aria-label="Instagram"><i class="fa-brands fa-telegram"></i></a>
             <a href="[Instagram_URL]" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        </div>
+        </div> {% endcomment %}
     </div>
 </div>

@@ -1,0 +1,301 @@
+<!-- admin/templates/admin/logout.html -->
+{% extends "admin/layouts/auth_base.html" %}
+{% load static %}
+
+{% block bodyclass %}logout {{ block.super }}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  <video autoplay muted loop playsinline id="bg-video">
+      <source src="{% static 'admin/images/background.mp4' %}" type="video/mp4">
+      <img src="{% static 'admin/images/fallback.jpg' %}" alt="Background">
+  </video>
+
+  <!-- Synthwave elements (matching login page) -->
+  <div class="sun-container">
+      <div class="sun-gradient"></div>
+  </div>
+  <div class="grid-lines"></div>
+
+  <div id="logout-container">
+    <div class="logout-card">
+      <div class="logout-icon">
+        <i class="fas fa-sign-out-alt"></i>
+      </div>
+      
+      <div class="logout-header">
+        <h1>Logged Out Successfully</h1>
+        <p class="logout-subtitle">Session ended • Security maintained</p>
+      </div>
+      
+      <div class="logout-message">
+        <p>
+          <i class="fas fa-heart"></i>
+          Thank you for spending some quality time with the DyceTix Admin Panel today.
+        </p>
+        <p>
+          <i class="fas fa-shield-alt"></i>
+          All your session data has been securely cleared from this browser.
+        </p>
+      </div>
+      
+      {% if user_email %}
+      <div class="logout-details">
+        <div class="detail-row">
+          <i class="fas fa-user-circle"></i>
+          <span class="detail-label">Account:</span>
+          <span class="detail-value">{{ user_email }}</span>
+        </div>
+        {% if last_login %}
+        <div class="detail-row">
+          <i class="fas fa-clock"></i>
+          <span class="detail-label">Last login:</span>
+          <span class="detail-value">{{ last_login|date:"M d, Y H:i" }}</span>
+        </div>
+        {% endif %}
+        <div class="detail-row">
+          <i class="fas fa-calendar-check"></i>
+          <span class="detail-label">Logout time:</span>
+          <span class="detail-value">{% now "M d, Y H:i" %}</span>
+        </div>
+      </div>
+      {% endif %}
+      
+      <div class="logout-actions">
+        <a href="{% url 'admin_login' %}" class="btn-login-again">
+          <i class="fas fa-sign-in-alt"></i>
+          Login Again
+        </a>
+        
+        {% comment %} <a href="/" class="btn-go-home">
+          <i class="fas fa-home"></i>
+          Return to Home
+        </a> {% endcomment %}
+      </div>
+      
+      <div class="logout-security">
+        <p><i class="fas fa-exclamation-triangle"></i> For security, please close your browser window</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom logout page styles - matches login theme */
+  #logout-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  .logout-card {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    border: 1px solid rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 50px rgba(255, 0, 255, 0.2),
+                0 10px 30px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .logout-icon {
+    font-size: 4rem;
+    color: #ff00ff;
+    margin-bottom: 20px;
+    animation: pulse 2s infinite;
+    text-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+  
+  .logout-header h1 {
+    font-family: 'Audiowide', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.5);
+  }
+  
+  .logout-subtitle {
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+  }
+  
+  .logout-message {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-left: 4px solid #00ffff;
+  }
+  
+  .logout-message p {
+    color: #ccc;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .logout-message p i {
+    color: #ff00ff;
+    font-size: 1.2rem;
+  }
+  
+  .logout-details {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+  }
+  
+  .detail-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    color: #ccc;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  .detail-row i {
+    color: #00ffff;
+    width: 20px;
+    text-align: center;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+    color: #aaa;
+    min-width: 100px;
+  }
+  
+  .detail-value {
+    color: #fff;
+    word-break: break-all;
+  }
+  
+  .logout-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+  }
+  
+  .btn-login-again, .btn-go-home {
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Quantico', sans-serif;
+  }
+  
+  .btn-login-again {
+    background: linear-gradient(135deg, #ff00ff 0%, #9d00ff 100%);
+    color: white;
+    border: none;
+  }
+  
+  .btn-go-home {
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+  }
+  
+  .btn-login-again:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 0, 255, 0.4);
+  }
+  
+  .btn-go-home:hover {
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateY(-3px);
+  }
+  
+  .logout-security {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ff6b6b;
+    font-size: 0.9rem;
+  }
+  
+  .logout-security i {
+    margin-right: 8px;
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    .logout-card {
+      padding: 30px 20px;
+    }
+    
+    .logout-header h1 {
+      font-size: 2rem;
+    }
+    
+    .logout-actions {
+      flex-direction: column;
+    }
+    
+    .detail-row {
+      flex-wrap: wrap;
+    }
+  }
+</style>
+
+<script>
+  // Optional: Add a countdown timer for auto-redirect
+  document.addEventListener('DOMContentLoaded', function() {
+    let seconds = 30;
+    const countdownEl = document.createElement('div');
+    countdownEl.className = 'countdown-timer';
+    countdownEl.innerHTML = `Auto-redirect to login in <span id="countdown">${seconds}</span> seconds`;
+    countdownEl.style.cssText = `
+      margin-top: 20px;
+      color: #888;
+      font-size: 0.9rem;
+      font-family: 'Orbitron', sans-serif;
+    `;
+    
+    document.querySelector('.logout-actions').after(countdownEl);
+    
+    const countdownInterval = setInterval(() => {
+      seconds--;
+      document.getElementById('countdown').textContent = seconds;
+      
+      if (seconds <= 0) {
+        clearInterval(countdownInterval);
+        window.location.href = "{% url 'admin_login' %}";
+      }
+    }, 1000);
+  });
+</script>
+{% endblock %}

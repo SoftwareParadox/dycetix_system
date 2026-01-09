@@ -1,4 +1,5 @@
 <!-- technologies_swift.html -->
+{% load static %}
 <section id="technologies-swift" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <!-- Hidden structured data for microdata -->
     <div itemscope itemtype="https://schema.org/Service" style="display: none;">
@@ -91,7 +92,7 @@
         <div class="tech-stack-image-container">
             <div class="tech-stack-image-wrapper">
                 <img 
-                    src="../../static/images/main/swift.jpg" 
+                    src="{% static 'images/main/swift.jpg' %}" 
                     alt="Swift development for iOS, macOS and Apple ecosystem applications"
                     class="tech-stack-image"
                     itemprop="image"
@@ -145,7 +146,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Start Swift Project",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

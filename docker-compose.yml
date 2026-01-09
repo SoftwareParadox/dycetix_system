@@ -23,6 +23,7 @@ services:
             python admin/manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./admin:/app/admin
+      - ./media:/app/media # For media files
     depends_on:
       - postgres
     ports:

@@ -43,7 +43,7 @@
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Dycetix",
-        "url": "https://www.dycetix.com",
+        "url": "https://www.dycetix.co.za",
         "logo": "{% static 'images/dycetix-logo.png' %}",
         "description": "Dycetix provides comprehensive software development, IT support, graphic design and photography and videography solutions",
         "foundingDate": "2023",
@@ -70,7 +70,6 @@
         {% include 'includes/footer/footer.html' %}
     </div>
 
-    <!-- Add this to your base.html AFTER footer, BEFORE scripts -->
     <div id="form-modal" class="form-modal">
         <div class="form-modal-overlay"></div>
         <div class="form-modal-container">
@@ -187,7 +186,7 @@
                     </div>
                     
                     <!-- File Upload -->
-                    <div class="index-quote-form-group">
+                    {% comment %} <div class="index-quote-form-group">
                         <div class="index-quote-upload-header">
                             <span>File Upload (Optional)</span>
                             <div class="index-quote-tooltip">Attach relevant files (max 5)</div>
@@ -214,7 +213,7 @@
                                 <span class="total-size">Total: <span id="modal-totalSize">0 MB</span></span>
                             </div>
                         </div>
-                    </div>
+                    </div> {% endcomment %}
                     
                     <!-- Submit Button -->
                     <button type="submit" class="body-cta index-quote-submit-btn" id="modal-submitBtn">

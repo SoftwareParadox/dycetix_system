@@ -1,4 +1,5 @@
 <!-- desktop_development_hero.html -->
+{% load static %}
 <section id="desktop-development-hero" class="hero-section hero-split" itemscope itemtype="https://schema.org/Service">
     <div class="hero-background" role="img" aria-label="Desktop application development interface showing performance metrics">
         <div class="hero-gradient-overlay"></div>
@@ -28,7 +29,7 @@
                         <!-- Added video container and video element -->
                         <div class="meter-video-container">
                             <video class="gauge-video" autoplay muted loop playsinline itemprop="video">
-                                <source src="../../static/videos/desktop-hero.mp4" type="video/mp4">
+                                <source src="{% static 'videos/desktop-hero.mp4' %}" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                         </div>
@@ -66,7 +67,7 @@
         <p itemprop="description">Native desktop excellence with business-critical apps engineered for peak performance across multiple platforms.</p>
         <div itemprop="provider" itemscope itemtype="https://schema.org/Organization">
             <meta itemprop="name" content="Dycetix">
-            <meta itemprop="url" content="https://www.dycetix.com">
+            <meta itemprop="url" content="https://www.dycetix.co.za/desktop-application-development/">
         </div>
         <div itemprop="keywords" itemscope itemtype="https://schema.org/ItemList">
             <div itemprop="itemListElement" itemscope itemtype="https://schema.org/Thing">
@@ -93,7 +94,7 @@
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",
-            "url": "https://www.dycetix.com"
+            "url": "https://www.dycetix.com/desktop-application-development/"
         },
         "serviceType": "Desktop Application Development",
         "keywords": [
@@ -110,12 +111,12 @@
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action",
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/pricing/"
             }
         ]
     }

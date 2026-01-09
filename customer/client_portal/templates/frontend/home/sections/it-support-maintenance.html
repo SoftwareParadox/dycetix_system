@@ -1,4 +1,5 @@
 <!-- technologies_it_support.html -->
+{% load static %}
 <section id="technologies-it-support" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <!-- Hidden structured data for microdata -->
     <div itemscope itemtype="https://schema.org/Service" style="display: none;">
@@ -24,7 +25,7 @@
                     poster="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                     loading="lazy"
                 >
-                    <source src="../../static/videos/it-support-and-maintenance-index.mp4" type="video/mp4">
+                    <source src="{% static 'videos/it-support-and-maintenance-index.mp4' %}" type="video/mp4">
                     <!-- Fallback image if video doesn't load -->
                     <img 
                         src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
@@ -112,7 +113,7 @@
             </div>
 
             <div class="index-tech-stack-cta ">
-                <a href="/it-maintenance/#it-support-solutions" class="body-cta" itemprop="url">
+                <a href="/it-support-&-maintenance/#it-support-solutions" class="body-cta" itemprop="url">
                     {% if cta_text %}{{ cta_text }}{% else %}{{ CTA_LEARN_MORE }}{% endif %} <i class="fas fa-arrow-right"></i>
                     <div class="body-cta-hover"></div>
                 </a>
@@ -130,7 +131,8 @@
         "description": "Proactive, reliable, and comprehensive remote IT solutions to keep your business technology running smoothly 24/7/365.",
         "provider": {
             "@type": "Organization",
-            "name": "Your Company Name"
+            "name": "Dycetix Tech Solutions",
+            "url": "https://www.dycetix.com"
         },
         "serviceType": "IT Support",
         "category": "Technology Services",
@@ -141,9 +143,9 @@
         },
         "availableChannel": {
             "@type": "ServiceChannel",
-            "serviceUrl": "https://www.yourcompany.com/it-support",
-            "servicePhone": "+1-800-IT-SUPPORT",
-            "availableLanguage": ["English", "Spanish"]
+            "serviceUrl": "https://www.dycetix.com/it-support-and-maintenance/",
+            "servicePhone": "+27 75 195 5229",
+            "availableLanguage": ["English"]
         },
         "serviceAudience": {
             "@type": "BusinessAudience",
@@ -187,9 +189,9 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Get IT Support Consultation",
-            "url": "https://www.yourcompany.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         },
-        "termsOfService": "https://www.yourcompany.com/terms/it-support",
+        "termsOfService": "https://www.dycetix.com/terms-of-service/",
         "offers": {
             "@type": "Offer",
             "category": "IT Support Plans",

@@ -1,4 +1,5 @@
 <!-- industries_retail.html -->
+{% load static %}
 <section id="industries-retail" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <!-- Hidden structured data for microdata -->
     <div itemscope itemtype="https://schema.org/Service" style="display: none;">
@@ -15,7 +16,7 @@
         <div class="tech-stack-image-container">
             <div class="tech-stack-image-wrapper">
                 <img 
-                    src="../../static/images/main/retailer.jpg" 
+                    src="{% static 'images/main/retailer.jpg' %}" 
                     alt="Retail technology solutions including e-commerce and inventory management"
                     class="tech-stack-image"
                     itemprop="image"
@@ -142,7 +143,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Elevate Retail",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

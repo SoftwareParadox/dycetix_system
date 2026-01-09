@@ -1,8 +1,9 @@
 <!-- about_us_hero.html -->
+{% load static %}
 <section id="photography-videography-hero" class="hero-section" itemscope itemtype="https://schema.org/Service">
     <div class="video-photo-hero-background">
         <video class="video-photo-bg-video" autoplay muted loop playsinline aria-label="Professional photography and videography services showcase">
-            <source src="../../static/videos/video-photo-hero.mp4" type="video/mp4">
+            <source src="{% static 'videos/video-photo-hero.mp4' %}" type="video/mp4">
         </video>
         <div class="video-photo-gradient-overlay"></div>
     </div>
@@ -71,7 +72,7 @@
         "@type": "Service",
         "name": "Photography and Videography Services",
         "description": "Professional photography and videography services including commercial photography, cinematic videography, and professional editing. Transforming moments into lasting visual narratives.",
-        "url": "https://www.dycetix.com/services/photography-videography",
+        "url": "https://www.dycetix.com/photography-and-videography/",
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",

@@ -1,4 +1,5 @@
 <!-- Photography & Videography Service Definition -->
+{% load static %}
 <section id="photography-videography-definition" class="body-section dy-service-definition" itemscope itemtype="https://schema.org/Photography">
     <div class="body-section-container dy-service-definition-container">
         <!-- Visual Content -->
@@ -6,7 +7,7 @@
             <div class="sd-visual-composition">
                 <!-- Main Visual Element -->
                 <div class="sd-main-visual" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                    <div class="sd-visual-frame" style="background-image: url('../../static/images/main/visual-frame.jpg')">
+                    <div class="sd-visual-frame" style="background-image: url('{% static 'images/main/visual-frame.jpg' %}')">
                         <!-- <div class="sd-visual-overlay">
                             <div class="dy-play-icon">
                                 <i class="fas fa-play"></i>
@@ -19,8 +20,8 @@
                 
                 <!-- Supporting Visual Elements -->
                 <div class="sd-supporting-visuals">
-                    <div class="sd-supporting-item" style="background-image: url('../../static/images/main/supporting-visuals-1.jpg')"></div>
-                    <div class="sd-supporting-item" style="background-image: url('../../static/images/main/supporting-visuals-2.jpg')"></div>
+                    <div class="sd-supporting-item" style="background-image: url('{% static 'images/main/supporting-visuals-1.jpg' %}')"></div>
+                    <div class="sd-supporting-item" style="background-image: url('{% static 'images/main/supporting-visuals-2.jpg' %}')"></div>
                     <div class="sd-badge">
                         <span class="sd-badge-text">Visual Excellence</span>
                     </div>
@@ -141,7 +142,7 @@
         "@type": "Photography",
         "name": "Professional Photography and Videography Services",
         "description": "Strategic visual storytelling services combining technical excellence with creative vision for brand narratives",
-        "url": "https://www.dycetix.com/services/photography-videography",
+        "url": "https://www.dycetix.com/photography-and-videography",
         "provider": {
             "@type": "Organization",
             "name": "Dycetix",

@@ -1,9 +1,10 @@
 <!-- frontend/graphic_design/sections/why-us.html -->
+{% load static %}
 <section id="graphic-design-why-choose" class="body-section dy-why-section" itemscope itemtype="https://schema.org/Service">
     <div class="body-section-container dy-why-container">
         <div class="image-card" itemprop="image">
             <div class="image-visual">
-                <img src="../../static/images/main/our-journey.jpg" 
+                <img src="{% static 'images/main/our-journey.jpg' %}" 
                  alt="Custom software development workflow: Cloud infrastructure, CI/CD pipeline, and API integrations"
                  loading="lazy">
             </div>

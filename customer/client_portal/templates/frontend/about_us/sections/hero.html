@@ -1,14 +1,15 @@
 <!-- about_us_hero.html -->
+{% load static %}
 <section id="about-us-hero" class="hero-section" itemscope itemtype="https://schema.org/AboutPage">
     <div class="about-hero-background">
         <video class="about-hero-bg-video" autoplay muted loop playsinline aria-label="Abstract technology visualization">
-            <source src="../../static/videos/about-us-hero.mp4" type="video/mp4">
+            <source src="{% static 'videos/about-us-hero.mp4' %}" type="video/mp4">
         </video>
         <div class="about-hero-gradient-overlay"></div>
     </div>
     
     <div class="visually-hidden">
-        <h2 itemprop="description">Software Development, IT Support, and Graphic Design Services</h2>
+        <h2 itemprop="description">Software Development, IT Support, photography and videography, and Graphic Design Services</h2>
     </div>
 
     <div class="hero-content-container">
@@ -52,18 +53,18 @@
         "mainEntity": {
             "@type": "Organization",
             "name": "Dycetix",
-            "description": "Custom software development, IT support, and graphic design services"
+            "description": "Custom software development, IT support, photography and videography, and graphic design services"
         },
         "potentialAction": [
             {
                 "@type": "Action",
                 "name": "Schedule Free Consultation",
-                "url": "https://www.dycetix.com#contact"
+                "url": "https://www.dycetix.com/get-in-touch/"
             },
             {
                 "@type": "Action", 
                 "name": "Estimate Project Cost",
-                "url": "https://www.dycetix.com#pricing"
+                "url": "https://www.dycetix.com/pricing/"
             }
         ]
     }

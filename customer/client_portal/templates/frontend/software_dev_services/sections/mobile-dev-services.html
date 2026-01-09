@@ -1,4 +1,5 @@
 <!-- technologies_mobile_development.html -->
+{% load static %}
 <section class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <!-- Hidden structured data for microdata -->
     <div itemscope itemtype="https://schema.org/Service" style="display: none;">
@@ -15,7 +16,7 @@
         <div class="tech-stack-image-container">
             <div class="tech-stack-image-wrapper">
                 <img 
-                    src="../../static/images/main/mobile-dev-services.jpg" 
+                    src="{% static 'images/main/mobile-dev-services.jpg' %}" 
                     alt="Mobile app development for iOS and Android platforms"
                     class="tech-stack-image"
                     itemprop="image"
@@ -144,7 +145,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Build Your Mobile App",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

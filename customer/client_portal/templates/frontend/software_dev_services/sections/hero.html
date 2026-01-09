@@ -47,12 +47,7 @@
             </div>
         
             <!-- Unified CTA -->
-            <div class="hero-cta-btn-container">
-                <a href="#contact" class="hero-cta-btn primary" itemprop="potentialAction" itemscope itemtype="https://schema.org/Action">
-                    <span itemprop="name">Schedule Free Consultation</span> →
-                    <div class="hero-cta-btn-hover-fill"></div>
-                </a>
-            </div>
+            {% include 'includes/hero-cta.html' %}
         </div>
         <div class="hero-split-scroll-indicator">
             <div class="hero-split-chevron"></div>
@@ -98,7 +93,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Schedule Free Consultation",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

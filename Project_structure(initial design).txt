@@ -1,3 +1,4 @@
+# Initial Design
 dycetix_system/
 ├── docker-compose.yml
 ├── requirements.txt

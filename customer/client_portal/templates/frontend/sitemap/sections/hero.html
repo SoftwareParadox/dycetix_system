@@ -45,8 +45,8 @@
         <div class="sitemap-section">
             <h2 class="section-title"><i class="fas fa-chart-line"></i> Growth & Community</h2>
             <ul class="sitemap-list">
-                <li class="sitemap-item"><a href="{% url 'careers' %}">Careers</a> - Future opportunities</li>
-                <li class="sitemap-item"><a href="{% url 'blog' %}">Blog/Resources</a> - Tech insights & best practices</li>
+                <li class="sitemap-item"><a href="#">Careers</a> - Future opportunities (Coming Soon)</li>
+                <li class="sitemap-item"><a href="#">Blog/Resources</a> - Tech insights & best practices (Coming Soon)</li>
                 <!-- <li class="sitemap-item"><a href="/projects">Project Showcase</a> <em>(Coming Q4 2024)</em></li> -->
                 <li class="sitemap-item"><a href="/#faq">FAQ</a> - Common questions answered</li>
             </ul>
@@ -68,7 +68,7 @@
             </ul>
         </div>
 
-        <div class="newsletter-section-sitemap">
+        {% comment %} <div class="newsletter-section-sitemap">
             <h3 class="body-card-header">Stay Updated on Our Growth</h3>
             <p class="body-card-paragraph global-card-description">Get sitemap updates and company news directly in your inbox</p>
             <form class="newsletter-form-sitemap">
@@ -80,7 +80,7 @@
                 </button>
             </form>
             <p class="note">We respect your privacy – view our <a href="{% url 'privacy_policy' %}">Privacy Policy</a></p>
-        </div>
+        </div> {% endcomment %}
 
         <p class="note-p">Building transparency note: Some sections are under active development. Thanks for being part of our journey!</p>
     </div>

@@ -38,12 +38,12 @@ urlpatterns = [
     # Add service pages
     path('custom-software-development/', TemplateView.as_view(template_name='frontend/custom_dev/custom-software-development.html'), name='custom_software'),
     path('web-development/', TemplateView.as_view(template_name='frontend/web_dev/web-development.html'), name='web_development'),
-    path('mobile-development/', TemplateView.as_view(template_name='frontend/mobile_dev/mobile-development.html'), name='mobile_development'),
-    path('desktop-development/', TemplateView.as_view(template_name='frontend/desktop_dev/desktop-development.html'), name='desktop_development'),
+    path('mobile-application-development/', TemplateView.as_view(template_name='frontend/mobile_dev/mobile-application-development.html'), name='mobile_development'),
+    path('desktop-application-development/', TemplateView.as_view(template_name='frontend/desktop_dev/desktop-application-development.html'), name='desktop_development'),
     path('database-development/', TemplateView.as_view(template_name='frontend/database_dev/database-development.html'), name='database_development'),
-    path('it-maintenance/', TemplateView.as_view(template_name='frontend/it_support/it-maintenance.html'), name='it_maintenance'),
+    path('it-support-&-maintenance/', TemplateView.as_view(template_name='frontend/it_support/it-support-&-maintenance.html'), name='it_maintenance'),
     path('graphic-design/', TemplateView.as_view(template_name='frontend/graphic_design/graphic-design.html'), name='graphic_design'),
-    path('video-photo/', TemplateView.as_view(template_name='frontend/video_photo/video-photo.html'), name='video_photo'),
+    path('photography-and-videography/', TemplateView.as_view(template_name='frontend/video_photo/photography-and-videography.html'), name='video_photo'),
     path('software-solutions/', TemplateView.as_view(template_name='frontend/software_dev_services/software-solutions.html'), name='software_dev_services'),
 
     # Add pricing page

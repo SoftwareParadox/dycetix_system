@@ -1,10 +1,11 @@
 <!-- about_our_journey.html -->
+{% load static %}
 <section id="about-us-journey-growth" class="body-section" itemscope itemtype="https://schema.org/AboutPage">
     <div class="body-section-container">
         <!-- Founding Story -->
         <div class="image-card" itemprop="mainEntity" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="image-visual">
-                <img src="../../static/images/main/why-dycetix-exist.jpg" alt="Dycetix team collaborating" itemprop="image">
+                <img src="{% static 'images/main/why-dycetix-exist.jpg' %}" alt="Dycetix team collaborating" itemprop="image">
             </div>
             <div class="header-content journey-heading">
                 <h2 class="body-header journey-story-heading" itemprop="headline">Why Dycetix Exists</h2>

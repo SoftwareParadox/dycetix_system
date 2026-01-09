@@ -1,4 +1,5 @@
 <!-- industries -->
+{% load static %}
 <section id="industries" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <div class="tech-stack-content tech-stack-right">
         <!-- Content on left, video on right -->
@@ -93,7 +94,7 @@
                     itemprop="video"
                     poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                 >
-                    <source src="../../static/videos/industries.mp4" type="video/mp4">
+                    <source src="{% static 'videos/industries.mp4' %}" type="video/mp4">
                     <img 
                         src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
                         alt="Modern factory with automation and robotics showcasing manufacturing technology"
@@ -150,7 +151,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Explore Industry Solutions",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

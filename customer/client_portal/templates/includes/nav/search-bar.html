@@ -1,3 +1,4 @@
+{% load static %}
 <div class="search-item" itemscope itemtype="https://schema.org/WebSite">
     <div class="search-icon search-big" id="dycetix-search-toggle" itemprop="potentialAction" itemscope itemtype="https://schema.org/SearchAction">
         <i class="fas fa-search" itemprop="name"></i>
@@ -9,7 +10,7 @@
             <div class="video-container">
                 <div class="video-wrapper">
                     <video class="" autoplay muted loop playsinline aria-label="Abstract technology visualization showing innovation concepts" itemprop="video">
-                        <source src="../../static/videos/search_bar_visual.mp4" type="video/mp4">
+                        <source src="{% static 'videos/search_bar_visual.mp4' %}" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>

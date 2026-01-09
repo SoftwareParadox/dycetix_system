@@ -137,7 +137,23 @@
             {% include 'admin/components/settings_panel.html' %}
         </aside>
     </div>
-
+<!-- admin/templates/admin/layouts/dashboard_base.html - ADD MODAL HTML -->
+<!-- Add after the existing content, before the scripts -->
+<div id="client-detail-modal" class="modal">
+    <div class="modal-overlay"></div>
+    <div class="modal-container">
+        <button class="modal-close" onclick="closeDetailModal()">&times;</button>
+        <div class="modal-content">
+            <div id="modal-loading" class="modal-loading">
+                <div class="spinner"></div>
+                <p>Loading details...</p>
+            </div>
+            <div id="modal-content" style="display: none;">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Quick Action Modal -->
     {% comment %} <div class="modal" id="quick-action-modal">
         <div class="modal-content">
@@ -198,6 +214,321 @@
         };
         window.theme = 'synthwave';
         window.appVersion = '1.0.0';
+        // Add these functions to your existing JavaScript
+
+// Global variable to store current requirement ID
+let currentRequirementId = null;
+
+// Function to view client requirement details
+function viewForm(id) {
+    currentRequirementId = id;
+    openDetailModal();
+    loadRequirementDetails(id);
+}
+
+// Function to open detail modal
+function openDetailModal() {
+    const modal = document.getElementById('client-detail-modal');
+    modal.classList.add('active');
+    document.body.classList.add('modal-open');
+}
+
+// Function to close detail modal
+function closeDetailModal() {
+    const modal = document.getElementById('client-detail-modal');
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    document.getElementById('modal-content').style.display = 'none';
+    document.getElementById('modal-loading').style.display = 'block';
+}
+
+// Function to load requirement details
+function loadRequirementDetails(id) {
+    fetch(`/api/forms/client-requirements/${id}/`, {
+        credentials: 'include'
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            renderRequirementDetails(data.data);
+        } else {
+            showModalError(data.error || 'Failed to load details');
+        }
+    })
+    .catch(error => {
+        console.error('Error loading requirement details:', error);
+        showModalError('Network error. Please try again.');
+    });
+}
+
+// Function to render details in modal
+function renderRequirementDetails(data) {
+    const modalContent = document.getElementById('modal-content');
+    const modalLoading = document.getElementById('modal-loading');
+    
+    // Build the HTML
+    let html = `
+        <div class="detail-header">
+            <h2 class="detail-title">${data.first_name} ${data.last_name}</h2>
+            <div class="detail-meta">
+                <span>ID: ${data.id}</span>
+                <span>Submitted: ${data.created_at_formatted}</span>
+                <span class="status-badge-large status-${data.status}">${data.status_display}</span>
+            </div>
+        </div>
+        
+        <div class="detail-grid">
+            <!-- Personal Info Section -->
+            <div class="detail-section">
+                <h3 class="section-title">Personal Information</h3>
+                <div class="detail-field">
+                    <span class="field-label">Name</span>
+                    <div class="field-value">${data.first_name} ${data.last_name}</div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Email</span>
+                    <div class="field-value">${data.email}</div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Phone</span>
+                    <div class="field-value">${data.phone || 'Not provided'}</div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Company</span>
+                    <div class="field-value">${data.company || 'Not provided'}</div>
+                </div>
+            </div>
+            
+            <!-- Project Details Section -->
+            <div class="detail-section">
+                <h3 class="section-title">Project Details</h3>
+                <div class="detail-field">
+                    <span class="field-label">Services Requested</span>
+                    <div class="field-value">${data.services.join(', ')}</div>
+                </div>
+                ${data.other_service ? `
+                <div class="detail-field">
+                    <span class="field-label">Other Service</span>
+                    <div class="field-value">${data.other_service}</div>
+                </div>
+                ` : ''}
+                <div class="detail-field">
+                    <span class="field-label">Budget Range</span>
+                    <div class="field-value">${data.budget_range || 'Not specified'}</div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Timeline</span>
+                    <div class="field-value">${data.timeline || 'Not specified'}</div>
+                </div>
+            </div>
+            
+            <!-- Project Description -->
+            <div class="detail-section" style="grid-column: span 2;">
+                <h3 class="section-title">Project Description</h3>
+                <div class="detail-field">
+                    <div class="field-value textarea">${data.project_description}</div>
+                </div>
+            </div>
+    `;
+    
+    // Add attachments section if files exist
+    if (data.attachments_count > 0) {
+        html += `
+            <div class="detail-section" style="grid-column: span 2;">
+                <h3 class="section-title">Attachments (${data.attachments_count})</h3>
+                <div class="attachments-grid">
+        `;
+        
+        data.attachments.forEach(attachment => {
+            const fileIcon = getFileIcon(attachment.mime_type);
+            html += `
+                <div class="attachment-card">
+                    <div class="attachment-icon">${fileIcon}</div>
+                    <div class="attachment-name">${attachment.filename}</div>
+                    <div class="attachment-size">${attachment.size_mb} MB</div>
+                    <a href="${attachment.url}" class="btn-download" download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+    }
+    
+    // Add admin info section
+    html += `
+            <div class="detail-section">
+                <h3 class="section-title">Admin Information</h3>
+                <div class="detail-field">
+                    <span class="field-label">Status</span>
+                    <div class="field-value">
+                        <select id="status-select" class="status-select">
+                            <option value="new" ${data.status === 'new' ? 'selected' : ''}>New</option>
+                            <option value="contacted" ${data.status === 'contacted' ? 'selected' : ''}>Contacted</option>
+                            <option value="quoted" ${data.status === 'quoted' ? 'selected' : ''}>Quoted</option>
+                            <option value="converted" ${data.status === 'converted' ? 'selected' : ''}>Converted</option>
+                            <option value="archived" ${data.status === 'archived' ? 'selected' : ''}>Archived</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Priority</span>
+                    <div class="field-value">
+                        <select id="priority-select" class="priority-select">
+                            <option value="low" ${data.priority === 'low' ? 'selected' : ''}>Low</option>
+                            <option value="medium" ${data.priority === 'medium' ? 'selected' : ''}>Medium</option>
+                            <option value="high" ${data.priority === 'high' ? 'selected' : ''}>High</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Assigned To</span>
+                    <div class="field-value">${data.assigned_to || 'Unassigned'}</div>
+                </div>
+                <div class="detail-field">
+                    <span class="field-label">Internal Notes</span>
+                    <textarea id="internal-notes" class="field-value textarea" rows="4">${data.internal_notes || ''}</textarea>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Actions Panel -->
+        <div class="actions-panel">
+            <h3 class="section-title">Actions</h3>
+            <div class="action-buttons">
+                <button class="btn-action btn-mark-contacted" onclick="updateStatus('contacted')">
+                    <i class="fas fa-phone"></i> Mark as Contacted
+                </button>
+                <button class="btn-action btn-mark-quoted" onclick="updateStatus('quoted')">
+                    <i class="fas fa-file-invoice-dollar"></i> Mark as Quoted
+                </button>
+                <button class="btn-action btn-mark-converted" onclick="updateStatus('converted')">
+                    <i class="fas fa-check-circle"></i> Mark as Converted
+                </button>
+                <button class="btn-action btn-assign-me" onclick="assignToMe()">
+                    <i class="fas fa-user-plus"></i> Assign to Me
+                </button>
+                <button class="btn-action btn-archive" onclick="updateStatus('archived')">
+                    <i class="fas fa-archive"></i> Archive
+                </button>
+                <button class="btn-action btn-save" onclick="saveChanges()" style="background: var(--synth-primary); color: white;">
+                    <i class="fas fa-save"></i> Save Changes
+                </button>
+            </div>
+        </div>
+    `;
+    
+    modalContent.innerHTML = html;
+    modalLoading.style.display = 'none';
+    modalContent.style.display = 'block';
+}
+
+// Helper function to get file icon based on MIME type
+function getFileIcon(mimeType) {
+    if (mimeType.includes('pdf')) return '<i class="fas fa-file-pdf"></i>';
+    if (mimeType.includes('image')) return '<i class="fas fa-file-image"></i>';
+    if (mimeType.includes('word') || mimeType.includes('document')) return '<i class="fas fa-file-word"></i>';
+    if (mimeType.includes('zip') || mimeType.includes('compressed')) return '<i class="fas fa-file-archive"></i>';
+    return '<i class="fas fa-file"></i>';
+}
+
+// Function to show error in modal
+function showModalError(message) {
+    const modalContent = document.getElementById('modal-content');
+    const modalLoading = document.getElementById('modal-loading');
+    
+    modalLoading.style.display = 'none';
+    modalContent.style.display = 'block';
+    modalContent.innerHTML = `
+        <div class="error-message">
+            <i class="fas fa-exclamation-triangle"></i>
+            <h3>Error Loading Details</h3>
+            <p>${message}</p>
+            <button onclick="loadRequirementDetails(${currentRequirementId})" class="btn-retry">
+                <i class="fas fa-redo"></i> Retry
+            </button>
+            <button onclick="closeDetailModal()" class="btn-cancel" style="margin-left: 10px;">
+                <i class="fas fa-times"></i> Close
+            </button>
+        </div>
+    `;
+}
+
+// Function to update status
+function updateStatus(newStatus) {
+    const statusSelect = document.getElementById('status-select');
+    if (statusSelect) {
+        statusSelect.value = newStatus;
+        saveChanges();
+    }
+}
+
+// Function to assign to current user
+function assignToMe() {
+    // This will be implemented when we have user assignment
+    alert('Assignment feature coming soon!');
+}
+
+// Function to save changes
+function saveChanges() {
+    if (!currentRequirementId) return;
+    
+    const statusSelect = document.getElementById('status-select');
+    const prioritySelect = document.getElementById('priority-select');
+    const internalNotes = document.getElementById('internal-notes');
+    
+    const data = {
+        status: statusSelect ? statusSelect.value : null,
+        priority: prioritySelect ? prioritySelect.value : null,
+        internal_notes: internalNotes ? internalNotes.value : null
+    };
+    
+    fetch(`/api/forms/client-requirements/${currentRequirementId}/`, {
+        method: 'PATCH',
+        credentials: 'include',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            showNotification('success', 'Changes saved successfully!');
+            // Refresh the main list
+            loadClientRequirements();
+        } else {
+            showNotification('error', data.error || 'Failed to save changes');
+        }
+    })
+    .catch(error => {
+        console.error('Error saving changes:', error);
+        showNotification('error', 'Network error. Please try again.');
+    });
+}
+
+// Function to show notification (you may already have this)
+function showNotification(type, message) {
+    // Create a temporary notification div
+    const notification = document.createElement('div');
+    notification.className = `notification notification-${type}`;
+    notification.innerHTML = `
+        <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+        <span>${message}</span>
+    `;
+    
+    // Add to page
+    document.body.appendChild(notification);
+    
+    // Remove after 3 seconds
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
     </script>
     
     {% block extra_js %}{% endblock %}
@@ -222,5 +553,172 @@
             showNotification('error', 'Something went wrong. Please try again.');
         });
     </script>
+    <!-- admin/templates/admin/layouts/dashboard_base.html - ADD THIS SCRIPT -->
+<script>
+    // Function to update sidebar counters
+    function updateSidebarStats() {
+        fetch('/api/forms/admin/sidebar-stats/', {
+            credentials: 'include'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const newFormsEl = document.getElementById('new-forms-count');
+                const alertsEl = document.getElementById('alerts-count');
+                if (newFormsEl) newFormsEl.textContent = data.new_forms || 0;
+                if (alertsEl) alertsEl.textContent = data.alerts || 0;
+            }
+        })
+        .catch(error => console.error('Error updating sidebar stats:', error));
+    }
+    
+    // Function to load client requirements
+    function loadClientRequirements() {
+        fetch('/api/forms/client-requirements/', {
+            credentials: 'include'
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const container = document.getElementById('main-content');
+                if (container) {
+                    container.innerHTML = generateFormsTable(data.data, data.total_count);
+                }
+            }
+        })
+        .catch(error => {
+            console.error('Error loading client requirements:', error);
+            showError('Could not load form submissions');
+        });
+    }
+    
+    // Generate HTML table for forms
+    function generateFormsTable(forms, total) {
+        let html = `
+            <div class="page-header">
+                <h1 class="page-title">Client Requirements</h1>
+                <p class="page-subtitle">${total} submission${total !== 1 ? 's' : ''} found</p>
+            </div>
+            
+            <div class="content-area">
+                <div class="table-actions">
+                    <button class="btn-refresh" onclick="loadClientRequirements()">
+                        <i class="fas fa-sync-alt"></i> Refresh
+                    </button>
+                </div>
+                
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Services</th>
+                                <th>Status</th>
+                                <th>Submitted</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+        `;
+        
+        if (forms && forms.length > 0) {
+            forms.forEach(form => {
+                const statusClass = `status-${form.status}`;
+                
+                html += `
+                    <tr>
+                        <td>${form.id}</td>
+                        <td>${form.full_name}</td>
+                        <td>${form.email}</td>
+                        <td>${form.services || 'N/A'}</td>
+                        <td><span class="status-badge ${statusClass}">${form.status_display}</span></td>
+                        <td>${form.created_at_formatted}</td>
+                        <td>
+                            <button class="btn-view" onclick="viewForm(${form.id})">
+                                <i class="fas fa-eye"></i> View
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        } else {
+            html += `
+                <tr>
+                    <td colspan="7" class="empty-table">
+                        <i class="fas fa-inbox"></i>
+                        <p>No submissions found</p>
+                    </td>
+                </tr>
+            `;
+        }
+        
+        html += `
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        `;
+        
+        return html;
+    }
+    
+    // Show error message
+    function showError(message) {
+        const container = document.getElementById('main-content');
+        if (container) {
+            container.innerHTML = `
+                <div class="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Error</h3>
+                    <p>${message}</p>
+                    <button onclick="loadClientRequirements()" class="btn-retry">
+                        <i class="fas fa-redo"></i> Try Again
+                    </button>
+                </div>
+            `;
+        }
+    }
+    
+    // Initialize when page loads
+    document.addEventListener('DOMContentLoaded', function() {
+        // Update sidebar stats
+        updateSidebarStats();
+        
+        // Update every 30 seconds
+        setInterval(updateSidebarStats, 30000);
+        
+        // Load forms when Forms menu is clicked
+        const formsMenu = document.querySelector('[data-section="forms"]');
+        if (formsMenu) {
+            formsMenu.addEventListener('click', function(e) {
+                e.preventDefault();
+                loadClientRequirements();
+                
+                // Update page headers
+                const pageTitle = document.querySelector('.page-title');
+                const pageSubtitle = document.querySelector('.page-subtitle');
+                if (pageTitle) pageTitle.textContent = 'Forms';
+                if (pageSubtitle) pageSubtitle.textContent = 'Client Requirements';
+            });
+        }
+        
+        // Load forms when client requirements submenu is clicked
+        const clientReqLink = document.querySelector('[data-subsection="client-requirements"]');
+        if (clientReqLink) {
+            clientReqLink.addEventListener('click', function(e) {
+                e.preventDefault();
+                loadClientRequirements();
+                
+                // Update page headers
+                const pageTitle = document.querySelector('.page-title');
+                const pageSubtitle = document.querySelector('.page-subtitle');
+                if (pageTitle) pageTitle.textContent = 'Client Requirements';
+                if (pageSubtitle) pageSubtitle.textContent = 'Manage client submissions';
+            });
+        }
+    });
+</script>
 </body>
 </html>

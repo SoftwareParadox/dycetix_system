@@ -1,4 +1,5 @@
 <!-- custom_software_definition.html -->
+{% load static %}
 <section id="custom-software-solutions" class="body-section" itemscope itemtype="https://schema.org/Service">
     <div class="custom-development-definition-workflow-overlay">
         <div class="custom-development-definition-workflow-connector" data-connection="cloud-db"></div>
@@ -7,7 +8,7 @@
     <div class="body-section-container custom-development-definition-container">
         <div class="image-card" itemprop="mainEntity" itemscope itemtype="https://schema.org/CreativeWork">
             <div class="image-visual">
-                <img src="../../static/images/main/custom-solutions-us.jpg" 
+                <img src="{% static 'images/main/custom-solutions-us.jpg' %}" 
                  alt="Custom software development workflow: Cloud infrastructure, CI/CD pipeline, and API integrations"
                  loading="lazy" itemprop="image">
             </div>

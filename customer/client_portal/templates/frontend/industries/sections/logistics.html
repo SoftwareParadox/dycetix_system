@@ -1,4 +1,5 @@
 <!-- industries_logistics.html -->
+{% load static %}
 <section id="industries-logistics" class="body-section tech-stack-section" itemscope itemtype="https://schema.org/Service">
     <!-- Hidden structured data for microdata -->
     <div itemscope itemtype="https://schema.org/Service" style="display: none;">
@@ -15,7 +16,7 @@
         <div class="tech-stack-image-container">
             <div class="tech-stack-image-wrapper">
                 <img 
-                    src="../../static/images/main/logistic.jpg" 
+                    src="{% static 'images/main/logistic.jpg' %}" 
                     alt="Logistics management solutions including supply chain and fleet management"
                     class="tech-stack-image"
                     itemprop="image"
@@ -142,7 +143,7 @@
         "potentialAction": {
             "@type": "Action",
             "name": "Optimize Logistics",
-            "url": "https://www.dycetix.com#contact"
+            "url": "https://www.dycetix.com/get-in-touch/"
         }
     }
     </script>

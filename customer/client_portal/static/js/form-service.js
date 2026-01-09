@@ -3,7 +3,7 @@
 class FormService {
     constructor(formType) {
         this.formType = formType; // 'global' or 'modal'
-        this.apiEndpoint = 'http://localhost:8001/api/forms/client-requirement/';
+        this.apiEndpoint = 'http://localhost:8000/api/forms/submit/client-requirement/';
     }
     
     // === SHARED VALIDATION ===

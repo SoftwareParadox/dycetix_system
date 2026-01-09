@@ -20,33 +20,29 @@ class PhoneInput {
         this.init();
     }
     
-    init() {
-        // Initialize intl-tel-input
-        this.iti = window.intlTelInput(this.input, {
-            initialCountry: "auto",
-            geoIpLookup: (callback) => {
-                fetch('https://ipapi.co/json/')
-                    .then(res => res.json())
-                    .then(data => callback(data.country_code))
-                    .catch(() => callback("us"));
-            },
-            utilsScript: this.config.utilsScript,
-            preferredCountries: ['us', 'gb', 'ca', 'au', 'in'],
-            separateDialCode: false,
-            nationalMode: false,
-            autoPlaceholder: "polite",
-            formatOnDisplay: false,
-            customPlaceholder: (selectedCountryPlaceholder, selectedCountryData) => {
-                const example = selectedCountryPlaceholder.replace(/[^\d]/g, '');
-                return example.substring(0, 10);
-            }
-        });
-        
-        // Store instance on input element
-        this.input.iti = this.iti;
-        
-        this.setupEvents();
-    }
+    // form-utils.js - PhoneInput class - UPDATE THIS SECTION:
+init() {
+    // Initialize intl-tel-input
+    this.iti = window.intlTelInput(this.input, {
+        initialCountry: "us", // CHANGE FROM "auto" TO "us" OR "za"
+        // REMOVE THE geoIpLookup BLOCK COMPLETELY - it's causing CORS errors
+        utilsScript: this.config.utilsScript,
+        preferredCountries: ['us', 'gb', 'ca', 'au', 'in', 'za'],
+        separateDialCode: false,
+        nationalMode: false,
+        autoPlaceholder: "polite",
+        formatOnDisplay: false,
+        customPlaceholder: function(selectedCountryPlaceholder, selectedCountryData) {
+            const example = selectedCountryPlaceholder.replace(/[^\d]/g, '');
+            return example.substring(0, 10);
+        }
+    });
+    
+    // Store instance on input element
+    this.input.iti = this.iti;
+    
+    this.setupEvents();
+}
     
     setupEvents() {
         // Restrict input to only numbers

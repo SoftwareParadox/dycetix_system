@@ -2,6 +2,9 @@
     background: url('../../images/main/pricing-hero.jpg') center/cover;
 }
 
+/* .secondary {
+    display: none;
+} */
 /* pricing code */
 .pricing-section {
   background: radial-gradient(ellipse at 25% 50%, #365686 40%, #172b47 100%) !important;
