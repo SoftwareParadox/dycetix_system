@@ -18,6 +18,7 @@ def custom_admin_dashboard(request):
 
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/admin/', permanent=False)),
     # Django's default admin (hidden backup - for emergencies)
     path('admin/django/', admin.site.urls),
     

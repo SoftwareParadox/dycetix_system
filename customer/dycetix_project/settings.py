@@ -24,6 +24,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -48,6 +49,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'client_portal.context_processors.cta_texts',  # Uncomment when you create this
+                'django.template.context_processors.static',
             ],
         },
     },
@@ -210,15 +212,15 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ============================================
-# RENDER PRODUCTION SETTINGS (ADDED AT BOTTOM)
+# RENDER PRODUCTION SETTINGS (REPLACE ENTIRE SECTION)
 # ============================================
-import dj_database_url
+import os
 
-# Check if we're on Render
 if os.environ.get('RENDER'):
     print("=== RUNNING ON RENDER ===")
     
-    # Database - Use Render's PostgreSQL
+    # Database
+    import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(
             default=os.environ.get('DATABASE_URL'),
@@ -227,29 +229,39 @@ if os.environ.get('RENDER'):
         )
     }
     
-    # Security settings
+    # Security
     DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
     
-    # Render provides RENDER_EXTERNAL_HOSTNAME
+    # Hosts
     render_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
     if render_hostname:
         ALLOWED_HOSTS = [render_hostname, 'localhost', '127.0.0.1']
-    else:
-        # Fallback for blueprint deployment
-        ALLOWED_HOSTS = ['dycetix-customer.onrender.com', 'localhost', '127.0.0.1']
     
-    # HTTPS security
+    # HTTPS
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = not DEBUG  # Only redirect if not debugging
+    SECURE_SSL_REDIRECT = not DEBUG
     SESSION_COOKIE_SECURE = not DEBUG
     CSRF_COOKIE_SECURE = not DEBUG
     
-    # Static files with WhiteNoise
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    # TEMPLATES - CRITICAL FIX!
+    # Update BASE_DIR for customer (it's different structure)
+    from pathlib import Path
+    CUSTOMER_BASE_DIR = Path(__file__).resolve().parent.parent.parent
     
-    # Don't use STATICFILES_DIRS in production (it conflicts with WhiteNoise)
-    STATICFILES_DIRS = []
+    TEMPLATES[0]['DIRS'] = [
+        CUSTOMER_BASE_DIR / 'client_portal/templates',
+        CUSTOMER_BASE_DIR / 'templates',
+    ]
+    TEMPLATES[0]['APP_DIRS'] = True  # Make sure this is TRUE
+    
+    # Static files
+    STATIC_URL = '/static/'
+    STATIC_ROOT = os.path.join(CUSTOMER_BASE_DIR, 'staticfiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATICFILES_DIRS = [CUSTOMER_BASE_DIR / 'client_portal/static']
+    
+    # WhiteNoise middleware
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
     
     # Logging
     LOGGING = {
@@ -265,7 +277,3 @@ if os.environ.get('RENDER'):
             'level': 'INFO',
         },
     }
-    
-    print(f"Database configured: {DATABASES['default']['ENGINE']}")
-    print(f"Allowed hosts: {ALLOWED_HOSTS}")
-    print(f"Debug mode: {DEBUG}")

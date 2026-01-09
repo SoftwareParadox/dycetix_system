@@ -209,6 +209,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -338,15 +339,15 @@ if DEBUG:
     ] + static(MEDIA_URL, document_root=MEDIA_ROOT)
 
 # ============================================
-# RENDER PRODUCTION SETTINGS (ADDED AT BOTTOM)
+# RENDER PRODUCTION SETTINGS (REPLACE ENTIRE SECTION)
 # ============================================
-import dj_database_url
+import os
 
-# Check if we're on Render (Render sets RENDER environment variable)
 if os.environ.get('RENDER'):
     print("=== RUNNING IN RENDER PRODUCTION ===")
     
     # Database - Use Render's PostgreSQL
+    import dj_database_url
     DATABASES = {
         'default': dj_database_url.config(
             default=os.environ.get('DATABASE_URL'),
@@ -355,31 +356,37 @@ if os.environ.get('RENDER'):
         )
     }
     
-    # Security settings for production
+    # Security settings
     DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
     
-    # Render provides RENDER_EXTERNAL_HOSTNAME for the admin app
+    # Hosts
     render_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
     if render_hostname:
         ALLOWED_HOSTS = [render_hostname, 'localhost', '127.0.0.1']
-    else:
-        # Fallback for blueprint deployment
-        ALLOWED_HOSTS = ['dycetix-admin.onrender.com', 'localhost', '127.0.0.1']
     
-    # HTTPS security
+    # HTTPS
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    SECURE_SSL_REDIRECT = not DEBUG  # Only redirect if not debugging
+    SECURE_SSL_REDIRECT = not DEBUG
     SESSION_COOKIE_SECURE = not DEBUG
     CSRF_COOKIE_SECURE = not DEBUG
     
-    # Static files with WhiteNoise
+    # TEMPLATES - CRITICAL FIX!
+    TEMPLATES[0]['DIRS'] = [
+        os.path.join(BASE_DIR, 'templates'),
+        os.path.join(BASE_DIR, 'admin/templates'),
+    ]
+    TEMPLATES[0]['APP_DIRS'] = True  # Make sure this is TRUE
+    
+    # Static files
+    STATIC_URL = '/static/'
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  # Keep for collectstatic
     
-    # Don't use STATICFILES_DIRS in production (it conflicts with WhiteNoise)
-    STATICFILES_DIRS = []
+    # WhiteNoise middleware - MUST be after SecurityMiddleware
+    MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
     
-    # CORS - Allow customer app
+    # CORS
     CORS_ALLOWED_ORIGINS = [
         "https://dycetix-customer.onrender.com",
     ]
@@ -398,7 +405,3 @@ if os.environ.get('RENDER'):
             'level': 'INFO',
         },
     }
-    
-    print(f"Database configured: {DATABASES['default']['ENGINE']}")
-    print(f"Allowed hosts: {ALLOWED_HOSTS}")
-    print(f"Debug mode: {DEBUG}")
