@@ -1,13 +1,12 @@
-# render.yaml
-services:
-  # PostgreSQL Database (shared by both apps) - FIXED TYPE
-  - type: postgresql
-    name: dycetix-db
+databases:
+  # PostgreSQL Database (shared by both apps)
+  - name: dycetix-db
     databaseName: dycetixdb
     user: dycetix
-    region: oregon  # or ohio, frankfurt, singapore
+    region: oregon
     plan: free
-  
+
+services:
   # Admin Application
   - type: web
     name: dycetix-admin
@@ -50,17 +49,7 @@ services:
           name: dycetix-db
           property: connectionString
       - key: CUSTOMER_SECRET_KEY
-        fromService:
-          name: dycetix-admin
-          type: web
-          property: envVar
-          value: CUSTOMER_SECRET_KEY
-      - key: ADMIN_SECRET_KEY
-        fromService:
-          name: dycetix-admin
-          type: web
-          property: envVar
-          value: ADMIN_SECRET_KEY
+        generateValue: true  # We'll generate separate key for customer
       - key: DEBUG
         value: 'false'
       - key: PYTHON_VERSION
