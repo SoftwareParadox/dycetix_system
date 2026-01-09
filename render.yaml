@@ -7,7 +7,7 @@ databases:
     plan: free
 
 services:
-  # Admin Application
+  # Admin Application - UPDATED VERSION
   - type: web
     name: dycetix-admin
     env: python
@@ -16,9 +16,12 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
+      # Set PYTHONPATH to the project root, then run collectstatic for admin
+      export PYTHONPATH=/opt/render/project/src:$PYTHONPATH
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
-      cd admin && gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
+      # Set Python path, then start Gunicorn from the admin directory
+      cd /opt/render/project/src/admin && PYTHONPATH=/opt/render/project/src:$PYTHONPATH gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
     envVars:
       - key: DATABASE_URL
         fromDatabase:
@@ -28,10 +31,12 @@ services:
         generateValue: true
       - key: DEBUG
         value: 'false'
+      - key: RENDER
+        value: 'true'
       - key: PYTHON_VERSION
         value: 3.11.0
     
-  # Customer Application
+  # Customer Application - NO CHANGES NEEDED
   - type: web
     name: dycetix-customer
     env: python
@@ -49,8 +54,10 @@ services:
           name: dycetix-db
           property: connectionString
       - key: CUSTOMER_SECRET_KEY
-        generateValue: true  # We'll generate separate key for customer
+        generateValue: true
       - key: DEBUG
         value: 'false'
+      - key: RENDER
+        value: 'true'
       - key: PYTHON_VERSION
         value: 3.11.0
