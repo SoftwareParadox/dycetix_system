@@ -387,8 +387,36 @@ if os.environ.get('RENDER'):
     MIDDLEWARE.insert(1, 'whitenoise.middleware.WhiteNoiseMiddleware')
     
     # CORS
+    # CORS for form submission from customer
     CORS_ALLOWED_ORIGINS = [
         "https://dycetix-customer.onrender.com",
+        "http://localhost:8000",  # For local testing
+    ]
+    CORS_ALLOW_CREDENTIALS = True
+    CSRF_TRUSTED_ORIGINS = [
+        "https://dycetix-customer.onrender.com",
+        "https://dycetix-admin.onrender.com",
+    ]
+    
+    # Allow API access
+    CORS_ALLOW_METHODS = [
+        'DELETE',
+        'GET',
+        'OPTIONS',
+        'PATCH',
+        'POST',
+        'PUT',
+    ]
+    CORS_ALLOW_HEADERS = [
+        'accept',
+        'accept-encoding',
+        'authorization',
+        'content-type',
+        'dnt',
+        'origin',
+        'user-agent',
+        'x-csrftoken',
+        'x-requested-with',
     ]
     
     # Logging
