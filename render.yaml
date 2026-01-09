@@ -1,13 +1,12 @@
 # render.yaml
 services:
-  # PostgreSQL Database (shared by both apps)
-  - type: pgsql
+  # PostgreSQL Database (shared by both apps) - FIXED TYPE
+  - type: postgresql
     name: dycetix-db
     databaseName: dycetixdb
     user: dycetix
-    region: oregon
+    region: oregon  # or ohio, frankfurt, singapore
     plan: free
-    ipAllowList: []
   
   # Admin Application
   - type: web
