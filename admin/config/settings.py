@@ -151,6 +151,13 @@ if os.environ.get('RENDER'):
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_SSL_REDIRECT = not DEBUG
     
+    # Hosts - FIX THIS PART
+    render_hostname = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+    if render_hostname:
+        ALLOWED_HOSTS = [render_hostname, 'localhost', '127.0.0.1', 'dycetix-admin.onrender.com']
+    else:
+        ALLOWED_HOSTS = ['dycetix-admin.onrender.com', 'localhost', '127.0.0.1']
+    
     # Trusted origins for CSRF
     CSRF_TRUSTED_ORIGINS = [
         "https://dycetix-admin.onrender.com",
