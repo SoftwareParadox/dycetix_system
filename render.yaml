@@ -19,14 +19,14 @@ services:
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
       cd admin
-      echo "=== RESETTING DATABASE FOR TESTING ==="
-      # Drop accounts app tables
-      echo "from django.db import connection; cursor = connection.cursor(); cursor.execute('DROP TABLE IF EXISTS admins, admin_roles, admin_profiles, admin_sessions, admins_groups, admins_user_permissions CASCADE;')" | python manage.py shell
-      # Reset migration tracking
-      echo "DELETE FROM django_migrations WHERE app='accounts';" | python manage.py dbshell 2>/dev/null || echo "Could not reset migrations table"
-      # Run fresh migrations
-      echo "=== RUNNING FRESH MIGRATIONS ==="
+      echo "=== BREAKING CIRCULAR DEPENDENCY ==="
+      # First, mark the built-in admin migration as faked (since it depends on accounts)
+      python manage.py migrate admin --fake
+      # Now run the accounts migration (creates user table)
       python manage.py migrate accounts --noinput
+      # Run forms migration
+      python manage.py migrate forms --noinput
+      # Now run ALL migrations properly (will fix any fake ones)
       python manage.py migrate --noinput
       echo "=== CREATING SUPERUSER ==="
       echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(email='13238922wm@gmail.com', password='daxis@2006')" | python manage.py shell
