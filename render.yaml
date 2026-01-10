@@ -18,7 +18,7 @@ services:
       export PYTHONPATH=/opt/render/project/src:$PYTHONPATH
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
-      cd /opt/render/project/src/admin
+      cd admin
       python manage.py migrate --noinput
       echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(email='13238922wm@gmail.com', password='daxis@2006') if not User.objects.filter(email='13238922wm@gmail.com').exists() else print('Superuser already exists')" | python manage.py shell
       gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT

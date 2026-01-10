@@ -29,8 +29,8 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',  # For static files
 
     # Local apps
-    'admin.apps.accounts',
-    'admin.apps.forms',
+    'apps.accounts',
+    'apps.forms',
 ]
 
 MIDDLEWARE = [

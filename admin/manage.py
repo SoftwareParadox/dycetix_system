@@ -3,14 +3,6 @@
 import os
 import sys
 
-import sys
-from pathlib import Path
-
-# Add parent directory to Python path
-current_dir = Path(__file__).resolve().parent
-parent_dir = current_dir.parent
-sys.path.insert(0, os.path.abspath('.'))
-
 def main():
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
@@ -23,7 +15,6 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
-
 
 if __name__ == '__main__':
     main()

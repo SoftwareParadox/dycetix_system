@@ -5,8 +5,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
-from admin.apps.accounts.admin_site import admin_site  # Import custom admin site
-from admin.apps.accounts.views import custom_logout  # Import your custom logout
+from apps.accounts.admin_site import admin_site
+from apps.accounts.views import custom_logout
 
 # Your local working version doesn't have custom_admin_dashboard
 # So don't use it in production either
