@@ -16,11 +16,12 @@ services:
     build: .
     command: >
       sh -c "sleep 5 &&
-            echo 'Running migrations...' &&
-            python admin/manage.py makemigrations accounts &&
-            python admin/manage.py migrate &&
-            echo 'Starting server...' &&
-            python admin/manage.py runserver 0.0.0.0:8000"
+          echo 'Running migrations...' &&
+          cd admin && 
+          python manage.py makemigrations accounts forms &&
+          python manage.py migrate &&
+          echo 'Starting server...' &&
+          python manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./admin:/app/admin
       - ./media:/app/media # For media files

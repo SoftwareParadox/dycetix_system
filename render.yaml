@@ -19,8 +19,17 @@ services:
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
       cd admin
+      echo "=== RESETTING DATABASE FOR TESTING ==="
+      # Drop accounts app tables
+      echo "from django.db import connection; cursor = connection.cursor(); cursor.execute('DROP TABLE IF EXISTS admins, admin_roles, admin_profiles, admin_sessions, admins_groups, admins_user_permissions CASCADE;')" | python manage.py shell
+      # Reset migration tracking
+      echo "DELETE FROM django_migrations WHERE app='accounts';" | python manage.py dbshell 2>/dev/null || echo "Could not reset migrations table"
+      # Run fresh migrations
+      echo "=== RUNNING FRESH MIGRATIONS ==="
+      python manage.py migrate accounts --noinput
       python manage.py migrate --noinput
-      echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(email='13238922wm@gmail.com', password='daxis@2006') if not User.objects.filter(email='13238922wm@gmail.com').exists() else print('Superuser already exists')" | python manage.py shell
+      echo "=== CREATING SUPERUSER ==="
+      echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(email='13238922wm@gmail.com', password='daxis@2006')" | python manage.py shell
       gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
     envVars:
       - key: DATABASE_URL
