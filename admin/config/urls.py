@@ -1,29 +1,25 @@
-# admin/config/urls.py - UPDATED VERSION
+# admin/config/urls.py - USE THIS FOR PRODUCTION (matches your local)
 from django.contrib import admin
 from django.urls import path, include
-from django.shortcuts import render, redirect
 from django.conf import settings
 from django.conf.urls.static import static
-from django.contrib.auth import views as auth_views  # Add this import
+from django.contrib.auth import views as auth_views
+from django.views.generic import RedirectView
+from admin.apps.accounts.admin_site import admin_site  # Import custom admin site
+from admin.apps.accounts.views import custom_logout  # Import your custom logout
 
-# Import custom views
-from admin.apps.accounts.views import custom_logout  # We'll create this
-
-
-def custom_admin_dashboard(request):
-    """Render the custom admin dashboard"""
-    if not request.user.is_authenticated:
-        return redirect('/admin/login/')
-    return render(request, 'admin/layouts/dashboard_base.html')
-
+# Your local working version doesn't have custom_admin_dashboard
+# So don't use it in production either
 
 urlpatterns = [
+    # Root redirect to admin
     path('', RedirectView.as_view(url='/admin/', permanent=False)),
+    
+    # Use custom admin site (this is what works locally)
+    path('admin/', admin_site.urls),
+    
     # Django's default admin (hidden backup - for emergencies)
     path('admin/django/', admin.site.urls),
-    
-    # Your custom admin dashboard
-    path('admin/', custom_admin_dashboard, name='admin_dashboard'),
     
     # Use Django's built-in auth views with your custom templates
     path('admin/login/', auth_views.LoginView.as_view(
