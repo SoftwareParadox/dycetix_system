@@ -32,7 +32,7 @@ urlpatterns = [
     path('admin/logout/', custom_logout, name='admin_logout'),
     
     # Form submission and admin API endpoints
-    path('api/forms/', include('admin.apps.forms.urls')),
+    path('api/forms/', include('apps.forms.urls')),
 ]
 
 # Add media URL in development
