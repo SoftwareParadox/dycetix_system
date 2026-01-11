@@ -26,10 +26,8 @@ WORKDIR /app
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
-    g++ \
     postgresql-client \
     libpq-dev \
-    curl \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
@@ -39,22 +37,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project files
 COPY . /app/
 
-# Set environment variables
+# Set Python path
 ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
 
-# Create staticfiles directories
+# Create directories
 RUN mkdir -p /app/admin/staticfiles /app/customer/staticfiles
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD curl -f http://localhost:$PORT/health/ || exit 1
-
-# Create non-root user
-RUN useradd -m -u 1001 railway
-RUN chown -R railway:railway /app
-USER railway
-
-EXPOSE $PORT
-
-CMD ["bash", "-c", "echo 'Container started. Use Railway services.' && sleep infinity"]
