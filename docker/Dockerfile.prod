@@ -1,3 +1,4 @@
+# docker/Dockerfile.prod
 FROM python:3.11-slim
 
 WORKDIR /app
@@ -6,16 +7,22 @@ WORKDIR /app
 RUN apt-get update && apt-get install -y \
     gcc \
     postgresql-client \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy only admin app for now (we'll add customer later)
+# Copy project files
 COPY admin/ /app/admin/
 COPY customer/ /app/customer/
 
+# Create non-root user for security
+RUN useradd -m -u 1000 railway && chown -R railway:railway /app
+USER railway
+
 # Set Python path
 ENV PYTHONPATH=/app
-
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1

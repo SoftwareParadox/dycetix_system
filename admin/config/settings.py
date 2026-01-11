@@ -2,9 +2,6 @@
 import os
 from pathlib import Path
 import dj_database_url
-# from dotenv import load_dotenv
-
-# load_dotenv()
 
 # Build paths
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -146,9 +143,6 @@ CSRF_COOKIE_SECURE = not DEBUG
 CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:8001,http://127.0.0.1:8001').split(',')
 CORS_ALLOW_CREDENTIALS = True
 
-# ============================================
-# RENDER PRODUCTION SETTINGS (REPLACE ENTIRE SECTION)
-# ============================================
 # Render-specific settings
 if os.environ.get('RENDER'):
     print("=== RUNNING ON RENDER ===")
@@ -169,50 +163,3 @@ if os.environ.get('RENDER'):
         "https://dycetix-admin.onrender.com",
         "https://dycetix-customer.onrender.com",
     ]
-
-    # Railway-specific settings
-    if os.environ.get('RAILWAY_ENVIRONMENT'):
-        print("=== RUNNING ON RAILWAY ===")
-        
-        # Force HTTPS in production
-        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-        SECURE_SSL_REDIRECT = True
-        SESSION_COOKIE_SECURE = True
-        CSRF_COOKIE_SECURE = True
-        
-        # Update allowed hosts
-        railway_host = os.environ.get('RAILWAY_STATIC_URL', '').replace('https://', '')
-        if railway_host:
-            ALLOWED_HOSTS = [railway_host, 'localhost', '127.0.0.1', '0.0.0.0']
-        
-        # Static files with WhiteNoise
-        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-        STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-        
-        # Media files (consider using S3 for production)
-        DEFAULT_FILE_STORAGE = 'django.core.files.storage.FileSystemStorage'
-        
-        # Database
-        import dj_database_url
-        DATABASES = {
-            'default': dj_database_url.config(
-                default=os.environ.get('DATABASE_URL'),
-                conn_max_age=600,
-                ssl_require=True
-            )
-        }
-        
-        # Logging
-        LOGGING = {
-            'version': 1,
-            'disable_existing_loggers': False,
-            'handlers': {
-                'console': {
-                    'class': 'logging.StreamHandler',
-                },
-            },
-            'root': {
-                'handlers': ['console'],
-                'level': 'INFO',
-            },
-        }

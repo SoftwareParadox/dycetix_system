@@ -1,0 +1,8 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "python admin/manage.py migrate && python admin/manage.py collectstatic --noinput && gunicorn admin.config.wsgi:application --bind 0.0.0.0:$PORT"
+  }
+}
