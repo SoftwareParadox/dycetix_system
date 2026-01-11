@@ -1,3 +1,4 @@
+# admin/apps/accounts/models.admin_user.py
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from ..managers.user_manager import AdminUserManager

@@ -18,21 +18,21 @@ urlpatterns = [
     # Use custom admin site (this is what works locally)
     path('admin/', admin_site.urls),
     
-    # Django's default admin (hidden backup - for emergencies)
-    path('admin/django/', admin.site.urls),
+    # # Django's default admin (hidden backup - for emergencies)
+    # path('admin/django/', admin.site.urls),
     
-    # Use Django's built-in auth views with your custom templates
-    path('admin/login/', auth_views.LoginView.as_view(
-        template_name='admin/login.html',
-        redirect_authenticated_user=True,
-        extra_context={'site_title': 'DyceTix Admin'}
-    ), name='admin_login'),
+    # # Use Django's built-in auth views with your custom templates
+    # path('admin/login/', auth_views.LoginView.as_view(
+    #     template_name='admin/login.html',
+    #     redirect_authenticated_user=True,
+    #     extra_context={'site_title': 'DyceTix Admin'}
+    # ), name='admin_login'),
     
-    # Custom logout view (GET request allowed)
-    path('admin/logout/', custom_logout, name='admin_logout'),
+    # # Custom logout view (GET request allowed)
+    # path('admin/logout/', custom_logout, name='admin_logout'),
     
-    # Form submission and admin API endpoints
-    path('api/forms/', include('apps.forms.urls')),
+    # # Form submission and admin API endpoints
+    # path('api/forms/', include('apps.forms.urls')),
 ]
 
 # Add media URL in development

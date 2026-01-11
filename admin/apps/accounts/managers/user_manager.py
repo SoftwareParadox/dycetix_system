@@ -1,5 +1,6 @@
 # user_manager.py
 # Empty file - content will be added later
+# admin/apps/accounts/managers/user_manager.py.py
 from django.contrib.auth.models import BaseUserManager
 from django.core.exceptions import ValidationError
 

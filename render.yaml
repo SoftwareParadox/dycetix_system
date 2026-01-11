@@ -19,16 +19,10 @@ services:
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
       cd admin
-      echo "=== BREAKING CIRCULAR DEPENDENCY ==="
-      # First, mark the built-in admin migration as faked (since it depends on accounts)
-      python manage.py migrate admin --fake
-      # Now run the accounts migration (creates user table)
+      # Simple, clear migration order
       python manage.py migrate accounts --noinput
-      # Run forms migration
-      python manage.py migrate forms --noinput
-      # Now run ALL migrations properly (will fix any fake ones)
       python manage.py migrate --noinput
-      echo "=== CREATING SUPERUSER ==="
+      # Create superuser WITHOUT checking if exists
       echo "from django.contrib.auth import get_user_model; User = get_user_model(); User.objects.create_superuser(email='13238922wm@gmail.com', password='daxis@2006')" | python manage.py shell
       gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
     envVars:
