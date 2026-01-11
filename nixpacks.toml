@@ -1,0 +1,18 @@
+[phases.setup]
+nixPkgs = [
+  "postgresql",
+  "gcc",
+  "libpq-dev"
+]
+
+[phases.install]
+cmds = ["pip install --no-cache-dir -r requirements.txt"]
+
+[phases.build]
+cmds = [
+  "python admin/manage.py collectstatic --noinput",
+  "python customer/manage.py collectstatic --noinput"
+]
+
+[start]
+cmd = ["bash", "-c", "echo 'Dual Django app started' && tail -f /dev/null"]

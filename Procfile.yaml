@@ -1,0 +1,4 @@
+web-admin: cd admin && gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 3
+web-customer: cd customer && gunicorn dycetix_project.wsgi:application --bind 0.0.0.0:$PORT --workers 3
+release-admin: cd admin && python manage.py migrate --noinput
+release-customer: cd customer && python manage.py migrate --noinput

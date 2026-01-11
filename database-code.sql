@@ -1,3 +1,8 @@
+-- NOTE: This schema is for visualization and referencing purposes only. 
+-- NOTE: The actual database is managed via Django ORM and migrations. 
+-- NOTE: Direct SQL modifications may be overwritten by migrations.
+-- NOTE: This file does not represents the final state of the database schema.
+-- NOTE: The implementation is flexible and may evolve over time.
 -- ============================================
 -- ENUM TYPE DEFINITIONS (PostgreSQL requires these)
 -- ============================================

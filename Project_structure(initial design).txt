@@ -12,7 +12,7 @@ dycetix_system/
 ├── admin/
 │   ├── config/
 │   │   ├── __init__.py
-│   │   ├── settings.py           # MOVED FROM settings/ folder
+│   │   ├── settings.py           
 │   │   ├── urls.py
 │   │   ├── wsgi.py
 │   │   ├── asgi.py
@@ -491,7 +491,7 @@ dycetix_system/
 └── customer/
     ├── dycetix_project/
     │   ├── __init__.py
-    │   ├── settings.py           # MOVED FROM settings/ folder
+    │   ├── settings.py          
     │   ├── urls.py
     │   ├── wsgi.py
     │   ├── asgi.py
