@@ -1,8 +1,0 @@
-[build]
-builder = "NIXPACKS"
-
-[deploy]
-startCommand = "./start_admin.sh"
-
-[build.environment]
-NIXPACKS_PYTHON_VERSION = "3.11"

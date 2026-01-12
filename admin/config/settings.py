@@ -163,35 +163,3 @@ if os.environ.get('RENDER'):
         "https://dycetix-admin.onrender.com",
         "https://dycetix-customer.onrender.com",
     ]
-
-
-    # Railway-specific settings
-    if os.environ.get('RAILWAY_STATIC_URL'):
-        # Static files in production
-        STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-        STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-        
-        # Security settings for production
-        DEBUG = os.environ.get('DEBUG', 'False').lower() == 'true'
-        
-        # Use Railway's database URL
-        import dj_database_url
-        DATABASES = {
-            'default': dj_database_url.config(
-                default=os.environ.get('DATABASE_URL'),
-                conn_max_age=600,
-                ssl_require=True
-            )
-        }
-        
-        # Allowed hosts
-        ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
-        if not ALLOWED_HOSTS or ALLOWED_HOSTS == ['']:
-            ALLOWED_HOSTS = ['*']  # Allow all for Railway
-        
-        # HTTPS settings
-        SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-        SECURE_SSL_REDIRECT = True
-        SESSION_COOKIE_SECURE = True
-        CSRF_COOKIE_SECURE = True
-        CSRF_TRUSTED_ORIGINS = ['https://*.railway.app']
