@@ -110,10 +110,17 @@
                         <span>Activity Log</span>
                     </a>
                     <div class="user-divider"></div>
-                    <a href="{% url 'admin_logout' %}" class="user-link logout">
+                    {% comment %} <a href="{% url 'admin_logout' %}" class="user-link logout">
                         <i class="fas fa-sign-out-alt"></i>
                         <span>Logout</span>
-                    </a>
+                    </a> {% endcomment %}
+                    <form action="{% url 'admin_logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit" class="user-link logout" style="background: none; border: none; color: inherit; cursor: pointer; font: inherit;">
+                            <i class="fas fa-sign-out-alt"></i>
+                            <span>Logout</span>
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
