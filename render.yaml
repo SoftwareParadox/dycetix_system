@@ -83,6 +83,8 @@ services:
     buildCommand: |
       pip install --upgrade pip
       pip install -r requirements.txt
+      export PYTHONPATH=/opt/render/project/src:$PYTHONPATH
+      cd admin && python manage.py collectstatic --noinput
     startCommand: |
       cd admin
       # 1. Apply ALL migrations first
@@ -130,7 +132,7 @@ services:
         value: 3.11.0
       # ADD THESE - set in Render dashboard
       - key: ADMIN_EMAIL
-        value: 'your-admin-email@example.com'
+        value: '13238922wm@gmail.com'
       - key: ADMIN_PASSWORD
         generateValue: true  # Render will generate a secure password
       - key: DJANGO_SETTINGS_MODULE
@@ -141,3 +143,30 @@ services:
   # - type: web
   #   name: dycetix-customer
   #   ...
+  # Customer Application - Add auto-migrations too
+  - type: web
+    name: dycetix-customer
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      cd customer && python manage.py collectstatic --noinput
+    startCommand: |
+      cd customer && 
+      python manage.py migrate --noinput &&
+      gunicorn dycetix_project.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: dycetix-db
+          property: connectionString
+      - key: CUSTOMER_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: 'false'
+      - key: RENDER
+        value: 'true'
+      - key: PYTHON_VERSION
+        value: 3.11.0
