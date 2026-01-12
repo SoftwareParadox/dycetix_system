@@ -664,6 +664,9 @@
     position: relative;
 }
 
+.modal-other-service {
+  background: #f4f8fd !important;
+}
 .service-option:hover {
     background: #F1F5F9;
     border-color: var(--section-hero-color);

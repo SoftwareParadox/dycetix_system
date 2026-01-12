@@ -108,7 +108,7 @@ services:
         from django.contrib.auth import get_user_model
         User = get_user_model()
 
-        admin_email = os.environ.get('ADMIN_EMAIL', '13238922wm@gmail.com')
+        admin_email = os.environ.get('ADMIN_EMAIL', 'test@dycetix.com')
         admin_password = os.environ.get('ADMIN_PASSWORD')
 
         print(f"Creating superuser with email: {admin_email}")
