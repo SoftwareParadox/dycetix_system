@@ -140,8 +140,25 @@ SESSION_COOKIE_HTTPONLY = True
 CSRF_COOKIE_SECURE = not DEBUG
 
 # CORS Settings
-CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:8001,http://127.0.0.1:8001').split(',')
+# CORS_ALLOWED_ORIGINS = os.environ.get('CORS_ALLOWED_ORIGINS', 'http://localhost:8001,http://127.0.0.1:8001').split(',')
+# CORS_ALLOW_CREDENTIALS = True
+# Add CORS settings
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8001",  # Local customer app
+    "http://127.0.0.1:8001",  # Local customer app
+    "https://dycetix-customer.onrender.com",  # Your Render customer app
+    "https://dycetix-customer.onrender.com",  # Your Render customer app
+]
+
+# Allow credentials if needed
 CORS_ALLOW_CREDENTIALS = True
+
+# Allow specific headers
+CORS_ALLOW_HEADERS = [
+    'content-type',
+    'authorization',
+    'x-csrftoken',
+]
 
 # Render-specific settings
 if os.environ.get('RENDER'):

@@ -3,7 +3,14 @@
 class FormService {
     constructor(formType) {
         this.formType = formType; // 'global' or 'modal'
-        this.apiEndpoint = 'http://localhost:8000/api/forms/submit/client-requirement/';
+        
+        // Use environment variable or detect current domain
+        const adminBaseUrl = window.ADMIN_API_BASE_URL || 
+                           (window.location.hostname.includes('localhost') ? 
+                            'http://localhost:8000' : 
+                            'https://dycetix-admin.onrender.com');
+        
+        this.apiEndpoint = adminBaseUrl + '/api/forms/submit/client-requirement/';
     }
     
     // === SHARED VALIDATION ===

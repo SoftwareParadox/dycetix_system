@@ -123,12 +123,12 @@ services:
                     email=admin_email,
                     password=admin_password
                 )
-                print(f"✅ Superuser {admin_email} created successfully")
+                print(f"Superuser {admin_email} created successfully")
                 print(f"User ID: {user.id}, Is Staff: {user.is_staff}, Is Superuser: {user.is_superuser}")
             else:
-                print("❌ ADMIN_EMAIL or ADMIN_PASSWORD not set")
+                print("ADMIN_EMAIL or ADMIN_PASSWORD not set")
         except Exception as e:
-            print(f"❌ Error creating superuser: {e}")
+            print(f"Error creating superuser: {e}")
             import traceback
             traceback.print_exc()
         EOF
