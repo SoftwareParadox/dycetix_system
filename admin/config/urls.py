@@ -34,7 +34,7 @@ urlpatterns = [
     
     # Form submission and admin API endpoints
     path('api/forms/', include('apps.forms.urls')),
-    path('api/forms/submit/client-requirement/', submit_client_requirement, name='submit_client_requirement'),
+    # path('api/forms/submit/client-requirement/', submit_client_requirement, name='submit_client_requirement'),
 ]
 
 # Add media URL in development
