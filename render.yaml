@@ -86,52 +86,95 @@ services:
       export PYTHONPATH=/opt/render/project/src:$PYTHONPATH
       cd admin && python manage.py collectstatic --noinput
     startCommand: |
-        cd admin
-        echo "=== Fixing migration dependencies ==="
+      cd admin
+      
+      echo "=== NUCLEAR RESET - Fixing ALL migration issues ==="
+      
+      # First, let Django handle the migrations in correct order WITHOUT our intervention
+      python << 'EOF'
+      import os
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+      import django
+      django.setup()
+
+      from django.db import connection
+      from django.core.management import call_command
+      import sys
+
+      print("1. Checking current migration state...")
+      with connection.cursor() as cursor:
+        cursor.execute("SELECT app, name, applied FROM django_migrations WHERE app IN ('accounts', 'admin') ORDER BY applied")
+        migrations = cursor.fetchall()
+        for m in migrations:
+            print(f"  - {m[0]}.{m[1]} applied at {m[2]}")
+
+      print("2. Fixing migration dependencies...")
+      try:
+        # First, ensure accounts migrations are marked as applied
+        call_command('migrate', 'accounts', '--fake', interactive=False)
         
-        # Reset problematic migrations first
-        python manage.py migrate --fake accounts zero
-        python manage.py migrate --fake admin zero
+        # Then admin
+        call_command('migrate', 'admin', '--fake', interactive=False)
         
-        echo "=== Running migrations in correct order ==="
-        python manage.py migrate accounts --noinput
-        python manage.py migrate admin --noinput
-        python manage.py migrate --noinput
+        # Then everything else
+        call_command('migrate', interactive=False)
         
-        echo "=== Setting up superuser ==="
-        python << 'EOF'
-        import os
-        import django
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
-        django.setup()
+        print("✅ Migrations fixed successfully")
+      except Exception as e:
+          print(f"❌ Error during migrations: {e}")
+          # Fallback: drop and recreate
+          print("Attempting fallback fix...")
+          with connection.cursor() as cursor:
+              cursor.execute("DELETE FROM django_migrations WHERE app IN ('accounts', 'admin')")
+              print("Cleared accounts and admin migration history")
+          
+          # Re-run migrations
+          call_command('migrate', interactive=False)
+      EOF
+      
+      echo "=== Creating superuser ==="
+      python << 'EOF'
+      import os
+      import django
+      os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+      django.setup()
 
-        from django.contrib.auth import get_user_model
-        User = get_user_model()
+      from django.contrib.auth import get_user_model
+      User = get_user_model()
 
-        admin_email = os.environ.get('ADMIN_EMAIL', 'test@dycetix.com')
-        admin_password = os.environ.get('ADMIN_PASSWORD')
+      admin_email = os.environ.get('ADMIN_EMAIL', '13238922wm@gmail.com')
+      admin_password = os.environ.get('ADMIN_PASSWORD')
 
-        print(f"Creating superuser with email: {admin_email}")
+      print(f"Creating superuser with email: {admin_email}")
 
-        try:
-            if admin_email and admin_password:
-                # Delete existing superuser if exists (clean slate)
-                User.objects.filter(email=admin_email).delete()
-                
-                # Create new superuser
-                user = User.objects.create_superuser(
-                    email=admin_email,
-                    password=admin_password
-                )
-                print(f"Superuser {admin_email} created successfully")
-                print(f"User ID: {user.id}, Is Staff: {user.is_staff}, Is Superuser: {user.is_superuser}")
-            else:
-                print("ADMIN_EMAIL or ADMIN_PASSWORD not set")
-        except Exception as e:
-            print(f"Error creating superuser: {e}")
-            import traceback
-            traceback.print_exc()
-        EOF
+      try:
+          if admin_email and admin_password:
+              # Check if user exists, update password if it does
+              if User.objects.filter(email=admin_email).exists():
+                  user = User.objects.get(email=admin_email)
+                  user.set_password(admin_password)
+                  user.is_staff = True
+                  user.is_superuser = True
+                  user.is_active = True
+                  user.save()
+                  print(f"Updated existing user {admin_email}")
+              else:
+                  user = User.objects.create_superuser(
+                      email=admin_email,
+                      password=admin_password
+                  )
+                  print(f"Created new superuser {admin_email}")
+              
+              print(f"   User ID: {user.id}, Is Staff: {user.is_staff}, Is Superuser: {user.is_superuser}")
+          else:
+              print("ADMIN_EMAIL or ADMIN_PASSWORD not set")
+              print(f"   ADMIN_EMAIL: {admin_email}")
+              print(f"   ADMIN_PASSWORD: {'Set' if admin_password else 'Not set'}")
+      except Exception as e:
+          print(f"Error creating superuser: {e}")
+          import traceback
+          traceback.print_exc()
+      EOF
         
         echo "=== Starting server ==="
         gunicorn config.wsgi:application --workers=2 --bind 0.0.0.0:$PORT
