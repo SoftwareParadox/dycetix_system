@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  admin-postgres:
+    image: postgres:15
+    container_name: admin_postgres
+    environment:
+      POSTGRES_DB: dycetix_db
+      POSTGRES_USER: dycetix_admin
+      POSTGRES_PASSWORD: admin_password_123
+    ports:
+      - \"5432:5432\"
+    volumes:
+      - admin_postgres_data:/var/lib/postgresql/data
+
+  admin-migrate:
+    build: .
+    command: >
+      sh -c \"
+      echo '=== ADMIN MIGRATIONS STARTING ===' &&
+      cd /app/admin &&
+      sleep 10 &&
+      python manage.py migrate --noinput &&
+      echo '=== ADMIN MIGRATIONS COMPLETE ==='
+      \"
+    volumes:
+      - ./admin:/app/admin
+    depends_on:
+      - admin-postgres
+    env_file:
+      - .env.admin
+
+  admin:
+    build: .
+    command: >
+      sh -c \"
+      echo '=== ADMIN APP STARTING ===' &&
+      cd /app/admin &&
+      python manage.py runserver 0.0.0.0:8000
+      \"
+    volumes:
+      - ./admin:/app/admin
+    ports:
+      - \"8000:8000\"
+    depends_on:
+      - admin-migrate
+    env_file:
+      - .env.admin
+
+volumes:
+  admin_postgres_data:

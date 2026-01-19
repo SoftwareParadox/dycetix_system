@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   postgres:
     image: postgres:15
@@ -8,77 +6,81 @@ services:
       POSTGRES_USER: dycetix
       POSTGRES_PASSWORD: maxwell2019
     ports:
-      - '5432:5432'
+      - \"5432:5432\"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  # ADMIN MIGRATION - Now using .env.admin
   admin-migrate:
     build: .
     command: >
-      sh -c "
+      sh -c \"
       echo '=== ADMIN MIGRATIONS STARTING ===' &&
       cd /app/admin &&
       sleep 10 &&
       python manage.py migrate --noinput &&
       echo '=== ADMIN MIGRATIONS COMPLETE ==='
-      "
+      \"
     volumes:
       - ./admin:/app/admin
     depends_on:
       - postgres
     env_file:
-      - .env.admin
+      - .env.admin  # CHANGED
 
+  # ADMIN APP - Now using .env.admin
   admin:
     build: .
     command: >
-      sh -c "
+      sh -c \"
       echo '=== ADMIN APP STARTING ===' &&
       cd /app/admin &&
       python manage.py runserver 0.0.0.0:8000
-      "
+      \"
     volumes:
       - ./admin:/app/admin
     ports:
-      - '8000:8000'
+      - \"8000:8000\"
     depends_on:
       - admin-migrate
     env_file:
-      - .env.admin
+      - .env.admin  # CHANGED
 
+  # CUSTOMER MIGRATION - Now using .env.customer
   customer-migrate:
     build: .
     command: >
-      sh -c "
+      sh -c \"
       echo '=== CUSTOMER MIGRATIONS STARTING ===' &&
       cd /app/customer &&
       sleep 15 &&
       python manage.py migrate --noinput &&
       echo '=== CUSTOMER MIGRATIONS COMPLETE ==='
-      "
+      \"
     volumes:
       - ./customer:/app/customer
     depends_on:
       - postgres
     env_file:
-      - .env.customer
+      - .env.customer  # CHANGED
 
+  # CUSTOMER APP - Now using .env.customer
   customer:
     build: .
     command: >
-      sh -c "
+      sh -c \"
       echo '=== CUSTOMER APP STARTING ===' &&
       cd /app/customer &&
       python manage.py runserver 0.0.0.0:8001
-      "
+      \"
     volumes:
       - ./customer:/app/customer
     ports:
-      - '8001:8001'
+      - \"8001:8001\"
     depends_on:
       - customer-migrate
     env_file:
-      - .env.customer
+      - .env.customer  # CHANGED
 
 volumes:
   postgres_data:

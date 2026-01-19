@@ -1,6 +1,4 @@
-version: '3.8'
-
-services:
+﻿services:
   postgres:
     image: postgres:15
     environment:
@@ -8,10 +6,11 @@ services:
       POSTGRES_USER: dycetix
       POSTGRES_PASSWORD: maxwell2019
     ports:
-      - '5432:5432'
+      - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  # ADMIN MIGRATION - Simple version
   admin-migrate:
     build: .
     command: >
@@ -27,8 +26,9 @@ services:
     depends_on:
       - postgres
     env_file:
-      - .env.admin
+      - .env  # LOAD .env file here
 
+  # ADMIN APP
   admin:
     build: .
     command: >
@@ -40,12 +40,13 @@ services:
     volumes:
       - ./admin:/app/admin
     ports:
-      - '8000:8000'
+      - "8000:8000"
     depends_on:
       - admin-migrate
     env_file:
-      - .env.admin
+      - .env  # LOAD .env file here
 
+  # CUSTOMER MIGRATION
   customer-migrate:
     build: .
     command: >
@@ -61,8 +62,9 @@ services:
     depends_on:
       - postgres
     env_file:
-      - .env.customer
+      - .env  # LOAD .env file here
 
+  # CUSTOMER APP
   customer:
     build: .
     command: >
@@ -74,11 +76,11 @@ services:
     volumes:
       - ./customer:/app/customer
     ports:
-      - '8001:8001'
+      - "8001:8001"
     depends_on:
       - customer-migrate
     env_file:
-      - .env.customer
+      - .env  # LOAD .env file here
 
 volumes:
   postgres_data:
