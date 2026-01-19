@@ -1,52 +1,86 @@
-# version: '3.8'
-
-services:
+﻿services:
   postgres:
     image: postgres:15
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-dycetix_db}
-      POSTGRES_USER: ${POSTGRES_USER:-dycetix}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}  # NO DEFAULT - must be in .env
+      POSTGRES_DB: dycetix_db
+      POSTGRES_USER: dycetix
+      POSTGRES_PASSWORD: maxwell2019
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  # ADMIN MIGRATION - Simple version
+  admin-migrate:
+    build: .
+    command: >
+      sh -c "
+      echo '=== ADMIN MIGRATIONS STARTING ===' &&
+      cd /app/admin &&
+      sleep 10 &&
+      python manage.py migrate --noinput &&
+      echo '=== ADMIN MIGRATIONS COMPLETE ==='
+      "
+    volumes:
+      - ./admin:/app/admin
+    depends_on:
+      - postgres
+    env_file:
+      - .env  # LOAD .env file here
+
+  # ADMIN APP
   admin:
     build: .
     command: >
-      sh -c "sleep 5 &&
-          echo 'Running migrations...' &&
-          cd admin && 
-          python manage.py migrate &&
-          echo 'Starting server...' &&
-          python manage.py runserver 0.0.0.0:8000"
+      sh -c "
+      echo '=== ADMIN APP STARTING ===' &&
+      cd /app/admin &&
+      python manage.py runserver 0.0.0.0:8000
+      "
     volumes:
       - ./admin:/app/admin
-      - ./media:/app/media # For media files
-    depends_on:
-      - postgres
     ports:
       - "8000:8000"
+    depends_on:
+      - admin-migrate
     env_file:
-      - .env  # This is the KEY - loads ALL variables from .env
-    environment:
-      - DJANGO_SETTINGS_MODULE=config.settings
-  customer:
+      - .env  # LOAD .env file here
+
+  # CUSTOMER MIGRATION
+  customer-migrate:
     build: .
     command: >
-      sh -c "sleep 10 &&
-             python customer/manage.py migrate &&
-             python customer/manage.py runserver 0.0.0.0:8001"
+      sh -c "
+      echo '=== CUSTOMER MIGRATIONS STARTING ===' &&
+      cd /app/customer &&
+      sleep 15 &&
+      python manage.py migrate --noinput &&
+      echo '=== CUSTOMER MIGRATIONS COMPLETE ==='
+      "
     volumes:
       - ./customer:/app/customer
     depends_on:
       - postgres
+    env_file:
+      - .env  # LOAD .env file here
+
+  # CUSTOMER APP
+  customer:
+    build: .
+    command: >
+      sh -c "
+      echo '=== CUSTOMER APP STARTING ===' &&
+      cd /app/customer &&
+      python manage.py runserver 0.0.0.0:8001
+      "
+    volumes:
+      - ./customer:/app/customer
     ports:
       - "8001:8001"
+    depends_on:
+      - customer-migrate
     env_file:
-      - .env
-    environment:
-      - DJANGO_SETTINGS_MODULE=dycetix_project.settings
+      - .env  # LOAD .env file here
+
 volumes:
   postgres_data:

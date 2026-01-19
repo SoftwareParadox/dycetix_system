@@ -1,15 +1,15 @@
 <!-- admin/templates/admin/index.html -->
-{% extends "admin/layouts/dashboard_base.html" %}
+{% extends 'admin/layouts/dashboard_base.html' %}
 {% load static %}
 
-{% comment %} {% block page_title %}Dashboard{% endblock %}
-{% block page_subtitle %}Welcome back, {{ request.user.first_name|default:request.user.username }}{% endblock %} {% endcomment %}
+{% block page_title %}Dashboard{% endblock %}
+{% block page_subtitle %}Welcome back, {{ request.user.first_name|default:request.user.username }}{% endblock %}
 
-{% block content %}
+{% block main_content %}
 <!-- Your custom dashboard content here -->
-{% comment %} <div class="dashboard-content">
+<div class="dashboard-content">
     <h2>Welcome to Dycetix Admin</h2>
     <p>This is your custom dashboard.</p>
     <!-- Add your dashboard widgets here -->
-</div> {% endcomment %}
+</div>
 {% endblock %}

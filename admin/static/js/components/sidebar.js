@@ -104,6 +104,11 @@ function setupFlyoutSubmenus() {
         
         // Hover functionality for flyout
         menuItem.addEventListener('mouseenter', function() {
+            if (this.hoverTimer) {
+                clearTimeout(this.hoverTimer);
+                this.hoverTimer = null;
+            }
+
             if (sidebar.classList.contains('collapsed')) {
                 // Close other flyouts
                 document.querySelectorAll('.has-submenu.show-flyout').forEach(item => {
@@ -124,11 +129,26 @@ function setupFlyoutSubmenus() {
                 return;
             }
             
-            setTimeout(() => {
-                if (!this.matches(':hover') && !flyout?.matches(':hover')) {
+            // Use a timeout to check if we're still hovering
+            const hoverTimer = setTimeout(() => {
+                // Check if mouse is still over menu item or flyout
+                const isOverMenuItem = this.matches(':hover');
+                const isOverFlyout = flyout && flyout.matches(':hover');
+                
+                if (!isOverMenuItem && !isOverFlyout) {
                     this.classList.remove('show-flyout');
+                    
+                    // Reset inline styles when hiding flyout
+                    if (flyout) {
+                        flyout.style.position = '';
+                        flyout.style.left = '';
+                        flyout.style.top = '';
+                    }
                 }
-            }, 100);
+            }, 150); // Slightly longer delay
+            
+            // Store timer reference so we can cancel if needed
+            this.hoverTimer = hoverTimer;
         });
         
         // Keep flyout open when hovering over it
@@ -313,17 +333,28 @@ function toggleSidebar() {
         }
     }
     
-    // Close all flyouts when collapsing
+    // Close all flyouts and submenus when toggling sidebar
+    document.querySelectorAll('.has-submenu.show-flyout').forEach(item => {
+        item.classList.remove('show-flyout');
+    });
+    
+    // Also close any active submenus when collapsing
     if (isCollapsed) {
-        document.querySelectorAll('.has-submenu.show-flyout').forEach(item => {
-            item.classList.remove('show-flyout');
+        document.querySelectorAll('.has-submenu.active').forEach(item => {
+            item.classList.remove('active');
+        });
+    } else {
+        // When expanding, also remove any lingering flyout positioning
+        document.querySelectorAll('.submenu').forEach(submenu => {
+            submenu.style.position = '';
+            submenu.style.left = '';
+            submenu.style.top = '';
+            submenu.style.minWidth = '';
+            submenu.style.maxHeight = '';
+            submenu.style.overflowY = '';
+            submenu.style.zIndex = '';
         });
     }
-    
-    // Close all submenus when collapsing
-    document.querySelectorAll('.has-submenu.active').forEach(item => {
-        item.classList.remove('active');
-    });
 }
 
 function toggleMobileSidebar() {

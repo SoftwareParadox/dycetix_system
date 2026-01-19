@@ -1,0 +1,63 @@
+<!-- admin/templates/admin/layouts/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="synthwave">
+<head>
+    {% include 'admin/layouts/head.html' %}
+</head>
+<body class="admin-body">
+    <!-- Your existing background effects -->
+    <div class="sun-gradient-bg"></div>
+    <div class="grid-lines-bg"></div>
+    
+    <!-- Mobile toggle (keep existing) -->
+    <button class="sidebar-toggle" id="sidebar-toggle" onclick="toggleMobileSidebar()">
+        <i class="fas fa-bars"></i>
+    </button>
+    
+    <!-- Your existing loader -->
+    <div class="global-loader" id="global-loader">
+        <div class="loader-spinner">
+            <div class="spinner-ring"></div>
+        </div>
+    </div> 
+
+    <!-- Your existing notifications container -->
+    <div class="notifications-container" id="notifications-container"></div>
+
+    <!-- Main wrapper (keep existing classes) -->
+    <div class="admin-wrapper">
+        <!-- Sidebar (exactly as you have it) -->
+        <aside class="admin-sidebar" id="admin-sidebar">
+            {% include 'admin/components/sidebar.html' %}
+        </aside>
+
+        <!-- Main content area (keep existing structure) -->
+        <div class="admin-content">
+            <!-- Header (exactly as you have it) -->
+            <header class="admin-header" id="admin-header">
+                {% include 'admin/components/header.html' %}
+            </header>
+
+            <!-- Main content block -->
+            <main class="main-content" id="main-content">
+                {% block content %}{% endblock %}
+            </main>
+        </div>
+
+        <!-- Settings panel (exactly as you have it) -->
+        {% comment %} <aside class="settings-panel" id="settings-panel">
+            {% include 'admin/components/settings_panel.html' %}
+        </aside> {% endcomment %}
+    </div>
+    
+    <!-- Modals (extract from inline to partial) -->
+    {% include 'admin/layouts/modals.html' %}
+    
+    <!-- Scripts (extract from inline to partial) -->
+    {% include 'admin/layouts/scripts.html' %}
+    
+    <!-- Extra JS block for page-specific scripts -->
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

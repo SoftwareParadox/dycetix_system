@@ -2,8 +2,9 @@
   /* Footer Container */
 .footer-container {
   width: var(--container-view-width);
-  background: linear-gradient(135deg, #0C0931 0%, #12103D 100%);
-  border-top: 1px solid #1A1860;
+  /* background: linear-gradient(135deg, #0C0931 0%, #12103D 100%); */
+  background: radial-gradient(ellipse at 25% 50%, #365686 40%, #172b47 100%);
+  /* border-top: 1px solid #1A1860; */
   font-family: var(--text-font-family);
   margin-bottom: 0%;
   padding: 5rem 1.2rem;
@@ -34,7 +35,11 @@
 .footer-cta {
   padding: 20px;
   margin-bottom: 30px;
-  background-color: #131b34;
+  background: radial-gradient(ellipse at 25% 50%, rgba(54,86,134,0.9) 40%, rgba(23,43,71,0.95) 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(54, 86, 134, 0.5);
+    border-radius: 12px;
 }
 
 .footer-cta-buttons {
@@ -72,7 +77,11 @@
   align-items: stretch;
   justify-content: space-between;
   padding: 20px;
-  background-color: #16213e;
+  background: radial-gradient(ellipse at 25% 50%, rgb(54, 86, 134) 40%, rgb(23, 43, 71) 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(54, 86, 134, 0.5);
+    border-radius: 12px;
   color: white;
 }
 
@@ -113,7 +122,7 @@
   flex-direction: column;        
   justify-content: space-between;
   width: 65%;
-  border-left: 2px solid #2d323d;
+  border-left: 2px solid var(--section-hero-color);
   padding-left: 20px;
 }
 
@@ -158,7 +167,11 @@
 /* Social Section */
 .footer-social {
   display: flex;
-  background-color: #1a1a2e;
+  background: radial-gradient(ellipse at 25% 50%, rgba(54, 86, 134, 0.784) 40%, rgba(23,43,71,0.95) 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(54, 86, 134, 0.5);
+    border-radius: 12px;
   align-items: center;
   justify-content: center;
   margin: 10px 0;
@@ -209,12 +222,16 @@
   text-align: center;
   font-size: 0.85rem;
   padding: 10px;
-  background-color: #1a1a2e;
+  background: radial-gradient(ellipse at 25% 50%, rgba(54, 86, 134, 0.784) 40%, rgba(23, 43, 71, 0.827) 100%);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    border: 1px solid rgba(54, 86, 134, 0.5);
+    border-radius: 12px;
   color: #8b949e;
 }
 
 .footer-bottom a {
-  color: #0056b3;
+  color: var(--section-hero-color);
   text-decoration: underline;
   margin: 0 10px;
 }

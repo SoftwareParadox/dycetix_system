@@ -1,0 +1,65 @@
+<!-- admin/templates/admin/layouts/scripts.html -->
+<!-- Your existing JS files (keep them all) -->
+ {% load static %}
+<script src="{% static 'js/utils/helpers.js' %}"></script>
+<script src="{% static 'js/admin/themes.js' %}"></script>
+<script src="{% static 'js/base/core.js' %}"></script>
+<script src="{% static 'js/base/theme.js' %}"></script>
+<script src="{% static 'js/components/sidebar.js' %}"></script>
+<script src="{% static 'js/components/header.js' %}"></script>
+<script src="{% static 'js/components/notifications.js' %}"></script>
+
+<!-- User Context (exactly as you have it, but organized) -->
+<script>
+// User Context - Keep your exact code
+var userId = {% if request.user.is_authenticated %}{{ request.user.id|default:0 }}{% else %}null{% endif %};
+var userEmail = "{% if request.user.is_authenticated %}{{ request.user.email|default:''|escapejs }}{% else %}{% endif %}";
+var userFirstName = "{% if request.user.is_authenticated %}{{ request.user.first_name|default:''|escapejs }}{% else %}{% endif %}";
+var userLastName = "{% if request.user.is_authenticated %}{{ request.user.last_name|default:''|escapejs }}{% else %}{% endif %}";
+var userRole = "{% if request.user.is_authenticated %}{{ request.user.role|default:'operations'|escapejs }}{% else %}guest{% endif %}";
+
+// Your existing permissions code
+var userPermissions = {};
+var permissionsElement = document.getElementById('user-permissions');
+if (permissionsElement && permissionsElement.textContent) {
+    try {
+        userPermissions = JSON.parse(permissionsElement.textContent);
+    } catch(e) {
+        console.error('Failed to parse permissions:', e);
+        userPermissions = {};
+    }
+}
+
+// Your existing window variables
+window.user = {
+    id: userId,
+    email: userEmail,
+    firstName: userFirstName,
+    lastName: userLastName,
+    role: userRole,
+    permissions: userPermissions
+};
+window.theme = 'synthwave';
+window.appVersion = '1.0.0';
+</script>
+
+<!-- Base Initialization (keep your code) -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Your existing initialization
+    initAdminBase();
+    initTheme();
+    initNotifications();
+    
+    // Your existing loader timeout
+    setTimeout(() => {
+        document.getElementById('global-loader').style.display = 'none';
+    }, 300);
+});
+
+// Your existing HTMX error handler
+document.addEventListener('htmx:responseError', function(event) {
+    console.error('HTMX Error:', event.detail);
+    showNotification('error', 'Something went wrong. Please try again.');
+});
+</script>

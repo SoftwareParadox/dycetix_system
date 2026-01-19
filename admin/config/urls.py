@@ -5,7 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 from django.views.generic import RedirectView
-from admin.apps.forms.views import submit_client_requirement
+# from admin.apps.forms.views import submit_client_requirement
 from apps.accounts.admin_site import admin_site
 from apps.accounts.views import custom_logout
 
